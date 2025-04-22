@@ -1,0 +1,394 @@
+/* Global spacing improvements for all pages */
+
+/* Improve section spacing */
+.section {
+    padding: 5rem 0;
+    margin: 0;
+}
+
+/* Container improvements */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Improve responsive section padding */
+@media (max-width: 991px) {
+    .section {
+        padding: 4rem 0;
+    }
+    
+    .container {
+        padding: 0 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 3.5rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* Improve card spacing */
+.card, .industry-card, .custom-card, .product-card, .product-card-modern, .mobile-product-card, .solution-modern-step {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius);
+    background-color: var(--bg-light);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Improve section title spacing */
+.section-title {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-subtitle {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Improve form spacing */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    padding: 0.8rem 1rem;
+}
+
+/* Improve button spacing */
+.btn, .industry-contact-btn, .industries-hero-btn, .mobile-product-btn, .btn-outline-modern, .contact-unique-btn, .card .btn, button, input[type="button"], input[type="submit"] {
+    padding: 0.8rem 1.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Improve footer spacing */
+.footer {
+    padding: 4rem 0 2rem;
+}
+
+.footer-container {
+    padding: 0 1.5rem;
+}
+
+.footer-links-title {
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    margin-bottom: 2rem;
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+}
+
+/* Improve header and navigation spacing */
+.mobile-nav-menu {
+    padding: 1rem 0;
+}
+
+/* Gallery improvements */
+.gallery-grid {
+    gap: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        gap: 1rem;
+    }
+}
+
+/* Product cards spacing improvements */
+.product-cards {
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.product-content {
+    padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .product-cards {
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .product-content {
+        padding: 1.2rem;
+    }
+}
+
+/* Solution section image consistency fix */
+.product-image-wrapper {
+    position: relative;
+    height: 240px; /* Fixed height for all image wrappers */
+    overflow: hidden;
+    width: 100%; /* Ensure consistent width */
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Center the images */
+}
+
+@media (max-width: 992px) {
+    .product-image-wrapper {
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-image-wrapper {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-image-wrapper {
+        height: 220px;
+    }
+}
+
+/* Desktop Navigation Improvements */
+@media (min-width: 992px) {
+    .desktop-nav {
+        display: flex;
+        align-items: center;
+    }
+    
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem; /* Increased horizontal gap between nav items */
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .nav-item {
+        margin: 0 0.5rem; /* Additional horizontal margin on each side */
+        position: relative;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 0.5rem 0.8rem; /* Added horizontal padding to nav links */
+        font-weight: 500;
+        transition: color 0.3s ease, transform 0.2s ease;
+        text-decoration: none;
+    }
+    
+    .nav-link:hover {
+        transform: translateY(-2px);
+    }
+    
+    .nav-link.active {
+        font-weight: 600;
+    }
+}
+
+/* Mobile Navigation Improvements */
+@media (max-width: 991px) {
+    .mobile-nav-menu {
+        padding: 1.2rem 0;
+    }
+    
+    .mobile-nav-item {
+        padding: 0.8rem 1.5rem; /* Increased horizontal padding to mobile nav items */
+        margin: 0.2rem 0;
+    }
+    
+    .mobile-nav-link {
+        font-size: 1.1rem;
+        padding: 0.5rem 0;
+        display: block;
+    }
+}
+
+/* Header and navigation improvements */
+.header-container {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .header-container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 1.2rem;
+    }
+}
+
+/* Contact form mobile improvements */
+@media screen and (max-width: 480px) {
+    .contact-gallery-wrapper {
+        gap: 1.5rem; /* Reduce gap on smaller screens */
+    }
+    
+    .contact-gallery-card, 
+    .contact-gallery-form {
+        padding: 1.2rem; /* Reduce padding further on smaller screens */
+    }
+    
+    .contact-gallery-title, 
+    .contact-form-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-gallery-text h4 {
+        font-size: 0.95rem;
+    }
+    
+    .contact-gallery-text p {
+        font-size: 0.85rem;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+    
+    .contact-gallery-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .contact-gallery-icon i {
+        font-size: 0.9rem;
+    }
+}
+
+/* Fix contact form overflow issues */
+.contact-section {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
+.contact-card, .contact-form {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.contact-gallery-wrapper, 
+.contact-main, 
+.contact-cards {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Fix text overflow */
+.contact-gallery-text h4, 
+.contact-gallery-text p,
+.contact-form-title,
+.contact-gallery-title {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Fix input fields */
+.form-group input,
+.form-group textarea,
+.form-group select,
+.form-control {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Fix contact grid for mobile */
+@media (max-width: 768px) {
+    .contact-gallery-wrapper,
+    .contact-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-gallery-card, 
+    .contact-gallery-form,
+    .contact-form,
+    .contact-map {
+        padding: 1.2rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .contact-form button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Fix Google Map container */
+.map-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.map-wrapper iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block;
+    border: 0;
+} 
