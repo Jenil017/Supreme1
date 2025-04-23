@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/common-improvements.css">
+    <link rel="stylesheet" href="assets/css/header-improvements.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- GSAP Animation Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -120,9 +122,11 @@
     </style>
 </head>
 <body class="bg-background font-sans text-text-primary">
-    <div class="preloader flex items-center justify-center fixed top-0 left-0 w-full h-full bg-white z-50"><div class="spinner"></div></div>
-    
-    <!-- Header from index.html -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -144,10 +148,10 @@
             </nav>
             
             <!-- Mobile Menu Button (visible only on mobile) -->
-            <button class="menu-toggle" aria-label="Toggle mobile menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" style="display:flex;flex-direction:column;justify-content:space-between;width:30px;height:22px;background:transparent;border:none;cursor:pointer;padding:0;z-index:10001;position:relative;">
+                <span style="display:block;width:100%;height:3px;background-color:#1A3C40;border-radius:2px;transition:all 0.3s ease;"></span>
+                <span style="display:block;width:100%;height:3px;background-color:#1A3C40;border-radius:2px;transition:all 0.3s ease;"></span>
+                <span style="display:block;width:100%;height:3px;background-color:#1A3C40;border-radius:2px;transition:all 0.3s ease;"></span>
             </button>
         </div>
     </header>
@@ -159,7 +163,7 @@
                 <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" style="border-radius:50%;width:36px;height:36px;object-fit:cover;">
                 <span>Supreme Thread</span>
             </a>
-            <button class="mobile-menu-close">
+            <button class="mobile-menu-close" aria-label="Close menu">
                 <span>&times;</span>
             </button>
         </div>
@@ -181,53 +185,298 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay"></div>
-    
-    <!-- Header and Mobile Menu CSS from index.html -->
-    <style>
-    @media (max-width: 991px) {
-        /* Mobile menu toggle button ke liye updated z-index */
-        .menu-toggle {
-            z-index: 9999 !important;
-            position: relative !important;
-        }
-        
-        /* Mobile menu ke liye increased z-index */
-        .mobile-menu {
-            z-index: 9998 !important;
-        }
-        
-        /* Mobile menu overlay ke liye increased z-index */
-        .mobile-menu-overlay {
-            z-index: 9997 !important;
-        }
-        
-        /* Header ka z-index kam kiya */
-        .header {
-            z-index: 100 !important;
-        }
-        
-        /* Fix for mobile menu hover effects */
-        .mobile-nav-link:hover {
-            color: inherit !important;
-        }
-        
-        .mobile-nav-link.active {
-            color: var(--primary) !important;
-        }
-    }
 
-    /* Desktop view ke liye menu button hide karne ka rule - stronger selector */
+    <style>
+    /* Header menu button hide/show CSS */
     @media (min-width: 992px) {
         .menu-toggle {
-            display: none !important;
+            display: none !important; /* Hide menu on pc */
+        }
+    }
+    
+    @media (max-width: 991px) {
+        .menu-toggle {
+            display: flex !important; /* Show mobile menu */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10;
         }
         
-        .mobile-menu, 
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+    }
+    </style>
+
+    <style>
+        /* Menu color updates - mobile nav styles removed */
+        :root {
+          --primary-color: #1e3a8a;  /* Blue color */
+          --secondary-color: #3b82f6; /* Lighter blue for highlights */
+        }
+        
+        .nav-link { color: #333; }
+        
+        .nav-link:hover, 
+        .nav-link:focus, 
+        .nav-link.active {
+          color: var(--primary-color);
+        }
+        
+        .nav-link::after {
+          background-color: var(--primary-color);
+        }
+    </style>
+
+    <style>
+    /* Fixed z-index values for mobile menu components */
+    :root {
+        --primary: #1A3C40;
+        --secondary: #f9e79f;
+        --primary-color: #1A3C40;
+        --secondary-color: #f9e79f;
+    }
+    
+    /* Critical fixes for mobile menu */
+    @media (max-width: 991px) {
+        /* Fix z-index hierarchy */
+        .menu-toggle {
+            position: relative;
+            z-index: 10001 !important;
+            display: flex !important;
+            pointer-events: auto !important;
+            cursor: pointer !important;
+        }
+        
+        .mobile-menu {
+            z-index: 10000 !important;
+        }
+        
         .mobile-menu-overlay {
-            display: none !important;
+            z-index: 9999 !important;
+        }
+        
+        /* Ensure header doesn't overlap toggles */
+        .header {
+            z-index: 9998 !important;
+            position: relative;
+        }
+        
+        /* Fix for menu toggle visibility */
+        .menu-toggle span {
+            display: block !important;
+            width: 100% !important;
+            height: 3px !important;
+            background-color: var(--primary) !important;
+            margin: 0 0 5px 0 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .menu-toggle span:last-child {
+            margin-bottom: 0 !important;
+        }
+    }
+    </style>
+
+    <style>
+    /* Mobile Menu - Required for functionality */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 280px;
+        height: 100%;
+        background-color: #fff;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem 1rem;
+        overflow-y: auto;
+        z-index: 10000;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-menu.active {
+        right: 0;
+    }
+    
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Mobile Menu Toggle Button */
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 10001;
+        position: relative;
+    }
+    
+    .menu-toggle span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary, #1A3C40);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        transform-origin: center;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    .mobile-menu-header {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-bottom: 1.5rem;
+        justify-content: flex-start;
+        min-height: 48px;
+    }
+    
+    .mobile-logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--primary, #1A3C40);
+        font-weight: 600;
+        padding-right: 2.5rem; /* add space for close button */
+        font-size: 1.15rem;
+    }
+    
+    .mobile-logo img {
+        margin-right: 8px;
+    }
+    
+    .mobile-menu-close {
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        transform: translateY(-50%);
+        background: transparent;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #333;
+        line-height: 1;
+        padding: 0 0.5rem;
+        z-index: 2;
+    }
+    
+    .mobile-nav-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+    }
+    
+    .mobile-nav-item {
+        margin-bottom: 0.5rem;
+    }
+    
+    .mobile-nav-link {
+        display: block;
+        padding: 0.75rem 0;
+        color: #333;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.2s ease;
+    }
+    
+    .mobile-nav-link.active {
+        color: var(--primary, #1A3C40);
+        font-weight: 600;
+    }
+    
+    .mobile-menu-footer {
+        margin-top: 2rem;
+    }
+    
+    .mobile-social-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+    
+    .mobile-social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 50%;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-social-links a:hover {
+        background-color: var(--primary, #1A3C40);
+        color: #fff;
+    }
+    
+    @media (max-width: 991px) {
+        .desktop-nav {
+            display: none;
+        }
+        
+        .menu-toggle {
+            display: flex;
+        }
+        
+        body.no-scroll {
+            overflow: hidden;
+        }
+    }
+    
+    @media (max-width: 400px) {
+        .mobile-logo {
+            font-size: 1rem;
+            padding-right: 2rem;
+        }
+        .mobile-menu-close {
+            font-size: 1.5rem;
+            right: 0.25rem;
         }
     }
     </style>
@@ -691,14 +940,14 @@
   </style>
     <!-- Footer from index.html -->
     <footer class="footer">
-        <div class="footer-container">
+        <div class="container footer-container">
             <div class="footer-main">
                 <div class="footer-logo-section">
                     <div class="footer-logo">
                         <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" class="footer-logo-img">
                         <span class="footer-logo-text">Supreme Thread</span>
                     </div>
-                    <p class="footer-about">We are a leading manufacturer of premium quality threads for various industries. Our state-of-the-art facilities in Surat, Gujarat produce threads that meet international quality standards.</p>
+                    <p class="footer-about">Supreme Thread is a premier manufacturer of high-quality industrial threads located in Surat, Gujarat. With over two decades of experience, we combine traditional craftsmanship with modern technology to create threads that meet the highest standards of quality and durability.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -743,8 +992,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Footer CSS from index.html -->
     <style>
     /* Modern Footer Styles */
     .footer {
@@ -973,6 +1220,37 @@
         }
     }
     
+    @media (max-width: 768px) {
+        .footer-links-section {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-links-column:nth-child(3) {
+            grid-column: span 2;
+        }
+        
+        .footer-contact {
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        
+        .footer-contact-item {
+            justify-content: flex-start;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .footer-links-section {
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+        }
+        
+        .footer-links-column:nth-child(3) {
+            grid-column: span 1;
+        }
+    }
+    
     /* Ensure Quick Links align left in PC view */
     @media (min-width: 992px) {
         .footer-links-column:first-child .footer-links {
@@ -1005,73 +1283,135 @@
             margin-left: 0;
         }
     }
-    
-    @media (max-width: 576px) {
-        .footer-links-section {
-            grid-template-columns: 1fr;
-            gap: 1.8rem;
-        }
-        
-        .footer-links-column:nth-child(3) {
-            grid-column: span 1;
-        }
-    }
     </style>
-
-    <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/script.js"></script>
+    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Direct implementation of mobile menu functionality with no external dependencies -->
     <script>
+    // Stand-alone mobile menu implementation - no reliance on external scripts
     document.addEventListener('DOMContentLoaded', function() {
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
+        console.log("Mobile menu initialization started");
         
-        // Mobile menu functionality
-        const menuToggle = document.querySelector('.menu-toggle');
+        // Directly find all mobile menu elements
+        const menuToggle = document.getElementById('mobileMenuToggle');
         const mobileMenu = document.querySelector('.mobile-menu');
         const mobileMenuClose = document.querySelector('.mobile-menu-close');
         const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
         
-        if (menuToggle && mobileMenu && mobileMenuClose && mobileMenuOverlay) {
-            // Toggle mobile menu
-            menuToggle.addEventListener('click', function() {
+        console.log("Menu toggle found:", menuToggle !== null);
+        console.log("Mobile menu found:", mobileMenu !== null);
+        console.log("Close button found:", mobileMenuClose !== null);
+        console.log("Overlay found:", mobileMenuOverlay !== null);
+        
+        if (menuToggle) {
+            // Force apply proper styles to ensure menu toggle is visible
+            menuToggle.style.display = "flex";
+            menuToggle.style.flexDirection = "column";
+            menuToggle.style.justifyContent = "space-between";
+            menuToggle.style.width = "30px";
+            menuToggle.style.height = "22px";
+            menuToggle.style.background = "transparent";
+            menuToggle.style.border = "none";
+            menuToggle.style.cursor = "pointer";
+            menuToggle.style.padding = "0";
+            menuToggle.style.zIndex = "10001";
+            menuToggle.style.position = "relative";
+            
+            // Direct click handler - no event listener that could be overridden
+            menuToggle.onclick = function(e) {
+                console.log("Menu toggle clicked - activating mobile menu");
+                e.preventDefault();
+                e.stopPropagation(); // Prevent event bubbling
+                
+                // Toggle active class on all elements
+                this.classList.toggle('active');
                 mobileMenu.classList.toggle('active');
                 mobileMenuOverlay.classList.toggle('active');
                 document.body.classList.toggle('no-scroll');
-            });
-            
-            // Close mobile menu
-            mobileMenuClose.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-                mobileMenuOverlay.classList.remove('active');
-                document.body.classList.remove('no-scroll');
-            });
-            
-            // Close mobile menu when clicking overlay
-            mobileMenuOverlay.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-                mobileMenuOverlay.classList.remove('active');
-                document.body.classList.remove('no-scroll');
-            });
+                
+                return false; // Prevent default and stop propagation
+            };
         }
         
-        // Preloader
+        if (mobileMenuClose) {
+            mobileMenuClose.onclick = function(e) {
+                console.log("Close button clicked");
+                e.preventDefault();
+                e.stopPropagation(); // Prevent event bubbling
+                
+                // Remove active class from all elements
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+                
+                return false; // Prevent default and stop propagation
+            };
+        }
+        
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.onclick = function(e) {
+                console.log("Overlay clicked");
+                e.preventDefault();
+                e.stopPropagation(); // Prevent event bubbling
+                
+                // Remove active class from all elements
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+                
+                return false; // Prevent default and stop propagation
+            };
+        }
+        
+        // Close menu when clicking mobile nav links
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.onclick = function() {
+                console.log("Mobile link clicked");
+                
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+                
+                // Allow link navigation to continue
+            };
+        });
+    });
+
+    // Wait for window load to hide preloader
+    window.addEventListener('load', function() {
+        console.log("Window loaded - initializing other components");
+        
+        // Hide preloader
         const preloader = document.querySelector('.preloader');
         if (preloader) {
-            window.addEventListener('load', function() {
-                preloader.style.display = 'none';
+            preloader.style.display = 'none';
+        }
+        
+        // Initialize AOS if available
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
             });
-            
-            // Fallback
-            setTimeout(function() {
-                preloader.style.display = 'none';
-            }, 3000);
         }
     });
+    
+    // Fallback timeout for preloader
+    setTimeout(function() {
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+            preloader.style.display = 'none';
+        }
+    }, 3000);
     </script>
+    
+    <!-- Other site scripts -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

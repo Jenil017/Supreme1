@@ -32,6 +32,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <style>
+        /* Styles for the manufacturing hero section */
         .manufacturing-hero.hero-bg-image {
             position: relative;
             min-height: 420px;
@@ -62,6 +63,7 @@
             .hero-content { padding-top: 2.5rem; padding-bottom: 2.5rem; }
             .hero-tags { font-size: 0.93rem; }
         }
+        /* Styles for the hero content section */
         .hero-content-mfg {
             position: relative;
             z-index: 2;
@@ -75,6 +77,7 @@
         .hero-tags {
             margin-top: 2.2rem;
         }
+        /* Styles for the hero overlay section */
         .hero-overlay {
             position: absolute;
             inset: 0;
@@ -84,8 +87,10 @@
             z-index: 1;
         }
         .hero-content { position: relative; z-index: 2; }
+        /* Styles for the page title section */
         .page-title { text-shadow: 0 4px 24px rgba(30,58,138,0.22), 0 1px 2px rgba(0,0,0,0.12); }
         .hero-tags { margin-top: 1.5rem; }
+        /* Styles for the hero tags section */
         .hero-tag {
             display: inline-block;
             background: rgba(255,255,255,0.80);
@@ -109,7 +114,9 @@
             .process-timeline { gap: 0.8rem; }
             .process-step-new { min-width: 110px; font-size: 0.93rem; }
         }
+        /* Styles for the facility features section */
         .facility-features { margin-top: 0.5rem; }
+        /* Styles for the facility card section */
         .facility-card {
             background: linear-gradient(120deg, #e0e7ff 80%, #fff 100%);
             border-radius: 1.2rem;
@@ -128,7 +135,9 @@
             transform: scale(1.06) translateY(-4px);
             box-shadow: 0 8px 24px 0 rgba(30,58,138,0.15);
         }
+        /* Styles for the process section */
         .process-section { background: linear-gradient(120deg, #f1f5fe 40%, #f9f6f2 100%); }
+        /* Styles for the process timeline section */
         .process-timeline {
             display: flex;
             flex-direction: column;
@@ -163,6 +172,7 @@
                 margin: 0.2rem auto 0.2rem auto;
             }
         }
+        /* Styles for the process step new section */
         .process-step-new {
             background: linear-gradient(120deg, #fff 80%, #e0e7ff 100%);
             border-radius: 1.5rem;
@@ -181,9 +191,13 @@
             transform: scale(1.07) translateY(-8px);
             box-shadow: 0 10px 32px 0 rgba(30,58,138,0.16);
         }
+        /* Styles for the process step icon section */
         .process-step-icon { font-size: 2rem; margin-bottom: 0.7rem; }
+        /* Styles for the process step title section */
         .process-step-title { font-size: 1.08rem; font-weight: 700; margin-bottom: 0.3rem; color: #1e3a8a; }
+        /* Styles for the process step description section */
         .process-step-desc { font-size: 0.98rem; color: #444; }
+        /* Styles for the cta section */
         .cta-section { background: linear-gradient(120deg, #e0e7ff 0%, #f9f6f2 100%); }
         @media (max-width: 991px) {
             .manufacturing-hero { min-height: 140px; }
@@ -195,6 +209,7 @@
             .process-timeline { gap: 0.8rem; }
             .process-step-new { min-width: 110px; font-size: 0.93rem; }
         }
+        /* Styles for the hero section manufacturing */
         .hero-section-mfg {
             background-size: cover;
             background-position: center;
@@ -209,6 +224,7 @@
             padding-bottom: 40px;
             box-sizing: border-box;
         }
+        /* Styles for the hero overlay manufacturing */
         .hero-overlay-mfg {
             position: absolute;
             inset: 0;
@@ -217,6 +233,7 @@
             background: linear-gradient(120deg, rgba(30,58,138,0.22) 0%, rgba(249,246,242,0.92) 100%), rgba(30,58,138,0.22);
             z-index: 1;
         }
+        /* Styles for the hero content manufacturing */
         .hero-content-mfg {
             position: relative;
             z-index: 2;
@@ -230,23 +247,28 @@
             padding-bottom: 40px;
             box-sizing: border-box;
         }
+        /* Styles for the hero icon manufacturing */
         .hero-icon-mfg {
             font-size: 3.2rem;
         }
+        /* Styles for the hero heading manufacturing */
         .hero-heading-mfg {
             font-size: 3.5rem;
             font-weight: 700;
             color: #fff;
             text-shadow: 0 4px 24px rgba(30,58,138,0.22), 0 1px 2px rgba(0,0,0,0.12);
         }
+        /* Styles for the hero subtext manufacturing */
         .hero-subtext-mfg {
             font-size: 1.2rem;
             color: #fff;
             text-shadow: 0 4px 24px rgba(30,58,138,0.22), 0 1px 2px rgba(0,0,0,0.12);
         }
+        /* Styles for the hero tags manufacturing */
         .hero-tags-mfg {
             margin-top: 1.5rem;
         }
+        /* Styles for the hero tag manufacturing */
         .hero-tag-mfg {
             display: inline-block;
             background: rgba(255,255,255,0.80);
@@ -313,6 +335,7 @@
                 margin: 0.2rem !important;
             }
         }
+        /* Styles for the why grid manufacturing */
         .why-grid-mfg {
             display: flex;
             flex-wrap: wrap;
@@ -335,16 +358,9 @@
         }
     </style>
     <style>
+      /* Media query for small devices */
       @media (max-width: 600px) {
-        .why-grid-mfg {
-          padding-left: 0.7rem !important;
-          padding-right: 0.7rem !important;
-          gap: 0.6rem !important;
-          display: grid !important;
-          grid-template-columns: repeat(2, 1fr) !important;
-        }
-        
-        /* Improve "Why Choose Supreme Thread" section on mobile */
+        /* Styles for the why choose section on small devices */
         #why-choose .section-title {
           font-size: 1.5rem !important;
           line-height: 1.3 !important;
@@ -355,11 +371,13 @@
           hyphens: auto !important;
         }
         
+        /* Styles for the why choose manufacturing section on small devices */
         .why-choose-mfg {
           padding-top: 1.5rem !important;
           padding-bottom: 1.5rem !important;
         }
         
+        /* Styles for the why card manufacturing section on small devices */
         .why-card-mfg {
           padding: 0.7rem !important;
           min-width: initial !important;
@@ -368,31 +386,37 @@
           height: 100% !important;
         }
         
+        /* Styles for the why card heading manufacturing section on small devices */
         .why-card-mfg h3 {
           font-size: 1rem !important;
           margin-bottom: 0.3rem !important;
         }
         
+        /* Styles for the why card paragraph manufacturing section on small devices */
         .why-card-mfg p {
           font-size: 0.85rem !important;
           margin-bottom: 0 !important;
         }
         
+        /* Styles for the why icon manufacturing section on small devices */
         .why-icon-mfg {
           font-size: 1.6rem !important;
           margin-bottom: 0.4rem !important;
         }
         
+        /* Styles for the cta section on small devices */
         .cta-section {
           padding: 1.5rem 0 !important;
           height: auto !important;
         }
         
+        /* Styles for the why choose manufacturing section on small devices */
         .why-choose-mfg {
           padding-top: 2rem !important;
           padding-bottom: 2rem !important;
         }
         
+        /* Styles for the why card manufacturing section on small devices */
         .why-card-mfg {
           padding: 0.8rem !important;
           min-width: 100% !important;
@@ -400,11 +424,13 @@
           margin-bottom: 0.8rem !important;
         }
         
+        /* Styles for the why icon manufacturing section on small devices */
         .why-icon-mfg {
           font-size: 1.8rem !important;
           margin-bottom: 0.6rem !important;
         }
         
+        /* Styles for the process section on small devices */
         /* Process section mobile improvements */
         .process-section .section-title {
           font-size: 1.5rem !important;
@@ -415,21 +441,24 @@
         }
       }
       
-      /* Extra small devices */
+      /* Media query for extra small devices */
       @media (max-width: 400px) {
+        /* Styles for the why choose section on extra small devices */
         #why-choose .section-title {
           font-size: 1.3rem !important;
           padding: 0 8px !important;
         }
         
+        /* Styles for the why card manufacturing section on extra small devices */
         .why-card-mfg {
           padding: 0.8rem !important;
         }
       }
     </style>
     <style>
-        /* Tablet-specific styles for process section */
+        /* Media query for tablet devices */
         @media (min-width: 768px) and (max-width: 1023px) {
+            /* Styles for the process timeline section on tablet devices */
             .process-timeline {
                 display: grid !important;
                 grid-template-columns: repeat(3, 1fr) !important;
@@ -439,6 +468,7 @@
                 align-items: stretch !important;
             }
             
+            /* Styles for the process step new section on tablet devices */
             .process-step-new {
                 min-width: auto !important;
                 width: 100% !important;
@@ -447,14 +477,17 @@
                 height: 100% !important;
             }
             
+            /* Styles for the process step title section on tablet devices */
             .process-step-title {
                 font-size: 1rem !important;
             }
             
+            /* Styles for the process step description section on tablet devices */
             .process-step-desc {
                 font-size: 0.9rem !important;
             }
             
+            /* Styles for the process step icon section on tablet devices */
             .process-step-icon {
                 font-size: 1.8rem !important;
                 margin-bottom: 0.6rem !important;
@@ -462,8 +495,9 @@
         }
     </style>
     <style>
-        /* Larger tablets like iPad Pro (1024 x 1366) */
+        /* Media query for larger tablet devices */
         @media (min-width: 1024px) and (max-width: 1366px) {
+            /* Styles for the process timeline section on larger tablet devices */
             .process-timeline {
                 display: grid !important;
                 grid-template-columns: repeat(3, 1fr) !important;
@@ -475,6 +509,7 @@
                 margin: 0 auto !important;
             }
             
+            /* Styles for the process step new section on larger tablet devices */
             .process-step-new {
                 min-width: auto !important;
                 width: 100% !important;
@@ -495,19 +530,23 @@
                 box-shadow: 0 4px 24px 0 rgba(30,58,138,0.10) !important;
             }
             
+            /* Styles for the process section title on larger tablet devices */
             .process-section .section-title {
                 margin-bottom: 2rem !important;
             }
             
+            /* Styles for the process step title section on larger tablet devices */
             .process-step-title {
                 font-size: 1.1rem !important;
                 margin-bottom: 0.5rem !important;
             }
             
+            /* Styles for the process step description section on larger tablet devices */
             .process-step-desc {
                 font-size: 0.95rem !important;
             }
             
+            /* Styles for the process step icon section on larger tablet devices */
             .process-step-icon {
                 font-size: 2rem !important;
                 margin-bottom: 0.8rem !important;
@@ -534,7 +573,7 @@
         <div class="spinner"></div>
     </div>
 
-    <!-- Header -->
+    <!-- Header Section -->
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -725,7 +764,7 @@
         </div>
     </section>
 
-     <!-- Footer -->
+     <!-- Footer Section -->
      <footer class="footer">
         <div class="footer-container">
             <div class="footer-main">
