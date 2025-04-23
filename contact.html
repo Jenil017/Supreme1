@@ -102,212 +102,416 @@
         }
     </style>
     <style>
-        /* Footer Styles */
+        /* Footer Fixes for About Page - Improved Compact Version */
         .footer {
             background-color: #1A3C40;
             color: white;
-            padding: 40px 0 20px;
-            font-size: 14px;
+            padding: 3rem 0 0;
+            margin-top: 3rem;
+            position: relative;
         }
         
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 1.5rem;
         }
         
         .footer-main {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-bottom: 20px;
+            grid-template-columns: 1fr 2fr;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
         }
         
         .footer-logo-section {
             display: flex;
             flex-direction: column;
-            gap: 10px;
         }
         
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 1.2rem;
         }
         
         .footer-logo-img {
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
+            object-fit: cover;
+            margin-right: 0.8rem;
         }
         
         .footer-logo-text {
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
         }
         
         .footer-about {
-            margin-bottom: 15px;
-            line-height: 1.4;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1.2rem;
             color: #e0e0e0;
-            max-width: 400px;
         }
         
         .social-links {
             display: flex;
-            gap: 12px;
-            margin-bottom: 10px;
+            gap: 0.8rem;
         }
         
         .social-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 30px;
-            height: 30px;
+            width: 36px;
+            height: 36px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: white;
-            transition: background-color 0.3s;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
         
         .social-link:hover {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
         }
         
         .footer-links-section {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-        }
-        
-        .footer-links-column {
-            margin-bottom: 5px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
         }
         
         .footer-links-title {
-            font-size: 16px;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 1.2rem;
             position: relative;
-            padding-bottom: 8px;
+            padding-bottom: 0.4rem;
+            color: white;
         }
         
-        .footer-links-title:after {
+        .footer-links-title::after {
             content: '';
             position: absolute;
-            left: 0;
             bottom: 0;
-            width: 40px;
+            left: 0;
+            width: 30px;
             height: 2px;
-            background-color: var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.3);
         }
         
         .footer-links {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 20px;
         }
         
         .footer-links li {
-            position: relative;
-            padding-left: 0;
+            margin-bottom: 0.5rem;
         }
         
-        .footer-links li a {
-            color: #e0e0e0;
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: color 0.3s;
-            font-size: 13px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: block;
         }
         
-        .footer-links li a:hover {
-            color: var(--primary-color);
-        }
-        
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+        .footer-links a:hover {
+            color: white;
         }
         
         .footer-contact-item {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            margin-bottom: 0.9rem;
+            font-size: 0.9rem;
+            line-height: 1.4;
             color: #e0e0e0;
-            margin: 0;
-            font-size: 13px;
         }
         
         .footer-contact-item i {
-            margin-top: 3px;
-            font-size: 12px;
-            color: var(--primary-color);
+            margin-right: 0.7rem;
+            margin-top: 0.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            min-width: 14px;
+            text-align: center;
         }
         
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 15px;
+            padding: 1.2rem 0;
             text-align: center;
-            font-size: 12px;
         }
         
         .copyright {
-            color: #e0e0e0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Super Compact Footer Links in One Row */
+        .footer-links-column:first-child .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 0;
+            gap: 8px 16px;
+            max-width: 100%;
+        }
+        
+        .footer-links-column:first-child .footer-links li {
             margin: 0;
+            position: relative;
+            padding-right: 16px;
         }
         
-        /* Responsive Footer */
-        @media (min-width: 576px) {
-            .footer-links-section {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .footer-links-column:first-child .footer-links li:not(:last-child)::after {
+            content: '•';
+            position: absolute;
+            right: 0;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.8rem;
         }
         
-        @media (min-width: 768px) {
+        .footer-links-column:first-child .footer-links li:last-child {
+            padding-right: 0;
+        }
+        
+        .footer-links-column:first-child .footer-links a {
+            font-size: 0.85rem;
+            white-space: nowrap;
+            padding: 2px 0;
+        }
+        
+        /* Responsive Footer - Enhanced */
+        @media (max-width: 992px) {
             .footer-main {
-                grid-template-columns: 1fr 2fr;
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
             
             .footer-links-section {
                 grid-template-columns: repeat(3, 1fr);
             }
-        }
-        
-        @media (min-width: 992px) {
-            .footer-main {
-                grid-template-columns: 1fr 2fr;
-                gap: 40px;
+            
+            .footer-logo-section {
+                max-width: 550px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                justify-content: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .footer-links-column:first-child .footer-links {
+                justify-content: center;
+                margin: 0 auto;
+                max-width: 550px;
             }
         }
         
-        @media (max-width: 575px) {
+        @media (max-width: 768px) {
             .footer {
-                padding: 30px 0 15px;
+                padding-top: 2.5rem;
             }
             
-            .footer-links {
-                display: flex;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                gap: 12px;
+            .footer-links-section {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem 1rem;
+            }
+            
+            .footer-links-column:first-child {
+                grid-column: span 2;
+            }
+            
+            .footer-links-column:first-child .footer-links {
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-wrap: wrap !important; /* Force wrap for tablet-sized screens */
+                overflow-x: visible;
                 padding-bottom: 5px;
-                -ms-overflow-style: none;
-                scrollbar-width: none;
+                gap: 10px 16px; /* Increased gap for tablet sizes */
             }
             
-            .footer-links::-webkit-scrollbar {
-                display: none;
+            /* Special rule for tablets and mid-sized devices (around 700px wide) */
+            @media (min-width: 600px) and (max-width: 767px) {
+                .footer-links-column:first-child .footer-links {
+                    display: flex;
+                    flex-wrap: wrap !important;
+                    justify-content: center;
+                    gap: 12px 20px; /* Larger gaps for 700px devices */
+                    margin: 0 auto;
+                    max-width: 600px;
+                    padding: 0 10px;
+                }
+                
+                .footer-links-column:first-child .footer-links li {
+                    margin: 0;
+                    padding: 0;
+                }
+                
+                .footer-links-column:first-child .footer-links a {
+                    font-size: 0.9rem;
+                    padding: 6px 8px;
+                    display: inline-block;
+                }
+                
+                .footer-links-column:first-child .footer-links li:not(:last-child)::after {
+                    display: none; /* Remove dots for cleaner appearance */
+                }
+            }
+            
+            .footer-links-column:first-child .footer-links::-webkit-scrollbar {
+                display: none; /* Chrome, Safari and Opera */
+            }
+            
+            .footer-links-column:not(:first-child) .footer-links li {
+                margin-bottom: 0.6rem;
+            }
+            
+            .footer-links-column:not(:first-child) .footer-links a {
+                padding: 6px 4px 6px 0;
             }
             
             .footer-contact-item {
-                font-size: 12px;
+                margin-bottom: 1rem;
+            }
+            
+            .copyright {
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .footer {
+                padding: 2rem 0 0;
+            }
+            
+            .footer-container {
+                padding: 0 1.2rem;
+            }
+            
+            .footer-main {
+                gap: 1.8rem;
+            }
+            
+            .footer-links-section {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .footer-links-column:first-child {
+                grid-column: span 1;
+                order: -1;
+            }
+            
+            .footer-links-column:nth-child(2) {
+                order: 1;
+            }
+            
+            .footer-links-column:nth-child(3) {
+                order: 0;
+            }
+            
+            .footer-links-column:first-child .footer-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 6px 12px;
+                margin: 0 auto;
+                max-width: 100%;
+            }
+            
+            .footer-links-column:first-child .footer-links li {
+                margin: 0;
+                padding-right: 12px;
+            }
+            
+            .footer-links-column:first-child .footer-links li:not(:last-child)::after {
+                right: 1px;
+            }
+            
+            .footer-links-title {
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
+                padding-bottom: 0.4rem;
+                text-align: center;
+            }
+            
+            .footer-links-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-links-column:not(:first-child) .footer-links {
+                columns: 2;
+                column-gap: 20px;
+                text-align: center;
+            }
+            
+            .footer-links li {
+                margin-bottom: 0.4rem;
+                break-inside: avoid;
+            }
+            
+            .footer-about {
+                font-size: 0.85rem;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+            
+            .footer-contact-item {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 280px;
+                text-align: left;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-links-column:not(:first-child) .footer-links {
+                columns: 1;
+            }
+            
+            .footer-links-column:first-child .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 6px 10px; /* Slightly increased gap for extra small devices */
+            }
+            
+            .footer-links-column:first-child .footer-links li {
+                padding-right: 0; /* Remove right padding */
+                margin: 2px 0;
+            }
+            
+            .footer-links-column:first-child .footer-links a {
+                padding: 4px 6px;
+                font-size: 0.82rem; /* Slightly smaller font on mobiles */
+            }
+            
+            .footer-links-column:first-child .footer-links li:not(:last-child)::after {
+                display: none; /* Remove dots between items */
+            }
+            
+            .footer-contact-item {
+                margin-bottom: 1rem;
+            }
+            
+            .copyright {
+                font-size: 0.8rem;
+                line-height: 1.4;
             }
         }
     </style>
@@ -437,36 +641,13 @@
     </style>
 
   <!-- Contact Us Section - Before Footer -->
-  <section class="contact-gallery-section">
+  <section class="contact-gallery-section" style="margin-top: 45px;">
     <div class="contact-gallery-container">
         <h2 class="section-heading" data-aos="fade-up">Get In Touch</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Have questions about our thread products or want to request samples? Contact our team today.</p>
         
         <div class="contact-gallery-wrapper">
-            <!-- Contact Map (Enhanced) -->
-            <div class="contact-gallery-map" data-aos="fade-right" data-aos-delay="150">
-                <div class="contact-map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59573.31858055624!2d72.8079043387085!3d21.190882010435476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1652363139973!5m2!1sen!2sin" 
-                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <!-- Quick Contact Info Strip -->
-                <div class="quick-contact-strip">
-                    <div class="quick-contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                        <span>123 Industrial Area, Surat, Gujarat</span>
-                            </div>
-                    <div class="quick-contact-item">
-                                <i class="fas fa-phone-alt"></i>
-                        <span>+91 9876543210</span>
-                            </div>
-                    <div class="quick-contact-item">
-                                <i class="fas fa-envelope"></i>
-                        <span>info@supremethread.com</span>
-                            </div>
-                            </div>
-                        </div>
-                        
-            <!-- Contact Form -->
+            <!-- Contact Form FIRST -->
             <div class="contact-gallery-form-wrapper" data-aos="fade-left" data-aos-delay="150">
                 <div class="contact-gallery-form">
                     <h3 class="contact-form-title">Send Us a Message</h3>
@@ -497,6 +678,30 @@
                     <button type="submit" class="contact-form-btn">Send Message</button>
                 </form>
                 </div>
+            </div>
+            <!-- Contact Map SECOND -->
+            <div class="contact-gallery-map" data-aos="fade-right" data-aos-delay="150">
+                <div class="contact-map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59573.31858055624!2d72.8079043387085!3d21.190882010435476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1652363139973!5m2!1sen!2sin" 
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <!-- Quick Contact Info Strip -->
+                <div class="quick-contact-strip">
+                    <div class="quick-contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Industrial Area, Surat, Gujarat</span>
+                            </div>
+                    <div class="quick-contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                        <span>+91 9876543210</span>
+                            </div>
+                    <div class="quick-contact-item">
+                                <i class="fas fa-envelope"></i>
+                        <span>info@supremethread.com</span>
+                            </div>
+                            </div>
+                        </div>
+                        
             </div>
         </div>
     </div>
@@ -831,25 +1036,25 @@
     
      <!-- Footer -->
      <footer class="footer">
-      <div class="container footer-container">
+        <div class="container footer-container">
             <div class="footer-main">
                 <div class="footer-logo-section">
-              <div class="footer-logo">
+                    <div class="footer-logo">
                         <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" class="footer-logo-img">
                         <span class="footer-logo-text">Supreme Thread</span>
-              </div>
-                    <p class="footer-about">Supreme Thread is a leading manufacturer of high-quality threads based in Surat. With advanced technology and commitment to excellence, we deliver premium threading solutions for various industries.</p>
-              <div class="social-links">
-                  <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                  <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                  <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-          </div>
+                    </div>
+                    <p class="footer-about">Supreme Thread is a premier manufacturer of high-quality industrial threads located in Surat, Gujarat. With over two decades of experience, we combine traditional craftsmanship with modern technology to create threads that meet the highest standards of quality and durability.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
                 <div class="footer-links-section">
                     <div class="footer-links-column">
                         <h3 class="footer-links-title">Quick Links</h3>
-              <ul class="footer-links">
+                        <ul class="footer-links">
                             <l><a href="index.html">Home</a></l>
                             <l><a href="about.html">About</a></l>
                             <l><a href="products.html">Products</a></l>
@@ -857,416 +1062,327 @@
                             <l><a href="industries.html">Industries</a></l>
                             <l><a href="gallery.html">Gallery</a></l>
                             <l><a href="contact.html">Contact</a></l>
-              </ul>
-          </div>
+                        </ul>
+                    </div>
                     <div class="footer-links-column">
-                        <h3 class="footer-links-title">Products</h3>
-              <ul class="footer-links">
-            <li><a href="products.html#cotton">Cotton Threads</a></li>
-            <li><a href="products.html#polyester">Polyester Threads</a></li>
-            <li><a href="products.html#nylon">Nylon Threads</a></li>
-            <li><a href="products.html#blended">Blended Threads</a></li>
-            <li><a href="products.html#embroidery">Embroidery Threads</a></li>
-            <li><a href="products.html#industrial">Industrial Threads</a></li>
-          </ul>
-        </div>
+                        <h3 class="footer-links-title">Our Products</h3>
+                        <ul class="footer-links">
+                            <li><a href="products.html#cotton">Premium Cotton Threads</a></li>
+                            <li><a href="products.html#polyester">High-Strength Polyester</a></li>
+                            <li><a href="products.html#nylon">Industrial Nylon Threads</a></li>
+                            <li><a href="products.html#blended">Specialized Blended Threads</a></li>
+                            <li><a href="products.html#embroidery">Precision Embroidery Threads</a></li>
+                            <li><a href="products.html#industrial">Heavy-Duty Industrial Threads</a></li>
+                        </ul>
+                    </div>
                     <div class="footer-links-column">
-                        <h3 class="footer-links-title">Contact Us</h3>
+                        <h3 class="footer-links-title">Get In Touch</h3>
                         <div class="footer-contact">
-                            <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> 123 Industrial Area, Surat, Gujarat, India - 395001</p>
-                            <p class="footer-contact-item"><i class="fas fa-phone"></i> +91 9876543210</p>
+                            <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> 123 Industrial Avenue, GIDC, Surat, Gujarat, India - 395001</p>
+                            <p class="footer-contact-item"><i class="fas fa-phone"></i> +91 9876543210 / +91 9876098760</p>
                             <p class="footer-contact-item"><i class="fas fa-envelope"></i> info@supremethread.com</p>
-      </div>
-      </div>
+                            <p class="footer-contact-item"><i class="fas fa-clock"></i> Monday-Saturday: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-      
-    </div>
-  <style>
-        /* Footer Fixes - Improved Compact Version */
-.footer {
-            background-color: #1A3C40;
-            color: white;
-            padding: 3rem 0 0;
-            margin-top: 3rem;
-            position: relative;
-}
-
-.footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-        .footer-main {
-display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 2.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-logo-section {
-            display: flex;
-            flex-direction: column;
-}
-
-.footer-logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.2rem;
-        }
-        
-        .footer-logo-img {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 0.8rem;
-        }
-        
-        .footer-logo-text {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: white;
-}
-
-.footer-about {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 1.2rem;
-            color: #e0e0e0;
-}
-
-.social-links {
-display: flex;
-            gap: 0.8rem;
-}
-
-.social-link {
-display: flex;
-align-items: center;
-justify-content: center;
-width: 36px;
-height: 36px;
-background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-}
-
-.social-link:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-        
-        .footer-links-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1.5rem;
-        }
-        
-        .footer-links-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-position: relative;
-            padding-bottom: 0.4rem;
-            color: white;
-}
-
-        .footer-links-title::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-            width: 30px;
-height: 2px;
-            background-color: rgba(255, 255, 255, 0.3);
-}
-
-.footer-links {
-list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: block;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-}
-
-.footer-contact-item {
-display: flex;
-            align-items: flex-start;
-            margin-bottom: 0.9rem;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: #e0e0e0;
-        }
-        
-        .footer-contact-item i {
-            margin-right: 0.7rem;
-            margin-top: 0.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            min-width: 14px;
-            text-align: center;
-}
-
-.footer-bottom {
-border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1.2rem 0;
-text-align: center;
-}
-
-        .copyright {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        /* Super Compact Footer Links in One Row */
-        .footer-links-column:first-child .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-items: center;
-            margin-bottom: 0;
-            gap: 8px 16px;
-            max-width: 100%;
-        }
-        
-        .footer-links-column:first-child .footer-links li {
-            margin: 0;
-            position: relative;
-            padding-right: 16px;
-        }
-        
-        .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-            content: '•';
-            position: absolute;
-            right: 0;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.8rem;
-        }
-        
-        .footer-links-column:first-child .footer-links li:last-child {
-            padding-right: 0;
-        }
-        
-        .footer-links-column:first-child .footer-links a {
-            font-size: 0.85rem;
-            white-space: nowrap;
-            padding: 2px 0;
-        }
-        
-        /* Responsive Footer - Enhanced */
-        @media (max-width: 992px) {
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .footer-logo-section {
-                max-width: 550px;
-                margin: 0 auto;
-                text-align: center;
-            }
-            
-            .footer-logo {
-                justify-content: center;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                justify-content: center;
-                margin: 0 auto;
-                max-width: 550px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .footer {
-                padding-top: 2.5rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem 1rem;
-            }
-            
-            .footer-links-column:first-child {
-                grid-column: span 2;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                justify-content: center;
-                margin-bottom: 0.5rem;
-                flex-wrap: wrap !important; /* Force wrap for tablet-sized screens */
-                overflow-x: visible;
-                padding-bottom: 5px;
-                gap: 10px 16px; /* Increased gap for tablet sizes */
-            }
-            
-            /* Special rule for tablets and mid-sized devices (around 700px wide) */
-            @media (min-width: 600px) and (max-width: 767px) {
-                .footer-links-column:first-child .footer-links {
-                    display: flex;
-                    flex-wrap: wrap !important;
-                    justify-content: center;
-                    gap: 12px 20px; /* Larger gaps for 700px devices */
-                    margin: 0 auto;
-                    max-width: 600px;
-                    padding: 0 10px;
-                }
-                
-                .footer-links-column:first-child .footer-links li {
-                    margin: 0;
-                    padding: 0;
-                }
-                
-                .footer-links-column:first-child .footer-links a {
-                    font-size: 0.9rem;
-                    padding: 6px 8px;
-                    display: inline-block;
-                }
-                
-                .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                    display: none; /* Remove dots for cleaner appearance */
-                }
-            }
-            
-            .footer-links-column:first-child .footer-links::-webkit-scrollbar {
-                display: none; /* Chrome, Safari and Opera */
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links li {
-                margin-bottom: 0.6rem;
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links a {
-                padding: 6px 4px 6px 0;
-            }
-            
-            .footer-contact-item {
-                margin-bottom: 1rem;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .footer {
-                padding: 2rem 0 0;
-            }
-            
-            .footer-container {
-                padding: 0 1.5rem;
-                width: 100%;
-                box-sizing: border-box;
-            }
-            
-            .footer-main {
-                gap: 1.8rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .footer-links-column {
-                margin-bottom: 1rem;
-            }
-            
-            .footer-links-title {
-                font-size: 1.1rem;
-                margin-bottom: 0.8rem;
-                padding-bottom: 0.4rem;
-                text-align: center;
-            }
-            
-            .footer-links-title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .footer-links {
-                text-align: center;
-                display: block;
-                columns: 1;
-            }
-            
-            /* Make Products section display in 2 columns */
-            .footer-links-column:nth-child(2) .footer-links {
-                columns: 2;
-                column-gap: 20px;
-            }
-            
-            .footer-links li {
-                margin-bottom: 0.5rem;
-                text-align: center;
-                display: block;
-            }
-            
-            .footer-links a {
-                padding: 4px 0;
-                font-size: 0.9rem;
-                display: inline-block;
-            }
-            
-            .footer-about {
-                font-size: 0.85rem;
-                text-align: center;
-                margin-bottom: 1.2rem;
-            }
-            
-            .footer-contact-item {
-                margin-left: auto;
-                margin-right: auto;
-                max-width: 280px;
-                text-align: left;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .footer-links li {
-                margin-bottom: 0.4rem;
-            }
-            
-            .footer-contact-item {
-                margin-bottom: 0.8rem;
-                font-size: 0.85rem;
-            }
-            
-            .footer-contact-item i {
-                margin-top: 0.2rem;
-            }
-            
-            .copyright {
-                font-size: 0.8rem;
-                line-height: 1.4;
-            }
-        }
-        </style>
+        </div>
     </footer>
     <!-- JavaScript -->
     <script src="assets/js/navigation.js"></script>
     <script src="assets/js/script.js"></script>
+
+    <style>
+    /* Modern Footer Styles */
+    .footer {
+        background-color: #1A3C40;
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+    
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+    }
+    
+    /* Company Info Section */
+    .footer-logo-section {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.2rem;
+    }
+    
+    .footer-logo-img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 0.8rem;
+        border: 2px solid rgba(255,255,255,0.2);
+    }
+    
+    .footer-logo-text {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: white;
+    }
+    
+    .footer-about {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Social Icons */
+    .social-links {
+        display: flex;
+        gap: 0.8rem;
+    }
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+        background-color: var(--secondary, #f9e79f);
+        color: var(--primary, #1A3C40);
+        transform: translateY(-3px);
+    }
+    
+    /* Links Section */
+    .footer-links-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-links-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+        color: white;
+    }
+    
+    .footer-links-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--secondary, #f9e79f);
+    }
+    
+    /* VERTICAL Quick Links - as requested */
+    .footer-links-column:first-child .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l {
+        margin-bottom: 0.2rem;
+        display: block;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 2px 0;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l a:hover {
+        color: var(--secondary, #f9e79f);
+        transform: translateX(5px);
+    }
+    
+    /* Other Link Lists */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-links li {
+        margin-bottom: 0.6rem;
+    }
+    
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 3px 0;
+    }
+    
+    .footer-links a:hover {
+        color: var(--secondary, #f9e79f);
+        transform: translateX(5px);
+    }
+    
+    /* Contact Info */
+    .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0.9rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .footer-contact-item i {
+        margin-right: 0.7rem;
+        margin-top: 0.2rem;
+        color: var(--secondary, #f9e79f);
+        min-width: 16px;
+        text-align: center;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+        .footer-main {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+        
+        .footer-logo-section {
+            text-align: center;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            justify-content: center;
+        }
+        
+        .social-links {
+            justify-content: center;
+        }
+        
+        .footer-links-title {
+            text-align: center;
+        }
+        
+        .footer-links-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .footer-links, 
+        .footer-links-column:first-child .footer-links {
+            text-align: center;
+        }
+        
+        .footer-links-column:first-child .footer-links l {
+            text-align: center;
+        }
+        
+        .footer-links-column:first-child .footer-links l a:hover,
+        .footer-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        .footer-contact-item {
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .footer-links-section {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-links-column:nth-child(3) {
+            grid-column: span 2;
+        }
+        
+        .footer-contact {
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        
+        .footer-contact-item {
+            justify-content: flex-start;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .footer-links-section {
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+        }
+        
+        .footer-links-column:nth-child(3) {
+            grid-column: span 1;
+        }
+    }
+    
+    /* Ensure Quick Links align left in PC view */
+    @media (min-width: 992px) {
+        .footer-links-column:first-child .footer-links {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: left;
+            flex-wrap: nowrap;
+            align-items: flex-start; /* Force alignment to start from left */
+        }
+        
+        .footer-links-column:first-child .footer-links l {
+            text-align: left;
+            margin-left: 0;
+            width: 100%;
+        }
+        
+        .footer-links-column:first-child .footer-links l a {
+            text-align: left;
+            padding-left: 0;
+        }
+        
+        .footer-links-column:first-child .footer-links-title {
+            text-align: left;
+        }
+        
+        .footer-links-column:first-child .footer-links-title::after {
+            left: 0;
+            transform: none;
+            margin-left: 0;
+        }
+    }
+    </style>
 </body>
 </html>

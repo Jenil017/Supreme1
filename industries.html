@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -46,8 +46,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
-<body>
-    <div class="preloader"><div class="spinner"></div></div>
+<body class="bg-background font-sans text-text-primary">
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -111,16 +115,16 @@
     <div class="mobile-menu-overlay"></div>
 
     <style>
-    /* à¤¹à¥ˆà¤¡à¤° à¤®à¥‡à¤¨à¥‚ à¤¬à¤Ÿà¤¨ à¤¹à¤¾à¤‡à¤¡/à¤¦à¤¿à¤–à¤¾à¤¨à¥‡ à¤•à¥‡ à¤²à¤¿à¤ CSS */
+    /* Header menu button hide/show CSS */
     @media (min-width: 992px) {
         .menu-toggle {
-            display: none !important; /* PC à¤ªà¤° à¤®à¥‡à¤¨à¥‚ à¤¬à¤Ÿà¤¨ à¤›à¤¿à¤ªà¤¾à¤à¤‚ */
+            display: none !important; /* Hide menu on pc */
         }
     }
     
     @media (max-width: 991px) {
         .menu-toggle {
-            display: flex !important; /* à¤®à¥‹à¤¬à¤¾à¤‡à¤² à¤ªà¤° à¤®à¥‡à¤¨à¥‚ à¤¬à¤Ÿà¤¨ à¤¦à¤¿à¤–à¤¾à¤à¤‚ */
+            display: flex !important; /* Show mobile menu */
             flex-direction: column;
             justify-content: space-between;
             width: 30px;
@@ -142,68 +146,25 @@
     </style>
 
     <!-- Main Content Starts -->
-    <!-- Modern Hero Section for Industries -->
-    <section class="industries-hero-modern">
-      <div class="industries-hero-bg">
-        <img src="https://images.unsplash.com/photo-1542744173-8659b8e77b9f?auto=format&fit=crop&w=1500&h=1000&q=80" alt="Industry Hero" class="industries-hero-img" />
-        <div class="industries-hero-overlay"></div>
+    <!-- Modern Hero Section for Industries (Cascade Custom) -->
+    <section class="industries-hero-modern" style="background: linear-gradient(120deg, #1A3C40 60%, #4F8A8B 100%); padding: 24px 0 12px 0; position: relative; color: #fff; overflow: hidden;">
+      <div class="industries-hero-bg" style="position:absolute;inset:0;z-index:0;">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1500&q=80" alt="Industries" class="industries-hero-img" style="width:100%;height:100%;object-fit:cover;opacity:0.22;filter:blur(1.5px);" />
+        <div class="industries-hero-overlay" style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(26,60,64,0.85) 0%,rgba(79,138,139,0.55) 100%);"></div>
       </div>
-      <div class="industries-hero-content">
-        <div class="hero-badge" data-aos="fade-down" data-aos-duration="800" data-aos-delay="100">
-          <i class="fas fa-industry"></i>
-          <span>Industry Solutions</span>
-        </div>
-        <h1 class="industries-hero-title" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-          <span id="typed-industries"></span>
-        </h1>
-        <p class="industries-hero-desc" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" style="color: #CCCCCC; font-weight: 300;">
-          Supreme Thread delivers precision-engineered threads that power <span class="highlight">global industries</span>. From <span class="highlight">apparel</span> to <span class="highlight">automotive</span>, <span class="highlight">medical</span> to <span class="highlight">aerospace</span> - our solutions combine <strong>strength</strong>, <strong>reliability</strong>, and <strong>innovation</strong>.
-        </p>
-        
-        <div class="industries-hero-stats" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-          <div class="industries-hero-stat">
-            <div class="stat-icon"><i class="fas fa-building"></i></div>
-            <div class="stat-content">
-              <span class="stat-number" data-count="12">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Industries Served</span>
-            </div>
+      <div class="container industries-hero-content" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:unset;text-align:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:600px;margin:0 auto;">
+          <div class="hero-badge" style="background:rgba(255,255,255,0.10);border-radius:16px;padding:0.3rem 0.8rem;display:inline-flex;align-items:center;gap:0.5rem;font-size:0.98rem;font-weight:600;margin-bottom:0.6rem;backdrop-filter:blur(2px);">
+            <i class="fas fa-industry"></i>
+            <span>Industries We Serve</span>
           </div>
-          <div class="industries-hero-stat">
-            <div class="stat-icon"><i class="fas fa-award"></i></div>
-            <div class="stat-content">
-              <span class="stat-number" data-count="20">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Years of Expertise</span>
-            </div>
-          </div>
-          <div class="industries-hero-stat">
-            <div class="stat-icon"><i class="fas fa-shipping-fast"></i></div>
-            <div class="stat-content">
-              <span class="stat-number" data-count="1000">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Tons/Month</span>
-          </div>
+          <h1 class="industries-hero-title" id="industries-hero-animated-title" style="font-size:1.36rem;font-weight:800;line-height:1.18;margin:0 0 0.6rem 0;letter-spacing:-1px;max-width:100%;min-height:2.1em;">Empowering Every Sector with Supreme Thread Solutions</h1>
+          <p class="industries-hero-desc" style="font-size:0.98rem;font-weight:400;color:#f3f3f3;max-width:100%;margin:0 auto 0.7rem auto;">
+            Supreme Thread is a trusted partner across <span class="highlight">textile</span>, <span class="highlight">automotive</span>, <span class="highlight">medical</span>, <span class="highlight">aerospace</span>, and many other industries. Our advanced threads deliver <strong>strength</strong>, <strong>precision</strong>, and <strong>reliability</strong> for every application—manufacturing, safety-critical components, or innovative product design. Experience tailored solutions, expertise, and quality that power progress in every sector we serve.
+          </p>
         </div>
-        </div>
-        
-        <div class="hero-buttons" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
-          <a href="#industries-list" class="btn-primary">
-            <span>Explore Industries</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="contact.html" class="btn-outline">
-            <span>Contact Us</span>
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-      
-      <div class="hero-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
       </div>
     </section>
-    <!-- End Modern Hero Section -->
     <style>
       :root {
         --hero-gradient-start: rgba(26, 60, 64, 0.9);
@@ -320,6 +281,9 @@
         -webkit-text-fill-color: transparent;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         letter-spacing: -0.5px;
+        position: relative;
+        display: block;
+        min-height: 60px; /* Adjust this value if you observe cut-off or extra space */
       }
       
       .industries-hero-desc {
@@ -335,67 +299,6 @@
       .industries-hero-desc .highlight {
         color: var(--secondary);
         font-weight: 600;
-      }
-      
-      .industries-hero-stats {
-        display: flex;
-        justify-content: center;
-        gap: 2.5rem;
-        margin-bottom: 3rem;
-      }
-      
-      .industries-hero-stat {
-        display: flex;
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 16px;
-        padding: 1.5rem 1.8rem;
-        min-width: 220px;
-        transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      
-      .industries-hero-stat:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-        background-color: rgba(255, 255, 255, 0.18);
-      }
-      
-      .stat-icon {
-        font-size: 2.2rem;
-        color: var(--secondary);
-        margin-right: 1.5rem;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      }
-      
-      .stat-content {
-        text-align: left;
-      }
-      
-      .stat-number {
-        display: inline-block;
-        font-size: 2.2rem;
-        font-weight: 700;
-        line-height: 1.2;
-      }
-      
-      .stat-plus {
-        display: inline-block;
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 1.2;
-        margin-left: 2px;
-      }
-      
-      .stat-label {
-        display: block;
-        font-size: 1rem;
-        opacity: 0.9;
-        margin-top: 5px;
-        font-weight: 500;
       }
       
       .hero-buttons {
@@ -529,20 +432,16 @@
           max-width: 90%;
         }
         
-        .industries-hero-stats { 
-          flex-wrap: wrap;
-          gap: 1.5rem;
-          margin-bottom: 2.5rem;
+        .hero-buttons {
+          flex-direction: column;
+          gap: 1rem;
+          margin-bottom: 3rem;
         }
         
-        .industries-hero-stat {
-          min-width: auto;
-          flex: 1 1 calc(33% - 1.5rem);
-          padding: 1.2rem 1.5rem;
-        }
-        
-        .stat-number, .stat-plus {
-          font-size: 1.8rem;
+        .btn-primary, .btn-outline {
+          width: 100%;
+          max-width: 280px;
+          margin: 0 auto;
         }
         
         .hero-shapes .shape {
@@ -565,26 +464,6 @@
         .industries-hero-desc {
           font-size: 1.1rem;
           margin-bottom: 2rem;
-        }
-        
-        .industries-hero-stats {
-          justify-content: space-around;
-        }
-        
-        .industries-hero-stat {
-          flex-direction: column;
-          padding: 1.2rem;
-          text-align: center;
-          min-width: 150px;
-        }
-        
-        .stat-icon {
-          margin-right: 0;
-          margin-bottom: 0.8rem;
-        }
-        
-        .stat-content {
-          text-align: center;
         }
         
         .hero-buttons {
@@ -627,49 +506,16 @@
           margin-bottom: 1.8rem;
         }
         
-        .industries-hero-stats {
+        .hero-buttons {
           flex-direction: column;
           gap: 1rem;
-          margin-bottom: 2rem;
-        }
-        
-        .industries-hero-stat {
-          flex-direction: row;
-          width: 100%;
-          text-align: left;
-          justify-content: flex-start;
-          min-width: 0;
-        }
-        
-        .stat-icon {
-          margin-right: 1rem;
-          margin-bottom: 0;
-        }
-        
-        .stat-content {
-          text-align: left;
-        }
-        
-        .stat-number, .stat-plus {
-          font-size: 1.6rem;
-        }
-        
-        .stat-label {
-          font-size: 0.85rem;
-        }
-        
-        .hero-badge {
-          padding: 0.5rem 1.2rem;
-          margin-bottom: 1.5rem;
-        }
-        
-        .hero-badge span {
-          font-size: 0.85rem;
+          margin-bottom: 3rem;
         }
         
         .btn-primary, .btn-outline {
-          padding: 0.8rem 1.5rem;
-          font-size: 1rem;
+          width: 100%;
+          max-width: 280px;
+          margin: 0 auto;
         }
         
         .hero-shapes .shape {
@@ -714,38 +560,6 @@
         }, 30);
       }
       
-      // Animated text for industries heading
-      var typedEl = document.getElementById('typed-industries');
-      if (typedEl) {
-        var texts = [
-          'Industries We Serve',
-          'Powering Global Industries',
-          'Thread Solutions for Every Sector'
-        ];
-        var idx = 0, charIdx = 0, isDeleting = false;
-        function type() {
-          var current = texts[idx];
-          if (!isDeleting) {
-            typedEl.textContent = current.substring(0, charIdx + 1);
-            charIdx++;
-            if (charIdx === current.length) {
-              isDeleting = true;
-              setTimeout(type, 2000);
-              return;
-            }
-        } else {
-            typedEl.textContent = current.substring(0, charIdx - 1);
-            charIdx--;
-            if (charIdx === 0) {
-              isDeleting = false;
-              idx = (idx + 1) % texts.length;
-            }
-          }
-          setTimeout(type, isDeleting ? 40 : 80);
-        }
-        type();
-      }
-      
       // Preloader
       const preloader = document.querySelector('.preloader');
       if (preloader) {
@@ -760,6 +574,21 @@
       }
     });
     </script>
+    <style>
+      .typed-ghost {
+        visibility: hidden;
+        display: block;
+        height: 0;
+        white-space: normal;
+        font-size: inherit;
+        font-weight: inherit;
+        font-family: inherit;
+        line-height: inherit;
+      }
+      #typed-industries {
+        display: block;
+      }
+    </style>
     <!-- Modern Industries Section -->
     <section id="industries-list" class="industries-modern-section">
       <div class="industries-modern-container">
@@ -932,38 +761,47 @@
       .industries-modern-section {
         padding: 2.5rem 0 2rem 0;
       }
+      
       .industries-modern-container {
         padding: 0 0.8rem;
       }
+      
       .industries-modern-title {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
       }
+      
       .industries-modern-intro {
         font-size: 1rem;
         margin-bottom: 1.5rem;
       }
+      
       .industries-modern-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.8rem;
       }
+      
       .industry-modern-card {
         min-height: 170px;
         padding: 1rem 0.6rem 0.8rem 0.6rem;
       }
+      
       .industry-modern-icon-bg {
         width: 50px;
         height: 50px;
         margin-bottom: 0.6rem;
       }
+      
       .industry-modern-icon-bg img {
         width: 30px;
         height: 30px;
       }
+      
       .industry-modern-label {
         font-size: 1rem;
         margin-bottom: 0.3rem;
       }
+      
       .industry-modern-desc {
         font-size: 0.85rem;
       }
@@ -1087,8 +925,8 @@
       padding: 0.8rem 2rem;
       border-radius: 8px;
       text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      gap: 0.8rem;
     }
     
     .modern-cta-btn:hover {
@@ -1243,563 +1081,333 @@
     </style>
     <!-- Footer -->
     <footer class="footer">
-      <div class="container footer-container">
-          <div class="footer-main">
-              <div class="footer-logo-section">
-                  <div class="footer-logo">
-                      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" class="footer-logo-img">
-                      <span class="footer-logo-text">Supreme Thread</span>
-                  </div>
-                  <p class="footer-about">Supreme Thread is a leading manufacturer of high-quality threads based in Surat. With advanced technology and commitment to excellence, we deliver premium threading solutions for various industries.</p>
-                  <div class="social-links">
-                      <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                      <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                      <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                      <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                  </div>
-              </div>
-              <div class="footer-links-section">
-                  <div class="footer-links-column">
-                      <h3 class="footer-links-title">Quick Links</h3>
-                      <ul class="footer-links">
-                        <l><a href="index.html">Home</a></l>
-                        <l><a href="about.html">About</a></l>
-                        <l><a href="products.html">Products</a></l>
-                        <l><a href="manufacturing.html">Manufacturing</a></l>
-                        <l><a href="industries.html">Industries</a></l>
-                        <l><a href="gallery.html">Gallery</a></l>
-                        <l><a href="contact.html">Contact</a></l>
-                      </ul>
-                  </div>
-                  <div class="footer-links-column">
-                      <h3 class="footer-links-title">Products</h3>
-                      <ul class="footer-links">
-                          <li><a href="products.html#cotton">Cotton Threads</a></li>
-                          <li><a href="products.html#polyester">Polyester Threads</a></li>
-                          <li><a href="products.html#nylon">Nylon Threads</a></li>
-                          <li><a href="products.html#blended">Blended Threads</a></li>
-                          <li><a href="products.html#embroidery">Embroidery Threads</a></li>
-                          <li><a href="products.html#industrial">Industrial Threads</a></li>
-                      </ul>
-                  </div>
-                  <div class="footer-links-column">
-                      <h3 class="footer-links-title">Contact Us</h3>
-                      <div class="footer-contact">
-                          <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> 123 Industrial Area, Surat, Gujarat, India - 395001</p>
-                          <p class="footer-contact-item"><i class="fas fa-phone"></i> +91 9876543210</p>
-                          <p class="footer-contact-item"><i class="fas fa-envelope"></i> info@supremethread.com</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-       
-      </div>
-  </footer>
-  <style>
-         /* Footer Fixes for About Page - Improved Compact Version */
-         .footer {
-          background-color: #1A3C40;
-          color: white;
-          padding: 3rem 0 0;
-          margin-top: 3rem;
-          position: relative;
-      }
-      
-      .footer-container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 1.5rem;
-      }
-      
-      .footer-main {
-          display: grid;
-          grid-template-columns: 1fr 2fr;
-          gap: 2.5rem;
-          margin-bottom: 2rem;
-      }
-      
-      .footer-logo-section {
-          display: flex;
-          flex-direction: column;
-      }
-      
-      .footer-logo {
-          display: flex;
-          align-items: center;
-          margin-bottom: 1.2rem;
-      }
-      
-      .footer-logo-img {
-          width: 38px;
-          height: 38px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin-right: 0.8rem;
-      }
-      
-      .footer-logo-text {
-          font-size: 1.4rem;
-          font-weight: 700;
-          color: white;
-      }
-      
-      .footer-about {
-          font-size: 0.9rem;
-          line-height: 1.5;
-          margin-bottom: 1.2rem;
-          color: #e0e0e0;
-      }
-      
-      .social-links {
-          display: flex;
-          gap: 0.8rem;
-      }
-      
-      .social-link {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          background-color: rgba(255, 255, 255, 0.1);
-          border-radius: 50%;
-          color: white;
-          font-size: 0.9rem;
-          transition: all 0.3s ease;
-      }
-      
-      .social-link:hover {
-          background-color: rgba(255, 255, 255, 0.2);
-          transform: translateY(-3px);
-      }
-      
-      .footer-links-section {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          gap: 1.5rem;
-      }
-      
-      .footer-links-title {
-          font-size: 1.1rem;
-          font-weight: 600;
-          margin-bottom: 1.2rem;
-          position: relative;
-          padding-bottom: 0.4rem;
-          color: white;
-      }
-      
-      .footer-links-title::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 30px;
-          height: 2px;
-          background-color: rgba(255, 255, 255, 0.3);
-      }
-      
-      .footer-links {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-      }
-      
-      .footer-links li {
-          margin-bottom: 0.5rem;
-      }
-      
-      .footer-links a {
-          color: rgba(255, 255, 255, 0.7);
-          text-decoration: none;
-          font-size: 0.9rem;
-          transition: all 0.3s ease;
-          display: block;
-      }
-      
-      .footer-links a:hover {
-          color: white;
-      }
-      
-      .footer-contact-item {
-          display: flex;
-          align-items: flex-start;
-          margin-bottom: 0.9rem;
-          font-size: 0.9rem;
-          line-height: 1.4;
-          color: #e0e0e0;
-      }
-      
-      .footer-contact-item i {
-          margin-right: 0.7rem;
-          margin-top: 0.2rem;
-          color: rgba(255, 255, 255, 0.9);
-          min-width: 14px;
-          text-align: center;
-      }
-      
-      .footer-bottom {
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 1.2rem 0;
-          text-align: center;
-      }
-      
-      .copyright {
-          font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.7);
-      }
-      
-      /* Super Compact Footer Links in One Row */
-      .footer-links-column:first-child .footer-links {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-          align-items: center;
-          margin-bottom: 0;
-          gap: 8px 16px;
-          max-width: 100%;
-      }
-      
-      .footer-links-column:first-child .footer-links li {
-          margin: 0;
-          position: relative;
-          padding-right: 16px;
-      }
-      
-      .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-          content: 'â€¢';
-          position: absolute;
-          right: 0;
-          color: rgba(255, 255, 255, 0.4);
-          font-size: 0.8rem;
-      }
-      
-      .footer-links-column:first-child .footer-links li:last-child {
-          padding-right: 0;
-      }
-      
-      .footer-links-column:first-child .footer-links a {
-          font-size: 0.85rem;
-          white-space: nowrap;
-          padding: 2px 0;
-      }
-      
-      /* Responsive Footer - Enhanced */
-      @media (max-width: 992px) {
-          .footer-main {
-              grid-template-columns: 1fr;
-              gap: 2rem;
-          }
-          
-          .footer-links-section {
-              grid-template-columns: repeat(3, 1fr);
-          }
-          
-          .footer-logo-section {
-              max-width: 550px;
-              margin: 0 auto;
-              text-align: center;
-          }
-          
-          .footer-logo {
-              justify-content: center;
-          }
-          
-          .social-links {
-              justify-content: center;
-          }
-          
-          .footer-links-column:first-child .footer-links {
-              justify-content: center;
-              margin: 0 auto;
-              max-width: 550px;
-          }
-      }
-      
-      @media (max-width: 768px) {
-          .footer {
-              padding-top: 2.5rem;
-          }
-          
-          .footer-links-section {
-              grid-template-columns: repeat(2, 1fr);
-              gap: 1.5rem 1rem;
-          }
-          
-          .footer-links-column:first-child {
-              grid-column: span 2;
-          }
-          
-          .footer-links-column:first-child .footer-links {
-              justify-content: center;
-              margin-bottom: 0.5rem;
-              flex-wrap: wrap !important; /* Force wrap for tablet-sized screens */
-              overflow-x: visible;
-              padding-bottom: 5px;
-              gap: 10px 16px; /* Increased gap for tablet sizes */
-          }
-          
-          /* Special rule for tablets and mid-sized devices (around 700px wide) */
-          @media (min-width: 600px) and (max-width: 767px) {
-              .footer-links-column:first-child .footer-links {
-                  display: flex;
-                  flex-wrap: wrap !important;
-                  justify-content: center;
-                  gap: 12px 20px; /* Larger gaps for 700px devices */
-                  margin: 0 auto;
-                  max-width: 600px;
-                  padding: 0 10px;
-              }
-              
-              .footer-links-column:first-child .footer-links li {
-                  margin: 0;
-                  padding: 0;
-              }
-              
-              .footer-links-column:first-child .footer-links a {
-                  font-size: 0.9rem;
-                  padding: 6px 8px;
-                  display: inline-block;
-              }
-              
-              .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                  display: none; /* Remove dots for cleaner appearance */
-              }
-          }
-          
-          .footer-links-column:first-child .footer-links::-webkit-scrollbar {
-              display: none; /* Chrome, Safari and Opera */
-          }
-          
-          .footer-links-column:not(:first-child) .footer-links li {
-              margin-bottom: 0.6rem;
-          }
-          
-          .footer-links-column:not(:first-child) .footer-links a {
-              padding: 6px 4px 6px 0;
-          }
-          
-          .footer-contact-item {
-              margin-bottom: 1rem;
-          }
-      }
-      
-      @media (max-width: 600px) {
-          .footer {
-              padding: 2rem 0 0;
-          }
-          
-          .footer-container {
-              padding: 0 1.2rem;
-          }
-          
-          .footer-main {
-              gap: 1.8rem;
-          }
-          
-          .footer-links-section {
-              grid-template-columns: 1fr;
-              gap: 1.5rem;
-          }
-          
-          .footer-links-column:first-child {
-              grid-column: span 1;
-              order: -1;
-          }
-          
-          .footer-links-column:nth-child(2) {
-              order: 1;
-          }
-          
-          .footer-links-column:nth-child(3) {
-              order: 0;
-          }
-          
-          .footer-links-column:first-child .footer-links {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
-              gap: 6px 12px;
-              margin: 0 auto;
-              max-width: 100%;
-          }
-          
-          .footer-links-column:first-child .footer-links li {
-              margin: 0;
-              padding-right: 12px;
-          }
-          
-          .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-              right: 1px;
-          }
-          
-          .footer-links-title {
-              font-size: 1rem;
-              margin-bottom: 0.8rem;
-              padding-bottom: 0.4rem;
-              text-align: center;
-          }
-          
-          .footer-links-title::after {
-              left: 50%;
-              transform: translateX(-50%);
-          }
-          
-          .footer-links-column:not(:first-child) .footer-links {
-              columns: 2;
-              column-gap: 20px;
-              text-align: center;
-          }
-          
-          .footer-links li {
-              margin-bottom: 0.4rem;
-              break-inside: avoid;
-          }
-          
-          .footer-about {
-              font-size: 0.85rem;
-              text-align: center;
-              margin-bottom: 1rem;
-          }
-          
-          .footer-contact-item {
-              margin-left: auto;
-              margin-right: auto;
-              max-width: 280px;
-              text-align: left;
-          }
-      }
-      
-      @media (max-width: 480px) {
-          .footer-links-column:not(:first-child) .footer-links {
-              columns: 1;
-          }
-          
-          .footer-links-column:first-child .footer-links {
-              flex-wrap: wrap;
-              justify-content: center;
-              gap: 6px 10px; /* Slightly increased gap for extra small devices */
-          }
-          
-          .footer-links-column:first-child .footer-links li {
-              padding-right: 0; /* Remove right padding */
-              margin: 2px 0;
-          }
-          
-          .footer-links-column:first-child .footer-links a {
-              padding: 4px 6px;
-              font-size: 0.82rem; /* Slightly smaller font on mobiles */
-          }
-          
-          .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-              display: none; /* Remove dots between items */
-          }
-          
-          .footer-contact-item {
-              display: flex;
-              align-items: center;
-              justify-content: flex-start;
-              text-align: left;
-              flex-direction: row;
-          }
-          
-          .footer-contact-item i {
-              margin-right: 0.6rem;
-              margin-top: 0;
-              font-size: 0.9rem;
-          }
-          
-          .copyright {
-              font-size: 0.8rem;
-              line-height: 1.4;
-          }
-      }
-  </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize countdown animation for stats
-            const statsElements = document.querySelectorAll('.stat-number');
-            
-            let hasAnimated = false;
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !hasAnimated) {
-                        hasAnimated = true;
-                        statsElements.forEach(el => {
-                            const count = el.getAttribute('data-count');
-                            animateCount(el, parseInt(count));
-                        });
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            // Observe first stat element
-            if (statsElements.length > 0) {
-                observer.observe(statsElements[0].parentElement);
-            }
-            
-            function animateCount(el, target) {
-                let current = 0;
-                const increment = Math.ceil(target / 30); // Divide animation into 30 steps
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    el.textContent = current;
-                }, 30);
-            }
-            
-            // Animated text for industries heading
-            var typedEl = document.getElementById('typed-industries');
-            if (typedEl) {
-                var texts = [
-                    'Industries We Serve',
-                    'Powering Global Industries',
-                    'Thread Solutions for Every Sector'
-                ];
-                var idx = 0, charIdx = 0, isDeleting = false;
-                function type() {
-                    var current = texts[idx];
-                    if (!isDeleting) {
-                        typedEl.textContent = current.substring(0, charIdx + 1);
-                        charIdx++;
-                        if (charIdx === current.length) {
-                            isDeleting = true;
-                            setTimeout(type, 2000);
-                            return;
-                        }
-                    } else {
-                        typedEl.textContent = current.substring(0, charIdx - 1);
-                        charIdx--;
-                        if (charIdx === 0) {
-                            isDeleting = false;
-                            idx = (idx + 1) % texts.length;
-                        }
-                    }
-                    setTimeout(type, isDeleting ? 40 : 80);
-                }
-                type();
-            }
-            
-            // Preloader
-            const preloader = document.querySelector('.preloader');
-            if (preloader) {
-                window.addEventListener('load', function() {
-                    preloader.classList.add('hide');
-                });
-            }
-            
-            // Initialize AOS
-            if (typeof AOS !== 'undefined') {
-                AOS.init({ once: false, mirror: true, offset: 120, easing: 'ease-out-cubic' });
-            }
-        });
-    </script>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-logo-section">
+                    <div class="footer-logo">
+                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" class="footer-logo-img">
+                        <span class="footer-logo-text">Supreme Thread</span>
+                    </div>
+                    <p class="footer-about">We are a leading manufacturer of premium quality threads for various industries. Our state-of-the-art facilities in Surat, Gujarat produce threads that meet international quality standards.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-section">
+                    <div class="footer-links-column">
+                        <h3 class="footer-links-title">Quick Links</h3>
+                        <ul class="footer-links">
+                            <l><a href="index.html">Home</a></l>
+                            <l><a href="about.html">About</a></l>
+                            <l><a href="products.html">Products</a></l>
+                            <l><a href="manufacturing.html">Manufacturing</a></l>
+                            <l><a href="industries.html">Industries</a></l>
+                            <l><a href="gallery.html">Gallery</a></l>
+                            <l><a href="contact.html">Contact</a></l>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3 class="footer-links-title">Our Products</h3>
+                        <ul class="footer-links">
+                            <li><a href="products.html#cotton">Premium Cotton Threads</a></li>
+                            <li><a href="products.html#polyester">High-Strength Polyester</a></li>
+                            <li><a href="products.html#nylon">Industrial Nylon Threads</a></li>
+                            <li><a href="products.html#blended">Specialized Blended Threads</a></li>
+                            <li><a href="products.html#embroidery">Precision Embroidery Threads</a></li>
+                            <li><a href="products.html#industrial">Heavy-Duty Industrial Threads</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3 class="footer-links-title">Get In Touch</h3>
+                        <div class="footer-contact">
+                            <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> 123 Industrial Avenue, GIDC, Surat, Gujarat, India - 395001</p>
+                            <p class="footer-contact-item"><i class="fas fa-phone"></i> +91 9876543210 / +91 9876098760</p>
+                            <p class="footer-contact-item"><i class="fas fa-envelope"></i> info@supremethread.com</p>
+                            <p class="footer-contact-item"><i class="fas fa-clock"></i> Monday-Saturday: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript -->
     <script src="assets/js/navigation.js"></script>
     <script src="assets/js/script.js"></script>
+
+    <style>
+    /* Modern Footer Styles */
+    .footer {
+        background-color: #1A3C40;
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+    
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+    }
+    
+    /* Company Info Section */
+    .footer-logo-section {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.2rem;
+    }
+    
+    .footer-logo-img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 0.8rem;
+        border: 2px solid rgba(255,255,255,0.2);
+    }
+    
+    .footer-logo-text {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: white;
+    }
+    
+    .footer-about {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Social Icons */
+    .social-links {
+        display: flex;
+        gap: 0.8rem;
+    }
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+        background-color: var(--secondary, #f9e79f);
+        color: var(--primary, #1A3C40);
+        transform: translateY(-3px);
+    }
+    
+    /* Links Section */
+    .footer-links-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-links-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+        color: white;
+    }
+    
+    .footer-links-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--secondary, #f9e79f);
+    }
+    
+    /* VERTICAL Quick Links - as requested */
+    .footer-links-column:first-child .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l {
+        margin-bottom: 0.2rem;
+        display: block;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 2px 0;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l a:hover {
+        color: var(--secondary, #f9e79f);
+        transform: translateX(5px);
+    }
+    
+    /* Other Link Lists */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-links li {
+        margin-bottom: 0.6rem;
+    }
+    
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 3px 0;
+    }
+    
+    .footer-links a:hover {
+        color: var(--secondary, #f9e79f);
+        transform: translateX(5px);
+    }
+    
+    /* Contact Info */
+    .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0.9rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .footer-contact-item i {
+        margin-right: 0.7rem;
+        margin-top: 0.2rem;
+        color: var(--secondary, #f9e79f);
+        min-width: 16px;
+        text-align: center;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+        .footer-main {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+        
+        .footer-logo-section {
+            text-align: center;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            justify-content: center;
+        }
+        
+        .social-links {
+            justify-content: center;
+        }
+        
+        .footer-links-title {
+            text-align: center;
+        }
+        
+        .footer-links-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .footer-links, 
+        .footer-links-column:first-child .footer-links {
+            text-align: center;
+        }
+        
+        .footer-links-column:first-child .footer-links l {
+            text-align: center;
+        }
+        
+        .footer-links-column:first-child .footer-links l a:hover,
+        .footer-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        .footer-contact-item {
+            justify-content: center;
+        }
+    }
+    
+    /* Ensure Quick Links align left in PC view */
+    @media (min-width: 992px) {
+        .footer-links-column:first-child .footer-links {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: left;
+            flex-wrap: nowrap;
+            align-items: flex-start; /* Force alignment to start from left */
+        }
+        
+        .footer-links-column:first-child .footer-links l {
+            text-align: left;
+            margin-left: 0;
+            width: 100%;
+        }
+        
+        .footer-links-column:first-child .footer-links l a {
+            text-align: left;
+            padding-left: 0;
+        }
+        
+        .footer-links-column:first-child .footer-links-title {
+            text-align: left;
+        }
+        
+        .footer-links-column:first-child .footer-links-title::after {
+            left: 0;
+            transform: none;
+            margin-left: 0;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .footer-links-section {
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+        }
+        
+        .footer-links-column:nth-child(3) {
+            grid-column: span 1;
+        }
+    }
+    </style>
 </body>
 </html>
-
-
-   

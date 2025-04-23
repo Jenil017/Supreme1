@@ -631,7 +631,7 @@
         
         .mission-stat:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
         .mission-stat h3 {
@@ -748,7 +748,7 @@
             <div class="product-cards">
                 <div class="product-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-image-wrapper">
-                        <img src="img1.png" alt="Premium Polyester Thread" loading="lazy" style="height: 100%;">
+                        <img src="https://images.pexels.com/photos/3997384/pexels-photo-3997384.jpeg?auto=compress&w=400&h=300&fit=crop" alt="Premium Polyester Thread" loading="lazy">
                         <div class="product-overlay">
                             <a href="products.html" class="product-btn">View Details</a>
                         </div>
@@ -766,7 +766,7 @@
                 
                 <div class="product-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="product-image-wrapper">
-                        <img src="https://cuddlyplushly.com/wp-content/uploads/2023/01/3fc758c5ebd1ddc05f3f7501933dc26f.png" alt="Soft Cotton Thread" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Soft Cotton Thread" loading="lazy">
                         <div class="product-overlay">
                             <a href="products.html" class="product-btn">View Details</a>
                         </div>
@@ -784,7 +784,7 @@
                 
                 <div class="product-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="product-image-wrapper">
-                        <img src="https://zameenblog.s3.amazonaws.com/blog/wp-content/uploads/2020/05/Eco-Friendly-Fabrics-for-Your-Home-D-28-05-640x400.jpg" alt="Eco-Friendly Thread" loading="lazy">
+                        <img src="https://images.pexels.com/photos/532220/pexels-photo-532220.jpeg?auto=compress&w=400&h=300&fit=crop" alt="Eco-Friendly Thread" loading="lazy">
                         <div class="product-overlay">
                             <a href="products.html" class="product-btn">View Details</a>
                         </div>
@@ -847,22 +847,26 @@
         }
         
         .product-image-wrapper {
-            position: relative;
-            height: 300px;
-            overflow: hidden;
             width: 100%;
+            height: 220px !important;
+            min-height: 220px !important;
+            max-height: 220px !important;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f3f3f3;
         }
-        
+
         .product-image-wrapper img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            transition: transform 0.5s ease;
-        }
-        
-        .product-card:hover .product-image-wrapper img {
-            transform: scale(1.1);
+            height: 100% !important;
+            min-height: 100% !important;
+            max-height: 100% !important;
+            object-fit: cover !important;
+            object-position: center !important;
+            display: block;
+            background: #f3f3f3;
         }
         
         .product-overlay {
@@ -997,7 +1001,6 @@
             }
         }
     </style>
-    
     <!-- History Section -->
     <section class="history-section">
         <div class="container">
@@ -1303,14 +1306,14 @@
     </style>
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-container">
+        <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-logo-section">
                     <div class="footer-logo">
                         <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" class="footer-logo-img">
                         <span class="footer-logo-text">Supreme Thread</span>
                     </div>
-                    <p class="footer-about">Supreme Thread is a premier manufacturer of high-quality industrial threads located in Surat, Gujarat. With over two decades of experience, we combine traditional craftsmanship with modern technology to create threads that meet the highest standards of quality and durability.</p>
+                    <p class="footer-about">We are a leading manufacturer of premium quality threads for various industries. Our state-of-the-art facilities in Surat, Gujarat produce threads that meet international quality standards.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -1353,419 +1356,280 @@
                     </div>
                 </div>
             </div>
-           
         </div>
     </footer>
-    
-    <!-- Footer Style Fixes -->
+
     <style>
-        /* Footer Fixes for About Page - Improved Compact Version */
-        .footer {
-            background-color: #1A3C40;
-            color: white;
-            padding: 3rem 0 0;
-            margin-top: 3rem;
-            position: relative;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
+    /* Modern Footer Styles */
+    .footer {
+        background-color: #1A3C40;
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+    
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+    }
+    
+    /* Company Info Section */
+    .footer-logo-section {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.2rem;
+    }
+    
+    .footer-logo-img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 0.8rem;
+        border: 2px solid rgba(255,255,255,0.2);
+    }
+    
+    .footer-logo-text {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: white;
+    }
+    
+    .footer-about {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Social Icons */
+    .social-links {
+        display: flex;
+        gap: 0.8rem;
+    }
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+        background-color: var(--secondary, #f9e79f);
+        color: var(--primary, #1A3C40);
+        transform: translateY(-3px);
+    }
+    
+    /* Links Section */
+    .footer-links-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-links-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+        color: white;
+    }
+    
+    .footer-links-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--secondary, #f9e79f);
+    }
+    
+    /* VERTICAL Quick Links - as requested */
+    .footer-links-column:first-child .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l {
+        margin-bottom: 0.2rem;
+        display: block;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 2px 0;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l a:hover {
+        color: var(--secondary, #f9e79f);
+        transform: translateX(5px);
+    }
+    
+    /* Other Link Lists */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-links li {
+        margin-bottom: 0.6rem;
+    }
+    
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 3px 0;
+    }
+    
+    .footer-links a:hover {
+        color: var(--secondary, #f9e79f);
+        transform: translateX(5px);
+    }
+    
+    /* Contact Info */
+    .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0.9rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .footer-contact-item i {
+        margin-right: 0.7rem;
+        margin-top: 0.2rem;
+        color: var(--secondary, #f9e79f);
+        min-width: 16px;
+        text-align: center;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
         .footer-main {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr;
             gap: 2.5rem;
-            margin-bottom: 2rem;
         }
         
         .footer-logo-section {
-            display: flex;
-            flex-direction: column;
+            text-align: center;
+            align-items: center;
         }
         
         .footer-logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.2rem;
-        }
-        
-        .footer-logo-img {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 0.8rem;
-        }
-        
-        .footer-logo-text {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: white;
-        }
-        
-        .footer-about {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 1.2rem;
-            color: #e0e0e0;
+            justify-content: center;
         }
         
         .social-links {
-            display: flex;
-            gap: 0.8rem;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-        
-        .footer-links-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1.5rem;
         }
         
         .footer-links-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            position: relative;
-            padding-bottom: 0.4rem;
-            color: white;
+            text-align: center;
         }
         
         .footer-links-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background-color: rgba(255, 255, 255, 0.3);
+            left: 50%;
+            transform: translateX(-50%);
         }
         
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .footer-links, 
+        .footer-links-column:first-child .footer-links {
+            text-align: center;
         }
         
-        .footer-links li {
-            margin-bottom: 0.5rem;
+        .footer-links-column:first-child .footer-links l {
+            text-align: center;
         }
         
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: block;
-        }
-        
+        .footer-links-column:first-child .footer-links l a:hover,
         .footer-links a:hover {
-            color: white;
+            transform: translateY(-3px);
         }
         
         .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 0.9rem;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: #e0e0e0;
+            justify-content: center;
         }
-        
-        .footer-contact-item i {
-            margin-right: 0.7rem;
-            margin-top: 0.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            min-width: 14px;
-            text-align: center;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1.2rem 0;
-            text-align: center;
-        }
-        
-        .copyright {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        /* Super Compact Footer Links in One Row */
+    }
+    
+    /* Ensure Quick Links align left in PC view */
+    @media (min-width: 992px) {
         .footer-links-column:first-child .footer-links {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             justify-content: flex-start;
-            align-items: center;
-            margin-bottom: 0;
-            gap: 8px 16px;
-            max-width: 100%;
+            text-align: left;
+            flex-wrap: nowrap;
+            align-items: flex-start; /* Force alignment to start from left */
         }
         
-        .footer-links-column:first-child .footer-links li {
-            margin: 0;
-            position: relative;
-            padding-right: 16px;
+        .footer-links-column:first-child .footer-links l {
+            text-align: left;
+            margin-left: 0;
+            width: 100%;
         }
         
-        .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-            content: '•';
-            position: absolute;
-            right: 0;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.8rem;
+        .footer-links-column:first-child .footer-links l a {
+            text-align: left;
+            padding-left: 0;
         }
         
-        .footer-links-column:first-child .footer-links li:last-child {
-            padding-right: 0;
+        .footer-links-column:first-child .footer-links-title {
+            text-align: left;
         }
         
-        .footer-links-column:first-child .footer-links a {
-            font-size: 0.85rem;
-            white-space: nowrap;
-            padding: 2px 0;
+        .footer-links-column:first-child .footer-links-title::after {
+            left: 0;
+            transform: none;
+            margin-left: 0;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .footer-links-section {
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
         }
         
-        /* Responsive Footer - Enhanced */
-        @media (max-width: 992px) {
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .footer-logo-section {
-                max-width: 550px;
-                margin: 0 auto;
-                text-align: center;
-            }
-            
-            .footer-logo {
-                justify-content: center;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                justify-content: center;
-                margin: 0 auto;
-                max-width: 550px;
-            }
+        .footer-links-column:nth-child(3) {
+            grid-column: span 1;
         }
-        
-        @media (max-width: 768px) {
-            .footer {
-                padding-top: 2.5rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem 1rem;
-            }
-            
-            .footer-links-column:first-child {
-                grid-column: span 2;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                justify-content: center;
-                margin-bottom: 0.5rem;
-                flex-wrap: wrap !important; /* Force wrap for tablet-sized screens */
-                overflow-x: visible;
-                padding-bottom: 5px;
-                gap: 10px 16px; /* Increased gap for tablet sizes */
-            }
-            
-            /* Special rule for tablets and mid-sized devices (around 700px wide) */
-            @media (min-width: 600px) and (max-width: 767px) {
-                .footer-links-column:first-child .footer-links {
-                    display: flex;
-                    flex-wrap: wrap !important;
-                    justify-content: center;
-                    gap: 12px 20px; /* Larger gaps for 700px devices */
-                    margin: 0 auto;
-                    max-width: 600px;
-                    padding: 0 10px;
-                }
-                
-                .footer-links-column:first-child .footer-links li {
-                    margin: 0;
-                    padding: 0;
-                }
-                
-                .footer-links-column:first-child .footer-links a {
-                    font-size: 0.9rem;
-                    padding: 6px 8px;
-                    display: inline-block;
-                }
-                
-                .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                    display: none; /* Remove dots for cleaner appearance */
-                }
-            }
-            
-            .footer-links-column:first-child .footer-links::-webkit-scrollbar {
-                display: none; /* Chrome, Safari and Opera */
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links li {
-                margin-bottom: 0.6rem;
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links a {
-                padding: 6px 4px 6px 0;
-            }
-            
-            .footer-contact-item {
-                margin-bottom: 1rem;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .footer {
-                padding: 2rem 0 0;
-            }
-            
-            .footer-container {
-                padding: 0 1.2rem;
-            }
-            
-            .footer-main {
-                gap: 1.8rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .footer-links-column:first-child {
-                grid-column: span 1;
-                order: -1;
-            }
-            
-            .footer-links-column:nth-child(2) {
-                order: 1;
-            }
-            
-            .footer-links-column:nth-child(3) {
-                order: 0;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 6px 12px;
-                margin: 0 auto;
-                max-width: 100%;
-            }
-            
-            .footer-links-column:first-child .footer-links li {
-                margin: 0;
-                padding-right: 12px;
-            }
-            
-            .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                right: 1px;
-            }
-            
-            .footer-links-title {
-                font-size: 1rem;
-                margin-bottom: 0.8rem;
-                padding-bottom: 0.4rem;
-                text-align: center;
-            }
-            
-            .footer-links-title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links {
-                columns: 2;
-                column-gap: 20px;
-                text-align: center;
-            }
-            
-            .footer-links li {
-                margin-bottom: 0.4rem;
-                break-inside: avoid;
-            }
-            
-            .footer-about {
-                font-size: 0.85rem;
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-            
-            .footer-contact-item {
-                margin-left: auto;
-                margin-right: auto;
-                max-width: 280px;
-                text-align: left;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .footer-links-column:not(:first-child) .footer-links {
-                columns: 1;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 6px 10px; /* Slightly increased gap for extra small devices */
-            }
-            
-            .footer-links-column:first-child .footer-links li {
-                padding-right: 0; /* Remove right padding */
-                margin: 2px 0;
-            }
-            
-            .footer-links-column:first-child .footer-links a {
-                padding: 4px 6px;
-                font-size: 0.82rem; /* Slightly smaller font on mobiles */
-            }
-            
-            .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                display: none; /* Remove dots between items */
-            }
-            
-            .footer-contact-item {
-                margin-bottom: 1rem;
-            }
-            
-            .copyright {
-                font-size: 0.8rem;
-                line-height: 1.4;
-            }
-        }
+    }
     </style>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/navigation.js"></script>

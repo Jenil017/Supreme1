@@ -13,7 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <!-- Update to latest Swiper version -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/common-improvements.css">
     <link rel="stylesheet" href="assets/css/header-improvements.css">
@@ -24,6 +25,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <style>
+        :root {
+  --primary: #1A3C40;
+  --primary-color: #1A3C40;
+  --secondary: #64b5f6;
+  --accent: #64b5f6;
+  --background: #F6F7F9;
+  --background-alt: #FFFFFF;
+  --text-primary: #23272F;
+  --text-secondary: #4B5D67;
+  --radius: 0.75rem;
+  --shadow: 0 4px 24px rgba(26,60,64,0.09);
+  --transition: 0.3s cubic-bezier(.4,0,.2,1);
+  --container-width: 1200px;
+  --font-bold: 700;
+  --font-regular: 400;
+  --font-family-heading: 'Poppins', Arial, sans-serif;
+  --font-family-body: 'Open Sans', Arial, sans-serif;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-subtitle: 1.1rem;
+  --font-size-paragraph: 1rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --underline-height: 4px;
+  --underline-width: 60px;
+  --underline-color: var(--primary);
+}
         @keyframes marquee-scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -315,15 +346,19 @@
         }
         /* Product Detail Modal */
         .product-modal {
-            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
         .product-modal-content {
             position: relative;
@@ -692,6 +727,119 @@
                 border-radius: 2px;
             }
         }
+        /* Swiper Navigation Styles */
+        .swiper-button-next, .swiper-button-prev {
+            color: #1A3C40;
+            background: rgba(255, 255, 255, 0.8);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            background: #ffffff;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .swiper-pagination-bullet {
+            background: #1A3C40;
+            opacity: 0.5;
+        }
+        
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #1A3C40;
+        }
+        
+        /* Modal Animation */
+        .product-modal {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .product-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .product-modal-content {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+        
+        .product-modal.active .product-modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Modal Tags */
+        .modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .modal-tag {
+            background: #f2f7f7;
+            color: #1A3C40;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            padding: 0.3em 1em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Swiper Navigation Enhancement */
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            color: #1A3C40;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .swiper-button-next {
+            right: 10px;
+        }
+        
+        .swiper-button-prev {
+            left: 10px;
+        }
+        
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background-color: #ffffff;
+            color: #1A3C40;
+            transform: scale(1.05);
+        }
+        
+        .swiper-button-disabled {
+            opacity: 0.35;
+            cursor: auto;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="bg-background font-sans text-text-primary">
@@ -749,10 +897,10 @@
         </ul>
         <div class="mobile-menu-footer">
             <div class="mobile-social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
@@ -761,17 +909,13 @@
     <div class="mobile-menu-overlay"></div>
 
     <!-- Main Content Starts -->
-    <!-- Page Banner -->
-    <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=1200&q=80');">
-        <div class="container">
-            <h1 class="page-title">Our Products</h1>
-        </div>
-    </section>
+    
+
     <!-- Redesigned Swiper Product Section Start -->
     <section class="section product-section">
         <div class="container">
             <h2 class="section-title text-center headline-animated" id="productsHeading">
-              <span class="headline-text">Our Products<span class="headline-underline"></span></span>
+              <span class="headline-text" style="padding-top: 67px;">Our Products<span class="headline-underline"></span></span>
             </h2>
             
             <!-- Desktop Swiper (hidden on mobile) -->
@@ -877,7 +1021,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="swiper-pagination"></div> -->
+                <!-- Add Swiper navigation and pagination -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
             
             <!-- Mobile Product Scroll (visible only on mobile) -->
@@ -950,14 +1097,14 @@
         </div>
     </section>
     <!-- Redesigned Swiper Product Section End -->
-    <!-- Modal HTML for Product Details -->
-    <div id="product-modal" class="product-modal" style="display:none;">
+    <!-- Product Modal HTML -->
+    <div id="product-modal" class="product-modal">
       <div class="product-modal-content">
-        <button id="modal-close-btn" class="modal-close" aria-label="Close" style="top: 18px; right: 18px; position: absolute; font-size: 2rem; background: #fff; border: 1.5px solid #eee; color: #222; cursor: pointer; z-index: 10001; border-radius: 50%; width: 44px; height: 44px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); display: flex; align-items: center; justify-content: center; transition: background 0.18s, box-shadow 0.18s; padding: 0; ">&times;</button>
+        <button id="modal-close-btn" class="modal-close" aria-label="Close" style="top: 18px; right: 18px; position: absolute; font-size: 2rem; background: #fff; border: 1.5px solid #eee; color: #222; cursor: pointer; z-index: 10001; border-radius: 50%; width: 44px; height: 44px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); display: flex; align-items: center; justify-content: center; transition: background 0.18s; padding: 0; ">&times;</button>
         <img id="modal-img" src="" alt="Product Image" style="max-width:220px;margin:0 auto 1.2rem auto;display:block;border-radius:1rem;box-shadow:0 4px 24px rgba(0,0,0,0.09);">
-        <h3 id="modal-title" style="font-size:1.35rem;font-weight:700;margin-bottom:0.7rem;text-align:center;"></h3>
-        <p id="modal-desc" style="font-size:1.05rem;color:#5f5e5e;text-align:center;"></p>
-        <div id="modal-tags" class="modal-tags" style="margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;"></div>
+        <h2 id="modal-title" style="text-align:center;font-size:1.6rem;color:#1A3C40;margin-bottom:1rem;font-weight:600;"></h2>
+        <p id="modal-desc" style="text-align:center;font-size:1rem;color:#444;line-height:1.5;margin-bottom:1.2rem;"></p>
+        <div id="modal-tags" class="modal-tags"></div>
       </div>
     </div>
     <!-- Product Features Section -->
@@ -992,21 +1139,21 @@
     <section class="section" style="background-image: url('https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; position: relative; color: var(--bg-color); text-align: center; padding: var(--spacing-xxl) 0;">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 0;"></div>
         <div class="container" style="position: relative; z-index: 1;">
-            <h2 style="font-size: var(--font-size-xxl); margin-bottom: var(--spacing-lg); color: #e3e8f7;">Custom Thread Solutions</h2>
+            <h2 style="font-size: var(--font-size-xxl); margin-bottom: var(--spacing-lg); color:#1A3C40;">Custom Thread Solutions</h2>
             <p style="margin-bottom: var(--spacing-xl); max-width: 800px; margin-left: auto; color: #e3e8f7; margin-right: auto;">Can't find exactly what you're looking for? We specialize in developing custom thread solutions to meet specific industry requirements. Contact our team to discuss your unique needs.</p>
             <a href="contact.html" class="example-btn" style="min-width:180px;font-size:1.08rem;font-weight:600;letter-spacing:0.01em;margin-top:18px;">Contact Us</a>
         </div>
     </section>
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-container">
+        <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-logo-section">
                     <div class="footer-logo">
                         <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" class="footer-logo-img">
                         <span class="footer-logo-text">Supreme Thread</span>
                     </div>
-                    <p class="footer-about">Supreme Thread is a leading manufacturer of high-quality threads based in Surat. With advanced technology and commitment to excellence, we deliver premium threading solutions for various industries.</p>
+                    <p class="footer-about">We are a leading manufacturer of premium quality threads for various industries. Our state-of-the-art facilities in Surat, Gujarat produce threads that meet international quality standards.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -1019,7 +1166,7 @@
                         <h3 class="footer-links-title">Quick Links</h3>
                         <ul class="footer-links">
                             <l><a href="index.html">Home</a></l>
-                            <l><a href="about.html">About Us</a></l>
+                            <l><a href="about.html">About</a></l>
                             <l><a href="products.html">Products</a></l>
                             <l><a href="manufacturing.html">Manufacturing</a></l>
                             <l><a href="industries.html">Industries</a></l>
@@ -1028,672 +1175,581 @@
                         </ul>
                     </div>
                     <div class="footer-links-column">
-                        <h3 class="footer-links-title">Products</h3>
+                        <h3 class="footer-links-title">Our Products</h3>
                         <ul class="footer-links">
-                            <li><a href="products.html#cotton">Cotton Threads</a></li>
-                            <li><a href="products.html#polyester">Polyester Threads</a></li>
-                            <li><a href="products.html#nylon">Nylon Threads</a></li>
-                            <li><a href="products.html#blended">Blended Threads</a></li>
-                            <li><a href="products.html#embroidery">Embroidery Threads</a></li>
-                            <li><a href="products.html#industrial">Industrial Threads</a></li>
+                            <li><a href="products.html#cotton">Premium Cotton Threads</a></li>
+                            <li><a href="products.html#polyester">High-Strength Polyester</a></li>
+                            <li><a href="products.html#nylon">Industrial Nylon Threads</a></li>
+                            <li><a href="products.html#blended">Specialized Blended Threads</a></li>
+                            <li><a href="products.html#embroidery">Precision Embroidery Threads</a></li>
+                            <li><a href="products.html#industrial">Heavy-Duty Industrial Threads</a></li>
                         </ul>
                     </div>
                     <div class="footer-links-column">
-                        <h3 class="footer-links-title">Contact Us</h3>
+                        <h3 class="footer-links-title">Get In Touch</h3>
                         <div class="footer-contact">
-                            <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> 123 Industrial Area, Surat, Gujarat, India - 395001</p>
-                            <p class="footer-contact-item"><i class="fas fa-phone"></i> +91 9876543210</p>
+                            <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> 123 Industrial Avenue, GIDC, Surat, Gujarat, India - 395001</p>
+                            <p class="footer-contact-item"><i class="fas fa-phone"></i> +91 9876543210 / +91 9876098760</p>
                             <p class="footer-contact-item"><i class="fas fa-envelope"></i> info@supremethread.com</p>
+                            <p class="footer-contact-item"><i class="fas fa-clock"></i> Monday-Saturday: 9:00 AM - 6:00 PM</p>
                         </div>
                     </div>
                 </div>
             </div>
-         
         </div>
     </footer>
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- Product Swiper Initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for Swiper library to be fully loaded
+            setTimeout(() => {
+                // Initialize Product Swiper with enhanced options
+                const productSwiper = new Swiper('.product-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    centeredSlides: true,
+                    loop: true,
+                    loopFillGroupWithBlank: true,
+                    grabCursor: true,
+                    speed: 600,
+                    effect: 'slide',
+                    autoplay: {
+                        delay: 3500,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    },
+                    keyboard: {
+                        enabled: true,
+                        onlyInViewport: true
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 20
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 30
+                        },
+                        992: {
+                            slidesPerView: 3,
+                            spaceBetween: 30
+                        },
+                        1200: {
+                            slidesPerView: 3,
+                            spaceBetween: 40
+                        }
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                        hideOnClick: false,
+                        disabledClass: 'swiper-button-disabled'
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                        dynamicBullets: true
+                    }
+                });
+
+                console.log('Swiper initialized with navigation');
+                
+                // Force update after initialization
+                productSwiper.update();
+                
+                // Add click events to navigation buttons as backup
+                document.querySelector('.swiper-button-next')?.addEventListener('click', () => {
+                    productSwiper.slideNext();
+                });
+                
+                document.querySelector('.swiper-button-prev')?.addEventListener('click', () => {
+                    productSwiper.slidePrev();
+                });
+                
+                // Product Details for Modal
+                const productDetails = {
+                    'Core-Spun Thread': {
+                        img: 'https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=400&q=80',
+                        description: 'Our premium Core-Spun Threads feature a polyester core wrapped with cotton for exceptional strength and softness. They provide reliable seam strength, excellent stitch appearance, and minimal shrinkage. Ideal for high-quality garments and textiles that require both durability and comfort.',
+                        tags: ['Cotton', 'Durable', 'Garment', 'Polyester Core']
+                    },
+                    'Rayon Embroidery Thread': {
+                        img: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=400&q=80',
+                        description: 'Our Rayon Embroidery Threads deliver exceptional luster and color vibrancy that make decorative stitches truly stand out. These threads are perfect for intricate designs, providing smooth running on high-speed machines with minimal thread breaks. Enjoy superior color consistency across batches for reliable results.',
+                        tags: ['Embroidery', 'Decorative', 'High Sheen', 'Colorfast']
+                    },
+                    'Technical Thread': {
+                        img: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
+                        description: 'Specially engineered for industrial applications, our Technical Threads offer flame retardance, UV resistance, and exceptional durability. These threads maintain their integrity in extreme conditions and are tested to meet strict industry standards for safety and performance.',
+                        tags: ['Industrial', 'Flame Retardant', 'UV Resistant', 'Heavy-Duty']
+                    },
+                    'Premium Cotton Thread': {
+                        img: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80',
+                        description: 'Made from the finest long-staple cotton fibers, our Premium Cotton Threads provide exceptional softness, natural sheen, and superior colorfast properties. These threads create beautiful stitches with minimal lint, making them perfect for quilting, heirloom sewing, and fine garments.',
+                        tags: ['100% Cotton', 'Eco-Friendly', 'Quilting', 'Fine Garments']
+                    },
+                    'Mercerized Cotton Thread': {
+                        img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80',
+                        description: 'Our Mercerized Cotton Threads undergo a special treatment process that enhances strength, luster, and color absorption. The resulting threads have a beautiful sheen, excellent tensile strength, and superior wash fastness, making them ideal for both decorative topstitching and everyday sewing needs.',
+                        tags: ['Enhanced Cotton', 'High Sheen', 'Colorfast', 'Versatile']
+                    },
+                    'All-Purpose Polyester Thread': {
+                        img: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
+                        description: 'Our versatile All-Purpose Polyester Threads offer strength and durability for a wide range of applications. These threads resist shrinking, stretching, and fading, while providing excellent stitch formation on all fabric types. Perfect for everyday sewing with reliable results.',
+                        tags: ['Polyester', 'Multi-Purpose', 'Fade Resistant', 'Strong']
+                    },
+                    'Heavy-Duty Polyester Thread': {
+                        img: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80',
+                        description: 'Engineered for maximum strength, our Heavy-Duty Polyester Threads are perfect for upholstery, outdoor projects, and industrial applications. These threads resist abrasion, UV damage, and harsh chemicals, while maintaining excellent tensile strength even in the most demanding conditions.',
+                        tags: ['Industrial Grade', 'Weather Resistant', 'Upholstery', 'Maximum Strength']
+                    },
+                    'Standard Nylon Thread': {
+                        img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80',
+                        description: 'Our Standard Nylon Threads offer excellent elasticity and strength, making them ideal for stretchy fabrics and leather goods. These threads return to their original length after stretching, creating secure seams that move with the fabric without breaking.',
+                        tags: ['Elastic', 'Strong', 'Leather', 'Stretchy Fabrics']
+                    },
+                    'Bonded Nylon Thread': {
+                        img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80',
+                        description: 'Treated with special resins, our Bonded Nylon Threads provide increased strength and abrasion resistance. These threads excel in high-speed industrial sewing applications, offering reduced friction, minimal lint, and exceptional tensile strength for the most demanding projects.',
+                        tags: ['Industrial', 'Abrasion Resistant', 'High Speed', 'Resin Coated']
+                    }
+                };
+
+                // Desktop Learn More button functionality
+                const learnMoreButtons = document.querySelectorAll('.learn-more-btn');
+                const productModal = document.getElementById('product-modal');
+                const modalImg = document.getElementById('modal-img');
+                const modalTitle = document.getElementById('modal-title');
+                const modalDesc = document.getElementById('modal-desc');
+                const modalTags = document.getElementById('modal-tags');
+                const modalCloseBtn = document.getElementById('modal-close-btn');
+                
+                if(learnMoreButtons.length > 0 && productModal) {
+                    learnMoreButtons.forEach(btn => {
+                        btn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            
+                            // Get product title from parent element
+                            const productCard = this.closest('.product-card-modern');
+                            const productTitle = productCard.querySelector('.product-title-modern').textContent;
+                            const productInfo = productDetails[productTitle] || {};
+                            
+                            // Update modal content
+                            modalImg.src = productInfo.img || '';
+                            modalImg.alt = productTitle;
+                            modalTitle.textContent = productTitle;
+                            modalDesc.textContent = productInfo.description || 'Product description not available.';
+                            
+                            // Clear existing tags
+                            modalTags.innerHTML = '';
+                            
+                            // Add tags if available
+                            if (productInfo.tags && productInfo.tags.length > 0) {
+                                productInfo.tags.forEach(tag => {
+                                    const tagEl = document.createElement('span');
+                                    tagEl.className = 'modal-tag';
+                                    tagEl.textContent = tag;
+                                    modalTags.appendChild(tagEl);
+                                });
+                            }
+                            
+                            // Show modal with animation
+                            productModal.style.display = 'flex';
+                            setTimeout(() => {
+                                productModal.classList.add('active');
+                            }, 10);
+                        });
+                    });
+                    
+                    // Close modal when clicking close button
+                    if(modalCloseBtn) {
+                        modalCloseBtn.addEventListener('click', function() {
+                            productModal.classList.remove('active');
+                            setTimeout(() => {
+                                productModal.style.display = 'none';
+                            }, 300); // Match the transition duration
+                        });
+                    }
+                    
+                    // Close modal when clicking outside content
+                    productModal.addEventListener('click', function(e) {
+                        if (e.target === productModal) {
+                            productModal.classList.remove('active');
+                            setTimeout(() => {
+                                productModal.style.display = 'none';
+                            }, 300); // Match the transition duration
+                        }
+                    });
+                }
+
+                // Mobile product modal functionality
+                const mobileProductCards = document.querySelectorAll('.mobile-product-card');
+                
+                if(mobileProductCards.length > 0 && productModal) {
+                    mobileProductCards.forEach(card => {
+                        card.addEventListener('click', function() {
+                            const productName = this.getAttribute('data-product');
+                            const productInfo = productDetails[productName] || {};
+                            
+                            // Update modal content
+                            modalImg.src = productInfo.img || '';
+                            modalImg.alt = productName;
+                            modalTitle.textContent = productName;
+                            modalDesc.textContent = productInfo.description || 'Product description not available.';
+                            
+                            // Clear existing tags
+                            modalTags.innerHTML = '';
+                            
+                            // Add tags if available
+                            if (productInfo.tags && productInfo.tags.length > 0) {
+                                productInfo.tags.forEach(tag => {
+                                    const tagEl = document.createElement('span');
+                                    tagEl.className = 'modal-tag';
+                                    tagEl.textContent = tag;
+                                    modalTags.appendChild(tagEl);
+                                });
+                            }
+                            
+                            // Show modal with animation
+                            productModal.style.display = 'flex';
+                            setTimeout(() => {
+                                productModal.classList.add('active');
+                            }, 10);
+                        });
+                    });
+                }
+                
+                // Make horizontal scrolling smooth for mobile products
+                const mobileProductsContainer = document.querySelector('.mobile-products-container');
+                if(mobileProductsContainer) {
+                    let isDown = false;
+                    let startX;
+                    let scrollLeft;
+                    
+                    mobileProductsContainer.addEventListener('mousedown', (e) => {
+                        isDown = true;
+                        mobileProductsContainer.classList.add('active');
+                        startX = e.pageX - mobileProductsContainer.offsetLeft;
+                        scrollLeft = mobileProductsContainer.scrollLeft;
+                    });
+                    
+                    mobileProductsContainer.addEventListener('mouseleave', () => {
+                        isDown = false;
+                        mobileProductsContainer.classList.remove('active');
+                    });
+                    
+                    mobileProductsContainer.addEventListener('mouseup', () => {
+                        isDown = false;
+                        mobileProductsContainer.classList.remove('active');
+                    });
+                    
+                    mobileProductsContainer.addEventListener('mousemove', (e) => {
+                        if(!isDown) return;
+                        e.preventDefault();
+                        const x = e.pageX - mobileProductsContainer.offsetLeft;
+                        const walk = (x - startX) * 2;
+                        mobileProductsContainer.scrollLeft = scrollLeft - walk;
+                    });
+                    
+                    // Touch events for mobile
+                    mobileProductsContainer.addEventListener('touchstart', (e) => {
+                        isDown = true;
+                        startX = e.touches[0].pageX - mobileProductsContainer.offsetLeft;
+                        scrollLeft = mobileProductsContainer.scrollLeft;
+                    });
+                    
+                    mobileProductsContainer.addEventListener('touchend', () => {
+                        isDown = false;
+                    });
+                    
+                    mobileProductsContainer.addEventListener('touchmove', (e) => {
+                        if(!isDown) return;
+                        const x = e.touches[0].pageX - mobileProductsContainer.offsetLeft;
+                        const walk = (x - startX) * 2;
+                        mobileProductsContainer.scrollLeft = scrollLeft - walk;
+                    });
+                }
+            });
+        });
+    </script>
+
     <style>
-           /* Footer Fixes for About Page - Improved Compact Version */
-           .footer {
-            background-color: #1A3C40;
-            color: white;
-            padding: 3rem 0 0;
-            margin-top: 3rem;
-            position: relative;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
+    /* Modern Footer Styles */
+    .footer {
+        background-color: #1A3C40;
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+    
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+    }
+    
+    /* Company Info Section */
+    .footer-logo-section {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.2rem;
+    }
+    
+    .footer-logo-img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 0.8rem;
+        border: 2px solid rgba(255,255,255,0.2);
+    }
+    
+    .footer-logo-text {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: white;
+    }
+    
+    .footer-about {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Social Icons */
+    .social-links {
+        display: flex;
+        gap: 0.8rem;
+    }
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+        background-color: var(--secondary, #f9e79f);
+        color: var(--primary, #1A3C40);
+        transform: translateY(-3px);
+    }
+    
+    /* Links Section */
+    .footer-links-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-links-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+        color: white;
+    }
+    
+    .footer-links-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--secondary, #f9e79f);
+    }
+    
+    /* VERTICAL Quick Links - as requested */
+    .footer-links-column:first-child .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l {
+        margin-bottom: 0.2rem;
+        display: block;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 2px 0;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l a:hover {
+        color: var(--secondary, #f9e79f);
+        transform: translateX(5px);
+    }
+    
+    /* Other Link Lists */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-links li {
+        margin-bottom: 0.6rem;
+    }
+    
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 3px 0;
+    }
+    
+    .footer-links a:hover {
+        color: var(--secondary, #f9e79f);
+        transform: translateX(5px);
+    }
+    
+    /* Contact Info */
+    .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0.9rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .footer-contact-item i {
+        margin-right: 0.7rem;
+        margin-top: 0.2rem;
+        color: var(--secondary, #f9e79f);
+        min-width: 16px;
+        text-align: center;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
         .footer-main {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr;
             gap: 2.5rem;
-            margin-bottom: 2rem;
         }
         
         .footer-logo-section {
-            display: flex;
-            flex-direction: column;
+            text-align: center;
+            align-items: center;
         }
         
         .footer-logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.2rem;
-        }
-        
-        .footer-logo-img {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 0.8rem;
-        }
-        
-        .footer-logo-text {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: white;
-        }
-        
-        .footer-about {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 1.2rem;
-            color: #e0e0e0;
+            justify-content: center;
         }
         
         .social-links {
-            display: flex;
-            gap: 0.8rem;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-        
-        .footer-links-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1.5rem;
         }
         
         .footer-links-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            position: relative;
-            padding-bottom: 0.4rem;
-            color: white;
+            text-align: center;
         }
         
         .footer-links-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background-color: rgba(255, 255, 255, 0.3);
+            left: 50%;
+            transform: translateX(-50%);
         }
         
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .footer-links, 
+        .footer-links-column:first-child .footer-links {
+            text-align: center;
         }
         
-        .footer-links li {
-            margin-bottom: 0.5rem;
+        .footer-links-column:first-child .footer-links l {
+            text-align: center;
         }
         
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: block;
-        }
-        
+        .footer-links-column:first-child .footer-links l a:hover,
         .footer-links a:hover {
-            color: white;
+            transform: translateY(-3px);
         }
         
         .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 0.9rem;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: #e0e0e0;
+            justify-content: center;
         }
-        
-        .footer-contact-item i {
-            margin-right: 0.7rem;
-            margin-top: 0.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            min-width: 14px;
-            text-align: center;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1.2rem 0;
-            text-align: center;
-        }
-        
-        .copyright {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        /* Super Compact Footer Links in One Row */
+    }
+    
+    /* Ensure Quick Links align left in PC view */
+    @media (min-width: 992px) {
         .footer-links-column:first-child .footer-links {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             justify-content: flex-start;
-            align-items: center;
-            margin-bottom: 0;
-            gap: 8px 16px;
-            max-width: 100%;
+            text-align: left;
+            flex-wrap: nowrap;
+            align-items: flex-start; /* Force alignment to start from left */
         }
         
-        .footer-links-column:first-child .footer-links li {
-            margin: 0;
-            position: relative;
-            padding-right: 16px;
+        .footer-links-column:first-child .footer-links l {
+            text-align: left;
+            margin-left: 0;
+            width: 100%;
         }
         
-        .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-            content: '•';
-            position: absolute;
-            right: 0;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.8rem;
+        .footer-links-column:first-child .footer-links l a {
+            text-align: left;
+            padding-left: 0;
         }
         
-        .footer-links-column:first-child .footer-links li:last-child {
-            padding-right: 0;
+        .footer-links-column:first-child .footer-links-title {
+            text-align: left;
         }
         
-        .footer-links-column:first-child .footer-links a {
-            font-size: 0.85rem;
-            white-space: nowrap;
-            padding: 2px 0;
+        .footer-links-column:first-child .footer-links-title::after {
+            left: 0;
+            transform: none;
+            margin-left: 0;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .footer-links-section {
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
         }
         
-        /* Responsive Footer - Enhanced */
-        @media (max-width: 992px) {
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .footer-logo-section {
-                max-width: 550px;
-                margin: 0 auto;
-                text-align: center;
-            }
-            
-            .footer-logo {
-                justify-content: center;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                justify-content: center;
-                margin: 0 auto;
-                max-width: 550px;
-            }
+        .footer-links-column:nth-child(3) {
+            grid-column: span 1;
         }
-        
-        @media (max-width: 768px) {
-            .footer {
-                padding-top: 2.5rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem 1rem;
-            }
-            
-            .footer-links-column:first-child {
-                grid-column: span 2;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                justify-content: center;
-                margin-bottom: 0.5rem;
-                flex-wrap: wrap !important; /* Force wrap for tablet-sized screens */
-                overflow-x: visible;
-                padding-bottom: 5px;
-                gap: 10px 16px; /* Increased gap for tablet sizes */
-            }
-            
-            /* Special rule for tablets and mid-sized devices (around 700px wide) */
-            @media (min-width: 600px) and (max-width: 767px) {
-                .footer-links-column:first-child .footer-links {
-                    display: flex;
-                    flex-wrap: wrap !important;
-                    justify-content: center;
-                    gap: 12px 20px; /* Larger gaps for 700px devices */
-                    margin: 0 auto;
-                    max-width: 600px;
-                    padding: 0 10px;
-                }
-                
-                .footer-links-column:first-child .footer-links li {
-                    margin: 0;
-                    padding: 0;
-                }
-                
-                .footer-links-column:first-child .footer-links a {
-                    font-size: 0.9rem;
-                    padding: 6px 8px;
-                    display: inline-block;
-                }
-                
-                .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                    display: none; /* Remove dots for cleaner appearance */
-                }
-            }
-            
-            .footer-links-column:first-child .footer-links::-webkit-scrollbar {
-                display: none; /* Chrome, Safari and Opera */
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links li {
-                margin-bottom: 0.6rem;
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links a {
-                padding: 6px 4px 6px 0;
-            }
-            
-            .footer-contact-item {
-                margin-bottom: 1rem;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .footer {
-                padding: 2rem 0 0;
-            }
-            
-            .footer-container {
-                padding: 0 1.2rem;
-            }
-            
-            .footer-main {
-                gap: 1.8rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .footer-links-column:first-child {
-                grid-column: span 1;
-                order: -1;
-            }
-            
-            .footer-links-column:nth-child(2) {
-                order: 1;
-            }
-            
-            .footer-links-column:nth-child(3) {
-                order: 0;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 6px 12px;
-                margin: 0 auto;
-                max-width: 100%;
-            }
-            
-            .footer-links-column:first-child .footer-links li {
-                margin: 0;
-                padding-right: 12px;
-            }
-            
-            .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                right: 1px;
-            }
-            
-            .footer-links-title {
-                font-size: 1rem;
-                margin-bottom: 0.8rem;
-                padding-bottom: 0.4rem;
-                text-align: center;
-            }
-            
-            .footer-links-title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links {
-                columns: 2;
-                column-gap: 20px;
-                text-align: center;
-            }
-            
-            .footer-links li {
-                margin-bottom: 0.4rem;
-                break-inside: avoid;
-            }
-            
-            .footer-about {
-                font-size: 0.85rem;
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-            
-            .footer-contact-item {
-                margin-left: auto;
-                margin-right: auto;
-                max-width: 280px;
-                text-align: left;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .footer-links-column:not(:first-child) .footer-links {
-                columns: 1;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 6px 10px; /* Slightly increased gap for extra small devices */
-            }
-            
-            .footer-links-column:first-child .footer-links li {
-                padding-right: 0; /* Remove right padding */
-                margin: 2px 0;
-            }
-            
-            .footer-links-column:first-child .footer-links a {
-                padding: 4px 6px;
-                font-size: 0.82rem; /* Slightly smaller font on mobiles */
-            }
-            
-            .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                display: none; /* Remove dots between items */
-            }
-            
-            .footer-contact-item {
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                text-align: left;
-                flex-direction: row;
-            }
-            
-            .footer-contact-item i {
-                margin-right: 0.6rem;
-                margin-top: 0;
-                font-size: 0.9rem;
-            }
-            
-            .copyright {
-                font-size: 0.8rem;
-                line-height: 1.4;
-            }
-        }
+    }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-        // Swiper initialization with advanced effects
-        var swiper = new Swiper('.product-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            centeredSlides: true,
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 30,
-                },
-                992: {
-                    slidesPerView: 3,
-                    spaceBetween: 40,
-                },
-            },
-            on: {
-                slideChange: function() {
-                    // Add active-center and side-fade classes for 3D effect
-                    var slides = document.querySelectorAll('.product-card-modern');
-                    slides.forEach(function(card) {
-                        card.classList.remove('active-center', 'side-fade');
-                    });
-                    var activeIdx = this.realIndex;
-                    var allSlides = this.slides;
-                    if (allSlides[activeIdx]) allSlides[activeIdx].querySelector('.product-card-modern').classList.add('active-center');
-                    if (allSlides[activeIdx-1]) allSlides[activeIdx-1].querySelector('.product-card-modern').classList.add('side-fade');
-                    if (allSlides[activeIdx+1]) allSlides[activeIdx+1].querySelector('.product-card-modern').classList.add('side-fade');
-                },
-                init: function() {
-                    // Initial highlight
-                    var slides = document.querySelectorAll('.product-card-modern');
-                    slides.forEach(function(card) {
-                        card.classList.remove('active-center', 'side-fade');
-                    });
-                    var activeIdx = this.realIndex;
-                    var allSlides = this.slides;
-                    if (allSlides[activeIdx]) allSlides[activeIdx].querySelector('.product-card-modern').classList.add('active-center');
-                    if (allSlides[activeIdx-1]) allSlides[activeIdx-1].querySelector('.product-card-modern').classList.add('side-fade');
-                    if (allSlides[activeIdx+1]) allSlides[activeIdx+1].querySelector('.product-card-modern').classList.add('side-fade');
-                }
-            }
-        });
-        // Product filter
-        const filterBtns = document.querySelectorAll('.filter-tab');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                const filterValue = this.getAttribute('data-filter');
-                document.querySelectorAll('.swiper-slide').forEach(slide => {
-                    const card = slide.querySelector('.product-card-modern');
-                    if (filterValue === 'all' || (card && card.getAttribute('data-category') === filterValue)) {
-                        slide.style.display = 'flex';
-                        // GSAP animation on show
-                        if (typeof gsap !== 'undefined') {
-                            gsap.fromTo(slide, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 });
-                        }
-                    } else {
-                        slide.style.display = 'none';
-                    }
-                });
-                // Update Swiper after filtering
-                if (window.swiper && swiper.update) {
-                    swiper.update();
-                }
-            });
-        });
-        // Pause marquee on hover
-        const marquee = document.querySelector('.feature-marquee');
-        if (marquee) {
-            marquee.addEventListener('mouseenter', () => {
-                marquee.style.animationPlayState = 'paused';
-            });
-            marquee.addEventListener('mouseleave', () => {
-                marquee.style.animationPlayState = 'running';
-            });
-        }
-        // AOS initialization (if used)
-        if (typeof AOS !== 'undefined') {
-            AOS.init({ once: false, mirror: true, offset: 120, easing: 'ease-out-cubic' });
-        }
-        // Modal logic for product details
-        var modal = document.getElementById('product-modal');
-        const modalImg = document.getElementById('modal-img');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDesc = document.getElementById('modal-desc');
-        const modalClose = document.querySelector('.modal-close');
-        const productDetails = {
-            "Core-Spun Thread": {
-                desc: "A blend of polyester strength and cotton softness for durable, comfortable stitching.",
-                tags: ["Polyester", "Cotton", "Low Lint", "Durable"]
-            },
-            "Rayon Embroidery Thread": {
-                desc: "High-sheen, vibrant thread perfect for decorative embroidery.",
-                tags: ["Rayon", "Shiny", "Vibrant", "Embroidery"]
-            },
-            "Technical Thread": {
-                desc: "Industrial-grade thread offering flame retardance and oil resistance.",
-                tags: ["Industrial", "Flame Retardant", "Oil Resistant"]
-            },
-            "Premium Cotton Thread": {
-                desc: "Soft, long-staple cotton thread for high-quality sewing projects.",
-                tags: ["Cotton", "Soft", "Premium"]
-            },
-            "Mercerized Cotton Thread": {
-                desc: "Enhanced cotton thread with extra sheen and strength for decorative use.",
-                tags: ["Mercerized", "Sheen", "Strong"]
-            },
-            "All-Purpose Polyester Thread": {
-                desc: "Versatile thread offering strength and durability for many applications.",
-                tags: ["Polyester", "UV Resistant", "Versatile"]
-            },
-            "Heavy-Duty Polyester Thread": {
-                desc: "Robust thread designed for upholstery and outdoor gear.",
-                tags: ["Heavy Duty", "Upholstery", "Outdoor"]
-            },
-            "Standard Nylon Thread": {
-                desc: "Elastic, heat resistant thread ideal for stretchy fabrics and leather.",
-                tags: ["Nylon", "Elastic", "Heat Resistant"]
-            },
-            "Bonded Nylon Thread": {
-                desc: "Resin-coated nylon thread offering extra strength and abrasion resistance.",
-                tags: ["Bonded", "Abrasion Resistant", "Strong"]
-            }
-        };
-        function openProductModal(img, title, desc, tags) {
-            modalImg.src = img;
-            modalTitle.textContent = title || 'Product Name';
-            modalDesc.textContent = desc || 'No description available for this product.';
-            const tagsDiv = document.getElementById('modal-tags');
-            tagsDiv.innerHTML = (tags && tags.length) ? tags.map(tag => `<span class="modal-tag">${tag}</span>`).join(' ') : '';
-            modal.style.display = 'flex';
-            modal.style.animation = 'modalIn 0.38s cubic-bezier(.4,2,.6,1)';
-        }
-        // Attach click event to mobile product buttons
-        document.querySelectorAll('.mobile-product-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                const card = btn.closest('.mobile-product-card');
-                const img = card.querySelector('img').src;
-                const title = card.querySelector('.mobile-product-title').textContent;
-                const details = productDetails[title] || {desc: '', tags: []};
-                openProductModal(img, title, details.desc, details.tags);
-            });
-        });
-        // Attach click event to all product buttons (fix for .example-btn)
-        document.querySelectorAll('.product-card-modern .example-btn.learn-more-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                const card = btn.closest('.product-card-modern');
-                const img = card.querySelector('img').src;
-                const title = card.querySelector('.product-title-modern').textContent;
-                const details = productDetails[title] || {desc: '', tags: []};
-                openProductModal(img, title, details.desc, details.tags);
-            });
-        });
-        // Only declare modal variable ONCE at the top for all modal logic
-        if (modal) {
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.animation = 'modalIn 0.38s reverse forwards';
-                    setTimeout(() => { modal.style.display = 'none'; }, 380);
-                }
-            });
-        }
-        // Modal close logic for new close button
-        var modalCloseBtn = document.getElementById('modal-close-btn');
-        if (modalCloseBtn) {
-            modalCloseBtn.onclick = function() {
-                modal.style.animation = 'modalIn 0.38s reverse forwards';
-                setTimeout(() => { modal.style.display = 'none'; }, 380);
-            }
-        }
-        // Add horizontal scroll with arrow buttons (mobile)
-        const scrollContainer = document.querySelector('.mobile-products-scroll');
-        document.querySelector('.mobile-nav-prev').addEventListener('click', function() {
-            scrollContainer.scrollBy({ left: -220, behavior: 'smooth' });
-        });
-        document.querySelector('.mobile-nav-next').addEventListener('click', function() {
-            scrollContainer.scrollBy({ left: 220, behavior: 'smooth' });
-        });
-        // Animate product cards on scroll into view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-            });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('.mobile-product-card').forEach(card => {
-            observer.observe(card);
-        });
-        // Animate modal open/close (optional: add close on background click)
-        if (modal) {
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.animation = 'modalIn 0.38s reverse forwards';
-                    setTimeout(() => { modal.style.display = 'none'; }, 380);
-                }
-            });
-        }
-    </script>
-    <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            mirror: false
-        });
-    </script>
 </body>
 </html>

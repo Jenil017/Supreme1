@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -121,269 +121,117 @@
 </head>
 <body class="bg-background font-sans text-text-primary">
     <div class="preloader flex items-center justify-center fixed top-0 left-0 w-full h-full bg-white z-50"><div class="spinner"></div></div>
+    
+    <!-- Header from index.html -->
     <header class="header">
-      <div class="container header-container">
-          <a href="index.html" class="logo">
-              <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" class="w-10 h-10 object-cover rounded-full" style="border-radius:50%;width:40px;height:40px;object-fit:cover;">
-              <div class="logo-text">Supreme Thread</div>
-          </a>
-          <button id="newMenuToggle" class="new-menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <ul class="nav-menu">
-              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-              <li class="nav-item"><a href="about.html" class="nav-link active">About Us</a></li>
-              <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
-              <li class="nav-item"><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
-              <li class="nav-item"><a href="industries.html" class="nav-link">Industries</a></li>
-              <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-              <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          </ul>
-      </div>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo">
+                <div class="logo-text">Supreme Thread</div>
+            </a>
+            
+            <!-- Desktop Navigation Menu (visible only on desktop) -->
+            <nav class="desktop-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+                    <li class="nav-item"><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
+                    <li class="nav-item"><a href="industries.html" class="nav-link">Industries</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Button (visible only on mobile) -->
+            <button class="menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
-    <div class="nav-overlay"></div>
+
+    <!-- Mobile Side Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="mobile-logo">
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" style="border-radius:50%;width:36px;height:36px;object-fit:cover;">
+                <span>Supreme Thread</span>
+            </a>
+            <button class="mobile-menu-close">
+                <span>&times;</span>
+            </button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="products.html" class="mobile-nav-link">Products</a></li>
+            <li class="mobile-nav-item"><a href="manufacturing.html" class="mobile-nav-link">Manufacturing</a></li>
+            <li class="mobile-nav-item"><a href="industries.html" class="mobile-nav-link">Industries</a></li>
+            <li class="mobile-nav-item"><a href="gallery.html" class="mobile-nav-link active">Gallery</a></li>
+            <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <div class="mobile-social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    
+    <!-- Header and Mobile Menu CSS from index.html -->
     <style>
-      /* Header & Navigation */
-.header {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-z-index: var(--z-menu);
-background-color: var(--bg-color);
-box-shadow: var(--shadow-sm);
-transition: all var(--transition-normal);
-height: 84px;
-min-height: 84px;
-}
+    @media (max-width: 991px) {
+        /* Mobile menu toggle button ke liye updated z-index */
+        .menu-toggle {
+            z-index: 9999 !important;
+            position: relative !important;
+        }
+        
+        /* Mobile menu ke liye increased z-index */
+        .mobile-menu {
+            z-index: 9998 !important;
+        }
+        
+        /* Mobile menu overlay ke liye increased z-index */
+        .mobile-menu-overlay {
+            z-index: 9997 !important;
+        }
+        
+        /* Header ka z-index kam kiya */
+        .header {
+            z-index: 100 !important;
+        }
+        
+        /* Fix for mobile menu hover effects */
+        .mobile-nav-link:hover {
+            color: inherit !important;
+        }
+        
+        .mobile-nav-link.active {
+            color: var(--primary) !important;
+        }
+    }
 
-.header-scrolled {
-box-shadow: var(--shadow-md);
-}
-
-.header-container {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: var(--spacing-md) 0;
-}
-
-.logo {
-display: flex;
-align-items: center;
-}
-
-.logo img {
-height: 50px;
-margin-right: var(--spacing-sm);
-}
-
-.logo-text {
-font-size: var(--font-size-lg);
-font-weight: 700;
-color: var(--primary-color);
-}
-
-.nav-menu {
-display: flex;
-list-style: none;
-}
-
-.nav-item {
-margin-left: var(--spacing-lg);
-position: relative;
-}
-
-.nav-link {
-font-size: var(--font-size-md);
-font-weight: 500;
-color: var(--text-color);
-transition: color var(--transition-fast);
-padding: var(--spacing-sm) 0;
-position: relative;
-}
-
-.nav-link:hover, 
-.nav-link:focus, 
-.nav-link.active {
-color: var(--primary-color);
-}
-
-.nav-link::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-width: 0;
-height: 2px;
-background-color: var(--primary-color);
-transition: width var(--transition-normal);
-}
-
-.nav-link:hover::after, 
-.nav-link:focus::after, 
-.nav-link.active::after {
-width: 100%;
-}
-
-/* New Menu Toggle Button Styling */
-.new-menu-toggle {
-display: none; /* Hidden by default */
-cursor: pointer;
-background: none;
-border: none;
-padding: var(--spacing-sm);
-z-index: 9999; /* Ensure it's above other elements */
-position: fixed; /* Keep it fixed during scroll */
-right: 15px;
-top: 36px;
-transform: translateY(-50%);
-}
-
-.new-menu-toggle span {
-display: block;
-width: 28px;
-height: 3px;
-background-color: var(--primary-color);
-margin: 4px 0;
-transition: all 0.3s ease-in-out;
-}
-
-/* 'X' shape when active */
-.new-menu-toggle.active span:nth-child(1) {
-transform: rotate(45deg) translate(5px, 5px);
-background-color: white; /* Change color when menu is open */
-}
-
-.new-menu-toggle.active span:nth-child(2) {
-opacity: 0;
-}
-
-.new-menu-toggle.active span:nth-child(3) {
-transform: rotate(-45deg) translate(5px, -5px);
-background-color: white; /* Change color when menu is open */
-}
-
-@media (max-width: 991px) {
-.header, .header-container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  width: 100vw;
-  max-width: 100vw;
-  min-width: 0;
-  z-index: 1100;
-  height: 72px;
-  min-height: 72px;
-}
-
-.new-menu-toggle {
-  display: flex; /* Show on mobile */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  margin-left: 8px;
-}
-
-.header-container {
-  position: relative;
-  min-width: 0;
-  max-width: 100vw;
-  width: 100vw;
-  overflow-x: hidden;
-}
-
-.nav-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: fixed;
-  top: 0;
-  right: -100vw; /* Start off-screen */
-  width: 80vw;
-  min-width: 240px;
-  max-width: 350px;
-  height: 100vh;
-  background: var(--primary-color); /* Dark background for mobile menu */
-  box-shadow: 4px 0 32px rgba(26,60,64,0.09);
-  padding: 1.6rem 1rem 1.2rem 1rem;
-  gap: 0.25rem;
-  transition: right 0.35s cubic-bezier(.4,0,.2,1);
-  z-index: 1200; /* Above overlay */
-}
-
-.nav-menu.active {
-  right: 0; /* Slide in */
-}
-
-.nav-item {
-  width: 100%;
-  margin: 0 0 0.7rem 0;
-}
-
-.nav-link {
-  color: var(--text-light); /* Light text for dark background */
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  padding: 0.7rem 0.7rem;
-  width: 100%;
-  display: block;
-  border-radius: 6px;
-  background: none;
-  text-align: left;
-  transition: background 0.2s, color 0.2s;
-}
-
-.nav-link.active, .nav-link:focus, .nav-link:hover {
-  background: var(--secondary-color); /* Highlight color */
-  color: var(--primary-color);
-}
-
-.nav-link::after {
-  /* Remove underline for mobile nav links */
-  display: none; 
-}
-
-/* Overlay Styling */
-.nav-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(26,60,64,0.10); /* Slightly dark overlay */
-  z-index: 1199; /* Below menu, above content */
-  transition: opacity 0.2s;
-}
-
-.nav-overlay.active {
-  display: block;
-  opacity: 1;
-}
-}
-
-@media (min-width: 992px) {
-.new-menu-toggle {
-  display: none !important; /* Ensure it's hidden on desktop */
-}
-}
-
-@media (max-width: 991px) {
-.gallery-item img {
-  pointer-events: none !important;
-  touch-action: manipulation !important;
-}
-}
+    /* Desktop view ke liye menu button hide karne ka rule - stronger selector */
+    @media (min-width: 992px) {
+        .menu-toggle {
+            display: none !important;
+        }
+        
+        .mobile-menu, 
+        .mobile-menu-overlay {
+            display: none !important;
+        }
+    }
     </style>
+
     <!-- Main Content Starts -->
     <!-- Full Screen Hero Section for Gallery -->
     <section class="hero-section-gallery" style="background: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat; position:relative; height:100vh; margin-top:0; padding:0; box-sizing:border-box;">
@@ -841,16 +689,16 @@ background-color: white; /* Change color when menu is open */
     </style>
     
   </style>
-    <!-- Footer -->
+    <!-- Footer from index.html -->
     <footer class="footer">
-        <div class="container footer-container">
+        <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-logo-section">
                     <div class="footer-logo">
                         <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" class="footer-logo-img">
                         <span class="footer-logo-text">Supreme Thread</span>
                     </div>
-                    <p class="footer-about">Supreme Thread is a leading manufacturer of high-quality threads based in Surat. With advanced technology and commitment to excellence, we deliver premium threading solutions for various industries.</p>
+                    <p class="footer-about">We are a leading manufacturer of premium quality threads for various industries. Our state-of-the-art facilities in Surat, Gujarat produce threads that meet international quality standards.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -862,547 +710,366 @@ background-color: white; /* Change color when menu is open */
                     <div class="footer-links-column">
                         <h3 class="footer-links-title">Quick Links</h3>
                         <ul class="footer-links">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="products.html">Products</a></li>
-                            <li><a href="manufacturing.html">Manufacturing</a></li>
-                            <li><a href="industries.html">Industries</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <l><a href="index.html">Home</a></l>
+                            <l><a href="about.html">About</a></l>
+                            <l><a href="products.html">Products</a></l>
+                            <l><a href="manufacturing.html">Manufacturing</a></l>
+                            <l><a href="industries.html">Industries</a></l>
+                            <l><a href="gallery.html">Gallery</a></l>
+                            <l><a href="contact.html">Contact</a></l>
                         </ul>
                     </div>
                     <div class="footer-links-column">
-                        <h3 class="footer-links-title">Products</h3>
+                        <h3 class="footer-links-title">Our Products</h3>
                         <ul class="footer-links">
-                            <li><a href="products.html#cotton">Cotton Threads</a></li>
-                            <li><a href="products.html#polyester">Polyester Threads</a></li>
-                            <li><a href="products.html#nylon">Nylon Threads</a></li>
-                            <li><a href="products.html#blended">Blended Threads</a></li>
-                            <li><a href="products.html#embroidery">Embroidery Threads</a></li>
-                            <li><a href="products.html#industrial">Industrial Threads</a></li>
+                            <li><a href="products.html#cotton">Premium Cotton Threads</a></li>
+                            <li><a href="products.html#polyester">High-Strength Polyester</a></li>
+                            <li><a href="products.html#nylon">Industrial Nylon Threads</a></li>
+                            <li><a href="products.html#blended">Specialized Blended Threads</a></li>
+                            <li><a href="products.html#embroidery">Precision Embroidery Threads</a></li>
+                            <li><a href="products.html#industrial">Heavy-Duty Industrial Threads</a></li>
                         </ul>
                     </div>
                     <div class="footer-links-column">
-                        <h3 class="footer-links-title">Contact Us</h3>
+                        <h3 class="footer-links-title">Get In Touch</h3>
                         <div class="footer-contact">
-                            <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> 123 Industrial Area, Surat, Gujarat, India - 395001</p>
-                            <p class="footer-contact-item"><i class="fas fa-phone"></i> +91 9876543210</p>
+                            <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> 123 Industrial Avenue, GIDC, Surat, Gujarat, India - 395001</p>
+                            <p class="footer-contact-item"><i class="fas fa-phone"></i> +91 9876543210 / +91 9876098760</p>
                             <p class="footer-contact-item"><i class="fas fa-envelope"></i> info@supremethread.com</p>
+                            <p class="footer-contact-item"><i class="fas fa-clock"></i> Monday-Saturday: 9:00 AM - 6:00 PM</p>
                         </div>
                     </div>
                 </div>
             </div>
-           
         </div>
-        <style>
-        /* Footer Fixes - Improved Compact Version */
-        .footer {
-            background-color: #1A3C40;
-            color: white;
-            padding: 3rem 0 0;
-            margin-top: 3rem;
-            position: relative;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
+    </footer>
+
+    <!-- Footer CSS from index.html -->
+    <style>
+    /* Modern Footer Styles */
+    .footer {
+        background-color: #1A3C40;
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+    
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+    }
+    
+    /* Company Info Section */
+    .footer-logo-section {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.2rem;
+    }
+    
+    .footer-logo-img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 0.8rem;
+        border: 2px solid rgba(255,255,255,0.2);
+    }
+    
+    .footer-logo-text {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: white;
+    }
+    
+    .footer-about {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Social Icons */
+    .social-links {
+        display: flex;
+        gap: 0.8rem;
+    }
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+        background-color: var(--secondary, #f9e79f);
+        color: var(--primary, #1A3C40);
+        transform: translateY(-3px);
+    }
+    
+    /* Links Section */
+    .footer-links-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-links-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+        color: white;
+    }
+    
+    .footer-links-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--secondary, #f9e79f);
+    }
+    
+    /* VERTICAL Quick Links - as requested */
+    .footer-links-column:first-child .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l {
+        margin-bottom: 0.2rem;
+        display: block;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 2px 0;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l a:hover {
+        color: var(--secondary, #f9e79f);
+        transform: translateX(5px);
+    }
+    
+    /* Other Link Lists */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-links li {
+        margin-bottom: 0.6rem;
+    }
+    
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 3px 0;
+    }
+    
+    .footer-links a:hover {
+        color: var(--secondary, #f9e79f);
+        transform: translateX(5px);
+    }
+    
+    /* Contact Info */
+    .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0.9rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .footer-contact-item i {
+        margin-right: 0.7rem;
+        margin-top: 0.2rem;
+        color: var(--secondary, #f9e79f);
+        min-width: 16px;
+        text-align: center;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
         .footer-main {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr;
             gap: 2.5rem;
-            margin-bottom: 2rem;
         }
         
         .footer-logo-section {
-            display: flex;
-            flex-direction: column;
+            text-align: center;
+            align-items: center;
         }
         
         .footer-logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.2rem;
-        }
-        
-        .footer-logo-img {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 0.8rem;
-        }
-        
-        .footer-logo-text {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: white;
-        }
-        
-        .footer-about {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 1.2rem;
-            color: #e0e0e0;
+            justify-content: center;
         }
         
         .social-links {
-            display: flex;
-            gap: 0.8rem;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-        
-        .footer-links-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1.5rem;
         }
         
         .footer-links-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            position: relative;
-            padding-bottom: 0.4rem;
-            color: white;
+            text-align: center;
         }
         
         .footer-links-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background-color: rgba(255, 255, 255, 0.3);
+            left: 50%;
+            transform: translateX(-50%);
         }
         
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .footer-links, 
+        .footer-links-column:first-child .footer-links {
+            text-align: center;
         }
         
-        .footer-links li {
-            margin-bottom: 0.5rem;
+        .footer-links-column:first-child .footer-links l {
+            text-align: center;
         }
         
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: block;
-        }
-        
+        .footer-links-column:first-child .footer-links l a:hover,
         .footer-links a:hover {
-            color: white;
+            transform: translateY(-3px);
         }
         
         .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 0.9rem;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: #e0e0e0;
+            justify-content: center;
         }
-        
-        .footer-contact-item i {
-            margin-right: 0.7rem;
-            margin-top: 0.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            min-width: 14px;
-            text-align: center;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1.2rem 0;
-            text-align: center;
-        }
-        
-        .copyright {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        /* Super Compact Footer Links in One Row */
+    }
+    
+    /* Ensure Quick Links align left in PC view */
+    @media (min-width: 992px) {
         .footer-links-column:first-child .footer-links {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             justify-content: flex-start;
-            align-items: center;
-            margin-bottom: 0;
-            gap: 8px 16px;
-            max-width: 100%;
+            text-align: left;
+            flex-wrap: nowrap;
+            align-items: flex-start; /* Force alignment to start from left */
         }
         
-        .footer-links-column:first-child .footer-links li {
-            margin: 0;
-            position: relative;
-            padding-right: 16px;
+        .footer-links-column:first-child .footer-links l {
+            text-align: left;
+            margin-left: 0;
+            width: 100%;
         }
         
-        .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-            content: '•';
-            position: absolute;
-            right: 0;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.8rem;
+        .footer-links-column:first-child .footer-links l a {
+            text-align: left;
+            padding-left: 0;
         }
         
-        .footer-links-column:first-child .footer-links li:last-child {
-            padding-right: 0;
+        .footer-links-column:first-child .footer-links-title {
+            text-align: left;
         }
         
-        .footer-links-column:first-child .footer-links a {
-            font-size: 0.85rem;
-            white-space: nowrap;
-            padding: 2px 0;
+        .footer-links-column:first-child .footer-links-title::after {
+            left: 0;
+            transform: none;
+            margin-left: 0;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .footer-links-section {
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
         }
         
-        /* Responsive Footer - Enhanced */
-        @media (max-width: 992px) {
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .footer-logo-section {
-                max-width: 550px;
-                margin: 0 auto;
-                text-align: center;
-            }
-            
-            .footer-logo {
-                justify-content: center;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                justify-content: center;
-                margin: 0 auto;
-                max-width: 550px;
-            }
+        .footer-links-column:nth-child(3) {
+            grid-column: span 1;
         }
-        
-        @media (max-width: 768px) {
-            .footer {
-                padding-top: 2.5rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem 1rem;
-            }
-            
-            .footer-links-column:first-child {
-                grid-column: span 2;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                justify-content: center;
-                margin-bottom: 0.5rem;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                padding-bottom: 5px;
-                scrollbar-width: none; /* Firefox */
-                -ms-overflow-style: none; /* IE and Edge */
-                gap: 0;
-            }
-            
-            .footer-links-column:first-child .footer-links::-webkit-scrollbar {
-                display: none; /* Chrome, Safari and Opera */
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links li {
-                margin-bottom: 0.6rem;
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links a {
-                padding: 6px 4px 6px 0;
-            }
-            
-            .footer-contact-item {
-                margin-bottom: 1rem;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .footer {
-                padding: 2rem 0 0;
-            }
-            
-            .footer-container {
-                padding: 0 1.2rem;
-            }
-            
-            .footer-main {
-                gap: 1.8rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .footer-links-column:first-child {
-                grid-column: span 1;
-                order: -1;
-            }
-            
-            .footer-links-column:nth-child(2) {
-                order: 1;
-            }
-            
-            .footer-links-column:nth-child(3) {
-                order: 0;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 6px 12px;
-                margin: 0 auto;
-                max-width: 100%;
-            }
-            
-            .footer-links-column:first-child .footer-links li {
-                margin: 0;
-                padding-right: 12px;
-            }
-            
-            .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                right: 1px;
-            }
-            
-            .footer-links-title {
-                font-size: 1rem;
-                margin-bottom: 0.8rem;
-                padding-bottom: 0.4rem;
-                text-align: center;
-            }
-            
-            .footer-links-title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links {
-                columns: 2;
-                column-gap: 20px;
-                text-align: center;
-            }
-            
-            .footer-links li {
-                margin-bottom: 0.4rem;
-                break-inside: avoid;
-            }
-            
-            .footer-about {
-                font-size: 0.85rem;
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-            
-            .footer-contact-item {
-                margin-left: auto;
-                margin-right: auto;
-                max-width: 280px;
-                text-align: left;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .footer-links-column:not(:first-child) .footer-links {
-                columns: 1;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 4px 8px;
-            }
-            
-            .footer-links-column:first-child .footer-links li {
-                padding-right: 8px;
-            }
-            
-            .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                font-size: 0.7rem;
-            }
-            
-            .footer-contact-item {
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                text-align: left;
-                flex-direction: row;
-            }
-            
-            .footer-contact-item i {
-                margin-right: 0.6rem;
-                margin-top: 0;
-                font-size: 0.9rem;
-            }
-            
-            .copyright {
-                font-size: 0.8rem;
-                line-height: 1.4;
-            }
-        }
-        </style>
-    </footer>
+    }
+    </style>
+
+    <script src="assets/js/navigation.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-    // Clean, simplified menu functionality for #newMenuToggle
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('Gallery Page DOM loaded - Initializing new menu toggle');
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
         
-        // Clean up any existing listeners to avoid conflicts
-        const oldMenuToggle = document.querySelector('.menu-toggle');
-        if (oldMenuToggle) {
-            console.log('Hiding old menu toggle button');
-            oldMenuToggle.style.display = 'none';
-            oldMenuToggle.style.visibility = 'hidden';
-            oldMenuToggle.style.opacity = '0';
-            oldMenuToggle.style.pointerEvents = 'none';
+        // Mobile menu functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        
+        if (menuToggle && mobileMenu && mobileMenuClose && mobileMenuOverlay) {
+            // Toggle mobile menu
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            });
+            
+            // Close mobile menu
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+            
+            // Close mobile menu when clicking overlay
+            mobileMenuOverlay.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
         }
         
-        // New implementation elements
-        const newMenuToggle = document.getElementById('newMenuToggle');
-        const navMenu = document.querySelector('.nav-menu');
-        const navOverlay = document.querySelector('.nav-overlay');
-        
-        console.log('New Menu Elements:', { newMenuToggle: !!newMenuToggle, navMenu: !!navMenu, navOverlay: !!navOverlay });
-        
-        if (newMenuToggle && navMenu && navOverlay) {
-            // Menu toggle click handler
-            newMenuToggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('New menu toggle clicked!');
-                
-                // Toggle classes for menu, button, and overlay
-                const isActive = newMenuToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
-                navOverlay.classList.toggle('active');
-                
-                // Handle body scroll and menu position
-                if (isActive) {
-                    console.log('Menu opened');
-                    document.body.style.overflow = 'hidden';
-                    navMenu.style.right = '0'; // Slide in
-                } else {
-                    console.log('Menu closed');
-                    document.body.style.overflow = '';
-                    navMenu.style.right = '-100vw'; // Slide out
-                }
-            });
-            
-            // Close menu when clicking on overlay
-            navOverlay.addEventListener('click', function() {
-                console.log('Overlay clicked - closing menu');
-                newMenuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                navOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-                navMenu.style.right = '-100vw';
-            });
-            
-            // Close menu when clicking on navigation links
-            const navLinks = navMenu.querySelectorAll('.nav-link');
-            navLinks.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    // Allow default navigation
-                    const targetHref = this.getAttribute('href');
-                    console.log('Nav link clicked:', targetHref);
-                    
-                    // Close menu on mobile if it's open
-                    if (window.innerWidth <= 991 && navMenu.classList.contains('active')) {
-                        console.log('Closing menu after nav link click');
-                        newMenuToggle.classList.remove('active');
-                        navMenu.classList.remove('active');
-                        navOverlay.classList.remove('active');
-                        document.body.style.overflow = '';
-                        navMenu.style.right = '-100vw';
-                    }
-                    // Let the browser handle the navigation
-                });
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (
-                    navMenu.classList.contains('active') && 
-                    !navMenu.contains(e.target) && 
-                    !newMenuToggle.contains(e.target) &&
-                    !navOverlay.contains(e.target) // Ensure click wasn't on overlay itself
-                ) {
-                    console.log('Clicked outside - closing menu');
-                    newMenuToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                    navOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                    navMenu.style.right = '-100vw';
-                }
-            });
-        } else {
-            console.error('Failed to find all necessary menu elements (#newMenuToggle, .nav-menu, .nav-overlay)');
-        }
-        
-        // Preloader (ensure it's handled correctly)
+        // Preloader
         const preloader = document.querySelector('.preloader');
         if (preloader) {
             window.addEventListener('load', function() {
-                console.log('Window loaded, hiding preloader');
                 preloader.style.display = 'none';
             });
+            
             // Fallback
-            setTimeout(() => {
-                if (preloader.style.display !== 'none') {
-                    console.log('Fallback: hiding preloader');
-                    preloader.style.display = 'none';
-                }
+            setTimeout(function() {
+                preloader.style.display = 'none';
             }, 3000);
-        }
-        
-        // Initialize AOS (ensure it runs)
-        if (typeof AOS !== 'undefined') {
-            console.log('Initializing AOS');
-            AOS.init({ once: true });
-        } else {
-            console.warn('AOS library not found');
         }
     });
     </script>

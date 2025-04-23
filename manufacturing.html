@@ -337,8 +337,50 @@
     <style>
       @media (max-width: 600px) {
         .why-grid-mfg {
-          padding-left: 1.1rem !important;
-          padding-right: 1.1rem !important;
+          padding-left: 0.7rem !important;
+          padding-right: 0.7rem !important;
+          gap: 0.6rem !important;
+          display: grid !important;
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        
+        /* Improve "Why Choose Supreme Thread" section on mobile */
+        #why-choose .section-title {
+          font-size: 1.5rem !important;
+          line-height: 1.3 !important;
+          margin-bottom: 1.2rem !important;
+          padding: 0 10px !important;
+          white-space: normal !important;
+          word-spacing: -0.05em !important;
+          hyphens: auto !important;
+        }
+        
+        .why-choose-mfg {
+          padding-top: 1.5rem !important;
+          padding-bottom: 1.5rem !important;
+        }
+        
+        .why-card-mfg {
+          padding: 0.7rem !important;
+          min-width: initial !important;
+          max-width: 100% !important;
+          margin-bottom: 0 !important;
+          height: 100% !important;
+        }
+        
+        .why-card-mfg h3 {
+          font-size: 1rem !important;
+          margin-bottom: 0.3rem !important;
+        }
+        
+        .why-card-mfg p {
+          font-size: 0.85rem !important;
+          margin-bottom: 0 !important;
+        }
+        
+        .why-icon-mfg {
+          font-size: 1.6rem !important;
+          margin-bottom: 0.4rem !important;
         }
         
         .cta-section {
@@ -352,75 +394,146 @@
         }
         
         .why-card-mfg {
-          padding: 1.2rem !important;
-          min-height: auto !important;
-          max-height: none !important;
-        }
-      }
-    </style>
-    <style>
-      @media (max-width: 600px) {
-        .process-step-new,
-        .process-step-new * {
-          pointer-events: none !important;
-          touch-action: none !important;
-          user-select: none !important;
-        }
-        /* Restore box-like visual effects */
-        .process-step-new {
-          transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
-          transform: none !important;
-          box-shadow: 0 4px 24px 0 rgba(30,58,138,0.10);
-          background: linear-gradient(120deg, #fff 80%, #e0e7ff 100%);
-          outline: none !important;
-        }
-        .process-step-new:active,
-        .process-step-new:focus {
-          transform: none !important;
-          box-shadow: 0 4px 24px 0 rgba(30,58,138,0.10);
-          background: linear-gradient(120deg, #fff 80%, #e0e7ff 100%);
-          outline: none !important;
-        }
-      }
-    </style>
-    <style>
-     /* Hero section adjustments */
-     .hero-section-mfg {
-       margin-top: 0;
-       padding-top: 94px;
-     }
-     
-     @media (max-width: 991px) {
-       .hero-section-mfg {
-         padding-top: 84px;
-       }
-     }
-     
-     @media (max-width: 767px) {
-       .hero-section-mfg {
-         padding-top: 74px;
-       }
-     }
-    </style>
-    <style>
-    /* Desktop view ke liye menu button hide karne ka rule */
-    @media (min-width: 992px) {
-        .menu-toggle {
-            display: none !important;
+          padding: 0.8rem !important;
+          min-width: 100% !important;
+          max-width: 100% !important;
+          margin-bottom: 0.8rem !important;
         }
         
-        .mobile-menu, 
-        .mobile-menu-overlay {
-            display: none !important;
+        .why-icon-mfg {
+          font-size: 1.8rem !important;
+          margin-bottom: 0.6rem !important;
         }
-    }
+        
+        /* Process section mobile improvements */
+        .process-section .section-title {
+          font-size: 1.5rem !important;
+          line-height: 1.3 !important;
+          margin-bottom: 1.5rem !important;
+          padding: 0 10px !important;
+          white-space: normal !important;
+        }
+      }
+      
+      /* Extra small devices */
+      @media (max-width: 400px) {
+        #why-choose .section-title {
+          font-size: 1.3rem !important;
+          padding: 0 8px !important;
+        }
+        
+        .why-card-mfg {
+          padding: 0.8rem !important;
+        }
+      }
+    </style>
+    <style>
+        /* Tablet-specific styles for process section */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .process-timeline {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                grid-template-rows: repeat(2, auto) !important;
+                gap: 1rem !important;
+                justify-content: center !important;
+                align-items: stretch !important;
+            }
+            
+            .process-step-new {
+                min-width: auto !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                height: 100% !important;
+            }
+            
+            .process-step-title {
+                font-size: 1rem !important;
+            }
+            
+            .process-step-desc {
+                font-size: 0.9rem !important;
+            }
+            
+            .process-step-icon {
+                font-size: 1.8rem !important;
+                margin-bottom: 0.6rem !important;
+            }
+        }
+    </style>
+    <style>
+        /* Larger tablets like iPad Pro (1024 x 1366) */
+        @media (min-width: 1024px) and (max-width: 1366px) {
+            .process-timeline {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                grid-template-rows: repeat(2, auto) !important;
+                gap: 1.2rem !important;
+                justify-content: center !important;
+                align-items: stretch !important;
+                max-width: 1000px !important;
+                margin: 0 auto !important;
+            }
+            
+            .process-step-new {
+                min-width: auto !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                height: 100% !important;
+                padding: 1.5rem 1rem !important;
+                /* Disable hover effects */
+                transition: none !important;
+                transform: none !important;
+            }
+            
+            /* Explicitly disable hover effects */
+            .process-step-new:hover,
+            .process-step-new:active,
+            .process-step-new:focus {
+                transform: none !important;
+                box-shadow: 0 4px 24px 0 rgba(30,58,138,0.10) !important;
+            }
+            
+            .process-section .section-title {
+                margin-bottom: 2rem !important;
+            }
+            
+            .process-step-title {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .process-step-desc {
+                font-size: 0.95rem !important;
+            }
+            
+            .process-step-icon {
+                font-size: 2rem !important;
+                margin-bottom: 0.8rem !important;
+            }
+        }
+        
+        /* Also remove hover effects for regular tablets */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .process-step-new:hover,
+            .process-step-new:active,
+            .process-step-new:focus {
+                transform: none !important;
+                box-shadow: 0 4px 24px 0 rgba(30,58,138,0.10) !important;
+            }
+            
+            .process-step-new {
+                transition: none !important;
+            }
+        }
     </style>
 </head>
-<body>
-    <!-- Preloader -->
+<body class="bg-background font-sans text-text-primary">
     <div class="preloader">
         <div class="spinner"></div>
     </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
@@ -450,7 +563,7 @@
             </button>
         </div>
     </header>
-    
+
     <!-- Mobile Side Menu -->
     <div class="mobile-menu">
         <div class="mobile-menu-header">
@@ -480,9 +593,40 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay"></div>
+
+    <style>
+    /* Header menu button hide/show CSS */
+    @media (min-width: 992px) {
+        .menu-toggle {
+            display: none !important; /* Hide menu on pc */
+        }
+    }
+    
+    @media (max-width: 991px) {
+        .menu-toggle {
+            display: flex !important; /* Show mobile menu */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10;
+        }
+        
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+    }
+    </style>
 
     <!-- Main Content Starts -->
 
@@ -583,14 +727,14 @@
 
      <!-- Footer -->
      <footer class="footer">
-        <div class="container footer-container">
+        <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-logo-section">
                     <div class="footer-logo">
                         <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" class="footer-logo-img">
                         <span class="footer-logo-text">Supreme Thread</span>
                     </div>
-                    <p class="footer-about">Supreme Thread is a leading manufacturer of high-quality threads based in Surat. With advanced technology and commitment to excellence, we deliver premium threading solutions for various industries.</p>
+                    <p class="footer-about">We are a leading manufacturer of premium quality threads for various industries. Our state-of-the-art facilities in Surat, Gujarat produce threads that meet international quality standards.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -603,7 +747,7 @@
                         <h3 class="footer-links-title">Quick Links</h3>
                         <ul class="footer-links">
                             <l><a href="index.html">Home</a></l>
-                            <l><a href="about.html">About Us</a></l>
+                            <l><a href="about.html">About</a></l>
                             <l><a href="products.html">Products</a></l>
                             <l><a href="manufacturing.html">Manufacturing</a></l>
                             <l><a href="industries.html">Industries</a></l>
@@ -612,508 +756,304 @@
                         </ul>
                     </div>
                     <div class="footer-links-column">
-                        <h3 class="footer-links-title">Products</h3>
+                        <h3 class="footer-links-title">Our Products</h3>
                         <ul class="footer-links">
-                            <li><a href="products.html#cotton">Cotton Threads</a></li>
-                            <li><a href="products.html#polyester">Polyester Threads</a></li>
-                            <li><a href="products.html#nylon">Nylon Threads</a></li>
-                            <li><a href="products.html#blended">Blended Threads</a></li>
-                            <li><a href="products.html#embroidery">Embroidery Threads</a></li>
-                            <li><a href="products.html#industrial">Industrial Threads</a></li>
+                            <li><a href="products.html#cotton">Premium Cotton Threads</a></li>
+                            <li><a href="products.html#polyester">High-Strength Polyester</a></li>
+                            <li><a href="products.html#nylon">Industrial Nylon Threads</a></li>
+                            <li><a href="products.html#blended">Specialized Blended Threads</a></li>
+                            <li><a href="products.html#embroidery">Precision Embroidery Threads</a></li>
+                            <li><a href="products.html#industrial">Heavy-Duty Industrial Threads</a></li>
                         </ul>
                     </div>
                     <div class="footer-links-column">
-                        <h3 class="footer-links-title">Contact Us</h3>
+                        <h3 class="footer-links-title">Get In Touch</h3>
                         <div class="footer-contact">
-                            <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> 123 Industrial Area, Surat, Gujarat, India - 395001</p>
-                            <p class="footer-contact-item"><i class="fas fa-phone"></i> +91 9876543210</p>
+                            <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> 123 Industrial Avenue, GIDC, Surat, Gujarat, India - 395001</p>
+                            <p class="footer-contact-item"><i class="fas fa-phone"></i> +91 9876543210 / +91 9876098760</p>
                             <p class="footer-contact-item"><i class="fas fa-envelope"></i> info@supremethread.com</p>
+                            <p class="footer-contact-item"><i class="fas fa-clock"></i> Monday-Saturday: 9:00 AM - 6:00 PM</p>
                         </div>
                     </div>
                 </div>
             </div>
-         
         </div>
     </footer>
+    <!-- JavaScript -->
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/script.js"></script>
+
     <style>
-           /* Footer Fixes for About Page - Improved Compact Version */
-           .footer {
-            background-color: #1A3C40;
-            color: white;
-            padding: 3rem 0 0;
-            margin-top: 3rem;
-            position: relative;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
+    /* Modern Footer Styles */
+    .footer {
+        background-color: #1A3C40;
+        color: white;
+        padding: 3rem 0 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+    
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+    }
+    
+    /* Company Info Section */
+    .footer-logo-section {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.2rem;
+    }
+    
+    .footer-logo-img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 0.8rem;
+        border: 2px solid rgba(255,255,255,0.2);
+    }
+    
+    .footer-logo-text {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: white;
+    }
+    
+    .footer-about {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Social Icons */
+    .social-links {
+        display: flex;
+        gap: 0.8rem;
+    }
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+        background-color: var(--secondary, #f9e79f);
+        color: var(--primary, #1A3C40);
+        transform: translateY(-3px);
+    }
+    
+    /* Links Section */
+    .footer-links-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-links-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+        color: white;
+    }
+    
+    .footer-links-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--secondary, #f9e79f);
+    }
+    
+    /* VERTICAL Quick Links - as requested */
+    .footer-links-column:first-child .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l {
+        margin-bottom: 0.2rem;
+        display: block;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 2px 0;
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links l a:hover {
+        color: var(--secondary, #f9e79f);
+        transform: translateX(5px);
+    }
+    
+    /* Other Link Lists */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-links li {
+        margin-bottom: 0.6rem;
+    }
+    
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        display: block;
+        padding: 3px 0;
+    }
+    
+    .footer-links a:hover {
+        color: var(--secondary, #f9e79f);
+        transform: translateX(5px);
+    }
+    
+    /* Contact Info */
+    .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0.9rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .footer-contact-item i {
+        margin-right: 0.7rem;
+        margin-top: 0.2rem;
+        color: var(--secondary, #f9e79f);
+        min-width: 16px;
+        text-align: center;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
         .footer-main {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr;
             gap: 2.5rem;
-            margin-bottom: 2rem;
         }
         
         .footer-logo-section {
-            display: flex;
-            flex-direction: column;
+            text-align: center;
+            align-items: center;
         }
         
         .footer-logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.2rem;
-        }
-        
-        .footer-logo-img {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 0.8rem;
-        }
-        
-        .footer-logo-text {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: white;
-        }
-        
-        .footer-about {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 1.2rem;
-            color: #e0e0e0;
+            justify-content: center;
         }
         
         .social-links {
-            display: flex;
-            gap: 0.8rem;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-        
-        .footer-links-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1.5rem;
         }
         
         .footer-links-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            position: relative;
-            padding-bottom: 0.4rem;
-            color: white;
+            text-align: center;
         }
         
         .footer-links-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background-color: rgba(255, 255, 255, 0.3);
+            left: 50%;
+            transform: translateX(-50%);
         }
         
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .footer-links, 
+        .footer-links-column:first-child .footer-links {
+            text-align: center;
         }
         
-        .footer-links li {
-            margin-bottom: 0.5rem;
+        .footer-links-column:first-child .footer-links l {
+            text-align: center;
         }
         
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: block;
-        }
-        
+        .footer-links-column:first-child .footer-links l a:hover,
         .footer-links a:hover {
-            color: white;
+            transform: translateY(-3px);
         }
         
         .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 0.9rem;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: #e0e0e0;
+            justify-content: center;
         }
-        
-        .footer-contact-item i {
-            margin-right: 0.7rem;
-            margin-top: 0.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            min-width: 14px;
-            text-align: center;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1.2rem 0;
-            text-align: center;
-        }
-        
-        .copyright {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        /* Super Compact Footer Links in One Row */
+    }
+    
+    /* Ensure Quick Links align left in PC view */
+    @media (min-width: 992px) {
         .footer-links-column:first-child .footer-links {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             justify-content: flex-start;
-            align-items: center;
-            margin-bottom: 0;
-            gap: 8px 16px;
-            max-width: 100%;
+            text-align: left;
+            flex-wrap: nowrap;
+            align-items: flex-start; /* Force alignment to start from left */
         }
         
-        .footer-links-column:first-child .footer-links li {
-            margin: 0;
-            position: relative;
-            padding-right: 16px;
+        .footer-links-column:first-child .footer-links l {
+            text-align: left;
+            margin-left: 0;
+            width: 100%;
         }
         
-        .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-            content: '•';
-            position: absolute;
-            right: 0;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.8rem;
+        .footer-links-column:first-child .footer-links l a {
+            text-align: left;
+            padding-left: 0;
         }
         
-        .footer-links-column:first-child .footer-links li:last-child {
-            padding-right: 0;
+        .footer-links-column:first-child .footer-links-title {
+            text-align: left;
         }
         
-        .footer-links-column:first-child .footer-links a {
-            font-size: 0.85rem;
-            white-space: nowrap;
-            padding: 2px 0;
+        .footer-links-column:first-child .footer-links-title::after {
+            left: 0;
+            transform: none;
+            margin-left: 0;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .footer-links-section {
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
         }
         
-        /* Responsive Footer - Enhanced */
-        @media (max-width: 992px) {
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .footer-logo-section {
-                max-width: 550px;
-                margin: 0 auto;
-                text-align: center;
-            }
-            
-            .footer-logo {
-                justify-content: center;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                justify-content: center;
-                margin: 0 auto;
-                max-width: 550px;
-            }
+        .footer-links-column:nth-child(3) {
+            grid-column: span 1;
         }
-        
-        @media (max-width: 768px) {
-            .footer {
-                padding-top: 2.5rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem 1rem;
-            }
-            
-            .footer-links-column:first-child {
-                grid-column: span 2;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                justify-content: center;
-                margin-bottom: 0.5rem;
-                flex-wrap: wrap !important;
-                overflow-x: visible;
-                padding-bottom: 5px;
-                gap: 10px 16px;
-            }
-            
-            .footer-links-column:first-child .footer-links::-webkit-scrollbar {
-                display: none;
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links li {
-                margin-bottom: 0.6rem;
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links a {
-                padding: 6px 4px 6px 0;
-            }
-            
-            .footer-contact-item {
-                margin-bottom: 1rem;
-            }
-            
-            @media (min-width: 600px) and (max-width: 767px) {
-                .footer-links-column:first-child .footer-links {
-                    display: flex;
-                    flex-wrap: wrap !important;
-                    justify-content: center;
-                    gap: 12px 20px;
-                    margin: 0 auto;
-                    max-width: 600px;
-                    padding: 0 10px;
-                }
-                
-                .footer-links-column:first-child .footer-links li {
-                    margin: 0;
-                    padding: 0;
-                }
-                
-                .footer-links-column:first-child .footer-links a {
-                    font-size: 0.9rem;
-                    padding: 6px 8px;
-                    display: inline-block;
-                }
-                
-                .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                    display: none;
-                }
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .footer {
-                padding: 2rem 0 0;
-            }
-            
-            .footer-container {
-                padding: 0 1.2rem;
-            }
-            
-            .footer-main {
-                gap: 1.8rem;
-            }
-            
-            .footer-links-section {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .footer-links-column:first-child {
-                grid-column: span 1;
-                order: -1;
-            }
-            
-            .footer-links-column:nth-child(2) {
-                order: 1;
-            }
-            
-            .footer-links-column:nth-child(3) {
-                order: 0;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 6px 12px;
-                margin: 0 auto;
-                max-width: 100%;
-            }
-            
-            .footer-links-column:first-child .footer-links li {
-                margin: 0;
-                padding-right: 12px;
-            }
-            
-            .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                right: 1px;
-            }
-            
-            .footer-links-title {
-                font-size: 1rem;
-                margin-bottom: 0.8rem;
-                padding-bottom: 0.4rem;
-                text-align: center;
-            }
-            
-            .footer-links-title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .footer-links-column:not(:first-child) .footer-links {
-                columns: 2;
-                column-gap: 20px;
-                text-align: center;
-            }
-            
-            .footer-links li {
-                margin-bottom: 0.4rem;
-                break-inside: avoid;
-            }
-            
-            .footer-about {
-                font-size: 0.85rem;
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-            
-            .footer-contact-item {
-                margin-left: auto;
-                margin-right: auto;
-                max-width: 280px;
-                text-align: left;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .footer-links-column:not(:first-child) .footer-links {
-                columns: 1;
-            }
-            
-            .footer-links-column:first-child .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 6px 10px;
-            }
-            
-            .footer-links-column:first-child .footer-links li {
-                padding-right: 0;
-                margin: 2px 0;
-            }
-            
-            .footer-links-column:first-child .footer-links a {
-                padding: 4px 6px;
-                font-size: 0.82rem;
-            }
-            
-            .footer-links-column:first-child .footer-links li:not(:last-child)::after {
-                display: none;
-            }
-            
-            .footer-contact-item {
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                text-align: left;
-                flex-direction: row;
-            }
-            
-            .footer-contact-item i {
-                margin-right: 0.6rem;
-                margin-top: 0;
-                font-size: 0.9rem;
-            }
-            
-            .copyright {
-                font-size: 0.8rem;
-                line-height: 1.4;
-            }
-        }
+    }
     </style>
-    <!-- Custom JavaScript -->
-    <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script>
-      // Enhanced smooth scroll functionality with mobile menu functionality removed
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM Content Loaded - Setting up scroll navigation');
-        
-        // Get all navigation links
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        // Mobile menu toggle code removed
-        
-        // Add click event listeners to all navigation links
-        navLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            console.log('Nav link clicked:', href);
-            
-            // Only for anchor links within the page
-            if (href && href.startsWith('#') && href.length > 1) {
-              e.preventDefault();
-              
-              const targetSection = document.querySelector(href);
-              console.log('Target section:', targetSection);
-              
-              if (targetSection) {
-                // Get header height for offset
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                console.log('Header height:', headerHeight);
-                
-                // Calculate the target position
-                const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - headerHeight;
-                console.log('Scrolling to position:', targetPosition);
-                
-                // Smooth scroll to section with offset for header
-                window.scrollTo({
-                  top: targetPosition,
-                  behavior: 'smooth'
-                });
-                
-                // Mobile menu closing code removed
-              }
-            }
-          });
-        });
-        
-        // Check if there's a hash in the URL and scroll to that section
-        if (window.location.hash) {
-          const targetSection = document.querySelector(window.location.hash);
-          if (targetSection) {
-            const headerHeight = document.querySelector('.header').offsetHeight;
-            setTimeout(function() {
-              window.scrollTo({
-                top: targetSection.offsetTop - headerHeight,
-                behavior: 'smooth'
-              });
-            }, 500); // Delay to ensure everything is loaded
-          }
-        }
-      });
-    </script>
 </body>
 </html>

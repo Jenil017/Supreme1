@@ -1691,6 +1691,7 @@ textarea.form-control {
 .headline-text {
   display: inline-block;
   position: relative;
+  color: #1A3C40;
 }
 .headline-underline {
   display: none;
@@ -2590,6 +2591,21 @@ textarea.form-control {
 .footer-links-column:first-child .footer-links a {
     font-size: 0.9rem;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.footer-links-column:first-child .footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-links-column:first-child .footer-links a:active {
+    color: var(--secondary-color);
+}
+
+.footer-links-column:first-child .footer-links a:focus {
+    color: var(--secondary-color);
 }
 
 /* Adjust footer layout */
@@ -2860,4 +2876,36 @@ textarea.form-control {
   .menu-toggle {
     display: flex; /* Ensure menu toggle is visible on mobile */
   }
+}
+
+/* --- Product Card Sizing Fixes (Increased) --- */
+.product-image-wrapper {
+  width: 100%;
+  height: 300px !important;
+  min-height: 300px !important;
+  max-height: 300px !important;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f3f3;
+}
+
+.product-card {
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.product-content {
+  padding: 40px 25px 36px 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
