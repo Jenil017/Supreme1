@@ -298,7 +298,7 @@
     </style>
     <!-- Main Content Starts -->
     <!-- Hero Section -->
-    <section class="hero bg-cover bg-center relative flex items-center hero-section" style="background-image: url('https://png.pngtree.com/background/20230412/original/pngtree-silk-fabric-background-premium-picture-image_2396600.jpg');">
+    <section class="hero bg-cover bg-center relative flex items-center hero-section" style="background-image: url('assets/images/hero.jpg');">
         <div class="hero-overlay"></div>
         <div class="container mx-auto px-6 py-16 flex flex-col items-center justify-center">
             <div class="hero-content text-center">
@@ -527,6 +527,9 @@
             gap: 3rem;
             margin-top: 2rem;
         }
+        .key-points {
+            text-align: left;
+        }
         
         @media (min-width: 1025px) {
             /* Desktop only: Center about-content and add line gap */
@@ -580,7 +583,6 @@
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
-            
             .about-image {
                 order: -1;
                 display: flex;
@@ -593,8 +595,17 @@
                 max-width: 520px;
             }
             
+            .key-point-heading {
+                text-align: center;
+            }
+            
             .key-point-list li {
-                padding: 0.9rem 0;
+                text-align: center;
+                font-size: 1.2rem;
+                padding: 0.5rem 0;
+                margin-bottom: 0.2rem;
+                line-height: 1.6;
+                max-width: 850px;
             }
         }
         
@@ -641,6 +652,169 @@
                 width: 100%;
                 text-align: center;
                 font-size: 1.05rem;
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .about-image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+            .about-image img {
+                height: 340px;
+                max-width: 440px;
+                width: 100%;
+                border-radius: 14px;
+                object-fit: cover;
+            }
+            .about-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            .section-heading {
+                font-size: 2.3rem;
+                text-align: center;
+                margin-bottom: 1.2rem;
+            }
+            .key-points {
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto 1.5rem auto;
+                text-align: left;
+            }
+            .key-point-heading {
+                font-size: 1.35rem;
+                text-align: center;
+                margin-bottom: 0.7rem;
+                font-weight: 600;
+            }
+            .key-point-list {
+                margin: 0 auto;
+                padding: 0;
+                list-style: none;
+            }
+            .key-point-list li {
+                font-size: 1.15rem;
+                text-align: left;
+                padding: 0.5rem 0.5rem 0.5rem 1.2rem;
+                margin-bottom: 0.15rem;
+                line-height: 1.5;
+                position: relative;
+            }
+            .key-point-list li::before {
+                content: '\2022';
+                color: var(--primary, #c49a6c);
+                position: absolute;
+                left: 0;
+                font-size: 1.2rem;
+                top: 0.2rem;
+            }
+            .about-button {
+                margin-top: 1.4rem;
+                display: flex;
+                justify-content: center;
+            }
+            .about-button .example-btn {
+                padding: 0.9em 2.2em;
+                font-size: 1.1rem;
+                width: auto;
+                min-width: 180px;
+                border-radius: 30px;
+                text-align: center;
+            }
+        }
+        
+        @media (min-width: 820px) {
+            .about-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                align-items: center;
+            }
+            .about-image {
+                grid-column: 1;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            .about-image img {
+                height: 380px;
+                max-width: 100%;
+                border-radius: 14px;
+                object-fit: cover;
+            }
+            .about-content {
+                grid-column: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+            }
+            .section-heading {
+                font-size: 2.5rem;
+                text-align: center;
+                margin-bottom: 1.2rem;
+                width: 100%;
+            }
+            .key-points {
+                width: 100%;
+                max-width: 520px;
+                margin: 0 0 1.5rem 0;
+                text-align: center;
+            }
+            .key-point-heading {
+                font-size: 1.35rem;
+                text-align: center;
+                margin-bottom: 0.7rem;
+                font-weight: 600;
+            }
+            .key-point-list {
+                margin: 0 auto;
+                padding: 0;
+                list-style: none;
+                display: inline-block;
+                text-align: left;
+            }
+            .key-point-list li {
+                font-size: 1.15rem;
+                text-align: left;
+                padding: 0.5rem 0.5rem 0.5rem 1.2rem;
+                margin-bottom: 0.15rem;
+                line-height: 1.5;
+                position: relative;
+            }
+            .key-point-list li::before {
+                content: '\2022';
+                color: var(--primary, #c49a6c);
+                position: absolute;
+                left: 0;
+                font-size: 1.2rem;
+                top: 0.2rem;
+            }
+            .about-button {
+                margin-top: 1.4rem;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            .about-button .example-btn {
+                padding: 0.9em 2.2em;
+                font-size: 1.1rem;
+                width: auto;
+                min-width: 180px;
+                border-radius: 30px;
+                text-align: center;
             }
         }
         </style>
@@ -1019,173 +1193,9 @@
         }
         </style>
     </section>
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-overlay"></div>
-        <div class="container cta-container">
-            <h2 class="cta-heading">Ready to Experience Supreme Quality?</h2>
-            <p class="cta-text" style="color: #a9a9a9;">Contact us today to discuss your thread requirements. Our experts are ready to help you find the perfect threading solution for your business.</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="cta-btn primary-btn">Contact Us</a>
-                <a href="products.html" class="cta-btn secondary-btn">Explore Products</a>
-            </div>
-        </div>
-        <style>
-        .cta-section {
-            position: relative;
-            background-image: url('https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 6.5rem 0 2.5rem 0; /* Top, right, bottom, left */
-            text-align: center;
-            color: white;
-            margin-bottom: 0 !important;
-        }
-        
-        .cta-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1;
-        }
-        
-        .cta-container {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-        .cta-heading {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-        
-        .cta-text {
-            font-size: 1.1rem;
-            margin-bottom: 2.8rem;
-            line-height: 1.6;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.8rem;
-        }
-        
-        .cta-btn {
-            display: inline-block;
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 0.9em 2.2em;
-            border-radius: var(--btn-radius);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-btn.primary-btn {
-            background-color: var(--primary);
-            color: white;
-            border: 2px solid var(--primary);
-        }
-        
-        .cta-btn.primary-btn:hover {
-            background-color: transparent;
-            color: white;
-            transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .cta-btn.secondary-btn {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .cta-btn.secondary-btn:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        @media (max-width: 768px) {
-            .cta-section {
-                padding: 5.5rem 0;
-            }
-            
-            .cta-heading {
-                font-size: 2.2rem;
-                margin-bottom: 1.3rem;
-            }
-            
-            .cta-text {
-                font-size: 1rem;
-                padding: 0 1.2rem;
-                margin-bottom: 2.5rem;
-            }
-            
-            .cta-btn {
-                padding: 0.8em 1.8em;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .cta-section {
-                padding: 5rem 0;
-            }
-            
-            .cta-container {
-                padding: 0 1.5rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                gap: 1.2rem;
-                padding: 0 1.5rem;
-                max-width: 280px;
-                margin: 0 auto;
-            }
-            
-            .cta-btn {
-                width: 100%;
-                padding: 1em 0;
-                font-size: 1.05rem;
-            }
-            
-            .cta-heading {
-                font-size: 1.8rem;
-                padding: 0 1rem;
-                margin-bottom: 1.2rem;
-            }
-            
-            .cta-text {
-                margin-bottom: 2.2rem;
-                padding: 0 0.5rem;
-                font-size: 0.95rem;
-                line-height: 1.65;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .cta-section {
-                padding: 4.5rem 0;
-            }
-            
-            .cta-heading {
-                font-size: 1.65rem;
-            }
-            
-            .cta-buttons {
-                max-width: 260px;
-            }
-        }
-        </style>
-    </section>
+    <!-- Revert to previous state: Remove new CTA section -->
+    <!-- (No CTA section here, restoring previous layout) -->
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">

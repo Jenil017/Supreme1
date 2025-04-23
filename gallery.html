@@ -937,9 +937,133 @@
     }
     </style>
     
-  </style>
-    <!-- Footer from index.html -->
-    <footer class="footer">
+    <!-- Unified Modern CTA Section -->
+    <section class="modern-cta-section" style="margin-bottom:0 !important;">
+      <div class="modern-cta-container">
+        <div class="modern-cta-card">
+          <div class="modern-cta-content">
+            <div class="modern-cta-icon" aria-hidden="true">
+              <img src="assets/images/logo-ai.svg" alt="Supreme Thread Logo" style="width:70px;height:70px;border-radius:50%;object-fit:cover;background:#fff;padding:8px;box-shadow:0 2px 10px rgba(26,60,64,0.10);">
+            </div>
+            <div class="modern-cta-text">
+              <h3>Ready to Experience Supreme Quality?</h3>
+              <p>Our experts can help you find the perfect thread for your unique manufacturing needs. Discover our range or get in touch today.</p>
+            </div>
+            <div class="modern-cta-action">
+              <a href="contact.html" class="modern-cta-btn">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+        /* Modern CTA Section Styles - Consistent across all pages */
+        .modern-cta-section {
+          padding: 4rem 0 5rem 0;
+          background:white;
+          padding-bottom: 2.5rem;
+          margin-bottom: 0 !important;
+        }
+        .modern-cta-container {
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 0 2rem;
+        }
+        .modern-cta-card {
+          background: linear-gradient(135deg, #1A3C40 0%, #1D5C63 100%);
+          border-radius: 16px;
+          box-shadow: 0 10px 30px rgba(26, 60, 64, 0.15);
+          overflow: hidden;
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .modern-cta-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(26, 60, 64, 0.25);
+        }
+        .modern-cta-content {
+          display: flex;
+          align-items: center;
+          padding: 3rem;
+        }
+        .modern-cta-icon img {
+          width: 80px;
+          height: 80px;
+          filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+        }
+        .modern-cta-text {
+          flex: 1 1 300px;
+          color: #fff;
+        }
+        .modern-cta-text h3 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+          color: #fff !important;
+        }
+        .modern-cta-text p {
+          font-size: 1.1rem;
+          opacity: 0.9;
+          margin-bottom: 0;
+          color: #e0e0e0;
+        }
+        .modern-cta-action {
+          flex: 0 0 auto;
+          margin-left: 2rem;
+        }
+        .modern-cta-btn {
+          display: inline-block;
+          background: #fff;
+          color: #1A3C40;
+          font-weight: 700;
+          font-size: 1.1rem;
+          padding: 0.8rem 2rem;
+          border-radius: 8px;
+          text-decoration: none;
+          transition: all 0.4s ease;
+          gap: 0.8rem;
+        }
+        .modern-cta-btn:hover {
+          transform: scale(1.05);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        @media (max-width: 900px) {
+          .modern-cta-section {
+            padding: 3rem 0 4rem 0;
+          }
+          .modern-cta-content {
+            padding: 2rem;
+          }
+          .modern-cta-icon {
+            margin-bottom: 1.5rem;
+          }
+          .modern-cta-action {
+            margin-left: 1.5rem;
+          }
+          .modern-cta-btn {
+            font-size: 1rem;
+            padding: 0.7rem 1.8rem;
+          }
+        }
+        @media (max-width: 768px) {
+          .modern-cta-content {
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem 1.5rem;
+          }
+          .modern-cta-icon {
+            margin-right: 0;
+            margin-bottom: 1.5rem;
+          }
+          .modern-cta-text {
+            margin-bottom: 1.5rem;
+          }
+          .modern-cta-action {
+            margin-left: 0;
+          }
+        }
+      </style>
+    </section>
+    <!-- Footer -->
+    <footer class="footer" style="margin-top:0 !important;">
         <div class="container footer-container">
             <div class="footer-main">
                 <div class="footer-logo-section">
@@ -998,7 +1122,7 @@
         background-color: #1A3C40;
         color: white;
         padding: 3rem 0 1.5rem;
-        margin-top: 3rem;
+        margin-top: 0 !important;
     }
     
     .footer-container {
