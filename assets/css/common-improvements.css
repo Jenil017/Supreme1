@@ -2,7 +2,7 @@
 
 /* Improve section spacing */
 .section {
-    padding: 5rem 0;
+    padding: 3.5rem 0;
     margin: 0;
 }
 
@@ -17,7 +17,7 @@
 /* Improve responsive section padding */
 @media (max-width: 991px) {
     .section {
-        padding: 4rem 0;
+        padding: 3rem 0;
     }
     
     .container {
@@ -27,13 +27,13 @@
 
 @media (max-width: 768px) {
     .section {
-        padding: 3.5rem 0;
+        padding: 2.5rem 0;
     }
 }
 
 @media (max-width: 576px) {
     .section {
-        padding: 3rem 0;
+        padding: 2rem 0;
     }
     
     .container {
@@ -41,10 +41,17 @@
     }
 }
 
+/* Added laptop optimization */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1300px;
+    }
+}
+
 /* Improve card spacing */
 .card, .industry-card, .custom-card, .product-card, .product-card-modern, .mobile-product-card, .solution-modern-step {
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     border-radius: var(--radius);
     background-color: var(--bg-light);
     box-shadow: var(--shadow-sm);
@@ -53,20 +60,20 @@
 
 /* Improve section title spacing */
 .section-title {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     text-align: center;
     position: relative;
-    padding-bottom: 1rem;
+    padding-bottom: 0.8rem;
 }
 
 .section-subtitle {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
 }
 
 /* Improve form spacing */
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .form-control {
@@ -75,14 +82,14 @@
 
 /* Improve button spacing */
 .btn, .industry-contact-btn, .industries-hero-btn, .mobile-product-btn, .btn-outline-modern, .contact-unique-btn, .card .btn, button, input[type="button"], input[type="submit"] {
-    padding: 0.8rem 1.8rem;
+    padding: 0.7rem 1.5rem;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
 /* Improve footer spacing */
 .footer {
-    padding: 4rem 0 2rem;
+    padding: 3.5rem 0 1.5rem;
 }
 
 .footer-container {
@@ -90,21 +97,21 @@
 }
 
 .footer-links-title {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .footer-links {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .footer-bottom {
-    padding-top: 2rem;
-    margin-top: 2rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 @media (max-width: 768px) {
     .footer {
-        padding: 3rem 0 1.5rem;
+        padding: 2.5rem 0 1.2rem;
     }
 }
 
@@ -126,38 +133,38 @@
 
 /* Product cards spacing improvements */
 .product-cards {
-    gap: 2rem;
-    margin-bottom: 4rem;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
 }
 
 .product-content {
-    padding: 1.5rem;
+    padding: 1.2rem;
 }
 
 @media (max-width: 768px) {
     .product-cards {
-        gap: 1.5rem;
-        margin-bottom: 3rem;
+        gap: 1.2rem;
+        margin-bottom: 2.5rem;
     }
     
     .product-content {
-        padding: 1.2rem;
+        padding: 1rem;
     }
 }
 
 /* Solution section image consistency fix */
 .product-image-wrapper {
     position: relative;
-    height: 240px; /* Fixed height for all image wrappers */
+    height: 240px;
     overflow: hidden;
-    width: 100%; /* Ensure consistent width */
+    width: 100%;
 }
 
 .product-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center; /* Center the images */
+    object-position: center;
 }
 
 @media (max-width: 992px) {
@@ -178,6 +185,13 @@
     }
 }
 
+/* Laptop optimization for image wrappers */
+@media (min-width: 1200px) {
+    .product-image-wrapper {
+        height: 260px;
+    }
+}
+
 /* Desktop Navigation Improvements */
 @media (min-width: 992px) {
     .desktop-nav {
@@ -188,20 +202,20 @@
     .nav-menu {
         display: flex;
         align-items: center;
-        gap: 2.5rem; /* Increased horizontal gap between nav items */
+        gap: 2rem;
         margin: 0;
         padding: 0;
         list-style: none;
     }
     
     .nav-item {
-        margin: 0 0.5rem; /* Additional horizontal margin on each side */
+        margin: 0 0.4rem;
         position: relative;
     }
     
     .nav-link {
         display: block;
-        padding: 0.5rem 0.8rem; /* Added horizontal padding to nav links */
+        padding: 0.5rem 0.7rem;
         font-weight: 500;
         transition: color 0.3s ease, transform 0.2s ease;
         text-decoration: none;
@@ -223,20 +237,20 @@
     }
     
     .mobile-nav-item {
-        padding: 0.8rem 1.5rem; /* Increased horizontal padding to mobile nav items */
+        padding: 0.7rem 1.5rem;
         margin: 0.2rem 0;
     }
     
     .mobile-nav-link {
         font-size: 1.1rem;
-        padding: 0.5rem 0;
+        padding: 0.4rem 0;
         display: block;
     }
 }
 
 /* Header and navigation improvements */
 .header-container {
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -244,31 +258,31 @@
 
 @media (max-width: 992px) {
     .header-container {
-        padding: 0 1.5rem;
+        padding: 0 1.2rem;
     }
 }
 
 @media (max-width: 768px) {
     .header-container {
-        padding: 0 1.2rem;
+        padding: 0 1rem;
     }
 }
 
 /* Contact form mobile improvements */
 @media screen and (max-width: 480px) {
     .contact-gallery-wrapper {
-        gap: 1.5rem; /* Reduce gap on smaller screens */
+        gap: 1.2rem;
     }
     
     .contact-gallery-card, 
     .contact-gallery-form {
-        padding: 1.2rem; /* Reduce padding further on smaller screens */
+        padding: 1rem;
     }
     
     .contact-gallery-title, 
     .contact-form-title {
         font-size: 1.2rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
     }
     
     .contact-gallery-text h4 {
@@ -355,20 +369,20 @@
     .contact-cards {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
     
     .contact-gallery-card, 
     .contact-gallery-form,
     .contact-form,
     .contact-map {
-        padding: 1.2rem;
+        padding: 1rem;
         width: 100%;
         box-sizing: border-box;
     }
     
     .form-group {
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
     }
     
     .contact-form button {

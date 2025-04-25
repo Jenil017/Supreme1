@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/common-improvements.css">
     <link rel="stylesheet" href="assets/css/header-improvements.css">
+    
+    <link rel="stylesheet" href="assets/css/product-redesign.css">
     <!-- GSAP Animation Library for advanced animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -60,7 +62,7 @@
             100% { transform: translateX(-50%); }
         }
         .feature-marquee-container { position: relative; overflow: hidden; margin: 0 auto 2rem auto; max-width: 100vw; padding: 0 2vw; }
-        .feature-marquee { will-change: transform; }
+        .feature-marquee { will-change: transform; animation: marquee-scroll 7s linear infinite !important; }
         .feature-gradient-left, .feature-gradient-right { position: absolute; top: 0; bottom: 0; width: 60px; pointer-events: none; z-index: 2; }
         .feature-gradient-left { left: 0; background: linear-gradient(90deg, #f9f6f2 85%, rgba(249,246,242,0) 100%); }
         .feature-gradient-right { right: 0; background: linear-gradient(270deg, #f9f6f2 85%, rgba(249,246,242,0) 100%); }
@@ -199,7 +201,7 @@
         }
         /* Feature Marquee Section for Why Choose Our Threads */
         .feature-marquee-container { position: relative; overflow: hidden; margin: 0 auto 2rem auto; max-width: 100vw; padding: 0 2vw; }
-        .feature-marquee { will-change: transform; }
+        .feature-marquee { will-change: transform; animation: marquee-scroll 7s linear infinite !important; }
         .feature-gradient-left, .feature-gradient-right { position: absolute; top: 0; bottom: 0; width: 60px; pointer-events: none; z-index: 2; }
         .feature-gradient-left { left: 0; background: linear-gradient(90deg, #f9f6f2 85%, rgba(249,246,242,0) 100%); }
         .feature-gradient-right { right: 0; background: linear-gradient(270deg, #f9f6f2 85%, rgba(249,246,242,0) 100%); }
@@ -266,637 +268,193 @@
             margin: 0 auto 2rem auto;
             max-width: 100vw;
             padding: 0 2vw;
+            min-height: 180px; /* Increased min-height */
         }
+        
         .feature-marquee {
             display: flex;
             align-items: stretch;
-            gap: 1.2rem;
+            gap: 1.5rem; /* Increased gap */
             width: max-content;
             min-width: 100%;
             animation: marqueeMove 22s linear infinite;
         }
+        
         .feature-marquee:hover {
             animation-play-state: paused;
         }
+        
         .feature-block {
             background: #fff;
             border-radius: 1.1rem;
             box-shadow: 0 4px 18px rgba(0,0,0,0.07);
-            padding: 1.3rem 1.2rem 1.1rem 1.2rem;
+            padding: 1.8rem 1.5rem 1.6rem 1.5rem; /* Increased padding */
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 150px;
-            max-width: 180px;
-            width: 160px;
-            min-height: 120px;
-            height: 120px;
+            min-width: 200px; /* Increased min-width */
+            max-width: 220px; /* Increased max-width */
+            width: 210px; /* Increased width */
+            min-height: 160px; /* Increased min-height */
+            height: 160px; /* Increased height */
             justify-content: center;
-            transition: box-shadow 0.2s;
+            transition: box-shadow 0.2s, transform 0.3s;
         }
+        
+        .feature-block:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+        }
+        
         .feature-block .feature-icon {
-            font-size: 2.1rem;
-            margin-bottom: 0.6rem;
+            font-size: 2.8rem; /* Increased font size */
+            margin-bottom: 1rem; /* Increased margin */
         }
+        
         .feature-block .feature-title {
-            font-size: 1.05rem;
+            font-size: 1.25rem; /* Increased font size */
             font-weight: 600;
             text-align: center;
         }
-        @media (max-width: 700px) {
+        
+        .feature-marquee.infinite-marquee {
+            height: 11vw !important; /* Increased height */
+            min-height: 180px !important; /* Increased min-height */
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Adjustments for laptop/desktop screens */
+        @media (min-width: 1200px) {
             .feature-block {
-                min-width: 120px;
-                max-width: 120px;
-                width: 120px;
-                min-height: 95px;
-                height: 95px;
-                padding: 0.8rem 0.5rem 0.7rem 0.5rem;
-            }
-            .feature-block .feature-icon {
-                font-size: 1.5rem;
-                margin-bottom: 0.3rem;
-            }
-            .feature-block .feature-title {
-                font-size: 0.93rem;
-            }
-        }
-        /* Special font size for specific product cards */
-        .product-card.special-font-size .product-title {
-            font-size: var(--font-size-md);
-        }
-        .product-card.special-font-size .product-description {
-            font-size: var(--font-size-xs);
-        }
-        /* Redesigned Swiper Product Section Styles */
-        .product-section {
-            padding: var(--spacing-xxl) 0;
-        }
-        .product-swiper {
-            margin-top: var(--spacing-lg);
-        }
-        .product-card-modern {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            background: var(--bg-color);
-        }
-        .product-img-modern {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: var(--radius-md) var(--radius-md) 0 0;
-        }
-        .product-info-modern {
-            padding: var(--spacing-md);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            height: 100%;
-        }
-        .product-title-modern {
-            font-size: var(--font-size-lg);
-            margin-bottom: var(--spacing-sm);
-        }
-        .product-desc-modern {
-            font-size: var(--font-size-sm);
-            margin-bottom: var(--spacing-md);
-        }
-        .product-specs-modern {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: var(--spacing-xs);
-            margin-bottom: var(--spacing-md);
-        }
-        .product-specs-modern li {
-            background-color: var(--bg-light);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: var(--radius-sm);
-            font-size: var(--font-size-sm);
-        }
-        .btn-outline-modern {
-            padding: var(--spacing-sm) var(--spacing-md);
-            border: 1px solid var(--primary-color);
-            border-radius: var(--radius-sm);
-            color: var(--primary-color);
-            background-color: var(--bg-color);
-            transition: background-color var(--transition-fast);
-        }
-        .btn-outline-modern:hover {
-            background-color: var(--bg-light);
-        }
-        .product-card-modern {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-        }
-        .learn-more-btn {
-            margin-top: auto;
-            align-self: center;
-        }
-        /* Product Detail Modal */
-        .product-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        .product-modal-content {
-            position: relative;
-            background-color: var(--bg-color);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-            z-index: 2;
-            max-width: 570px;
-            width: 85vw;
-        }
-        .product-modal-close {
-            position: absolute;
-            top: var(--spacing-sm);
-            right: var(--spacing-sm);
-            font-size: var(--font-size-lg);
-            cursor: pointer;
-            display: none;
-        }
-        .modal-close-btn {
-            margin: 0.5rem auto 0 auto;
-            display: block;
-            font-size: 1.08rem;
-            padding: 0.55em 1.6em;
-            border: none;
-            background: var(--primary-color, #e4572e);
-            color: #fff;
-            border-radius: 1.3em;
-            cursor: pointer;
-            box-shadow: 0 2px 7px rgba(0,0,0,0.08);
-            transition: background 0.18s;
-        }
-        .modal-close-btn:hover {
-            background: #c13c18;
-        }
-        .product-modal-body {
-            display: flex;
-            gap: var(--spacing-lg);
-        }
-        .product-modal-image {
-            width: 40%;
-        }
-        .product-modal-info {
-            width: 60%;
-        }
-        .product-modal-info h3 {
-            font-size: var(--font-size-xxl);
-            margin-bottom: var(--spacing-md);
-        }
-        .product-modal-info p {
-            font-size: var(--font-size-md);
-            margin-bottom: var(--spacing-lg);
-        }
-        .product-modal-info ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: var(--spacing-xs);
-        }
-        .product-modal-info li {
-            background-color: var(--bg-light);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: var(--radius-sm);
-            font-size: var(--font-size-sm);
-        }
-        .product-modal-tags {
-            display: none;
-            margin-bottom: var(--spacing-sm);
-        }
-        .product-modal-tags .modal-tag {
-            background-color: var(--bg-light);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: var(--radius-sm);
-            font-size: var(--font-size-sm);
-            margin-right: var(--spacing-xs);
-        }
-        .product-modal-details {
-            display: none;
-            font-size: var(--font-size-md);
-            margin-bottom: var(--spacing-lg);
-        }
-        /* Mobile Product Card Styles */
-        .mobile-products-container {
-            display: none;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            padding: var(--spacing-lg);
-            position: relative;
-        }
-        .mobile-products-scroll {
-            display: flex;
-            gap: var(--spacing-md);
-        }
-        .mobile-product-card {
-            flex: 0 0 calc((100% - var(--spacing-md)) / 2);
-            width: calc((100% - var(--spacing-md)) / 2);
-            height: 280px;
-            scroll-snap-align: start;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: var(--spacing-md);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            background: var(--bg-color);
-            cursor: pointer;
-            transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
-            justify-content: space-between;
-        }
-        .mobile-product-card:hover {
-            transform: translateY(-8px) scale(1.04) rotate(-1deg);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-        }
-        .mobile-product-card:active {
-            transform: scale(0.98);
-        }
-        .mobile-product-img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-radius: var(--radius-md) var(--radius-md) 0 0;
-            transition: box-shadow 0.2s;
-        }
-        .mobile-product-title {
-            font-size: var(--font-size-md);
-            margin-bottom: var(--spacing-sm);
-            margin-top: var(--spacing-sm);
-        }
-        .mobile-product-btn {
-            padding: var(--spacing-sm) var(--spacing-md);
-            border: 1px solid var(--primary-color);
-            border-radius: var(--radius-sm);
-            color: var(--primary-color);
-            background-color: var(--bg-color);
-            transition: background-color var(--transition-fast), color 0.2s;
-        }
-        .mobile-product-btn:hover {
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-        @media (max-width: 768px) {
-            .desktop-only {
-                display: none;
-            }
-            .mobile-only {
-                display: block;
-            }
-        }
-        /* Fullscreen Modal for Mobile */
-        .product-modal {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            background: rgba(0,0,0,0.88) !important;
-            z-index: 9999 !important;
-            justify-content: center !important;
-            align-items: center !important;
-            animation: modalIn 0.38s cubic-bezier(.4,2,.6,1);
-        }
-        .product-modal-content {
-            background: #fff;
-            border-radius: 20px;
-            padding: 2rem 1.2rem;
-            max-width: 95vw;
-            width: 100%;
-            max-height: 92vh;
-            overflow-y: auto;
-            box-shadow: 0 18px 64px rgba(0,0,0,0.25);
-            animation: modalContentIn 0.45s cubic-bezier(.4,2,.6,1);
-        }
-        @keyframes modalIn {
-            from { opacity: 0; transform: scale(0.94); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes modalContentIn {
-            from { opacity: 0; transform: translateY(60px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        /* Product Modal */
-        .product-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .product-modal-content {
-            position: relative;
-            background-color: var(--bg-color);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-            z-index: 2;
-            max-width: 600px;
-            width: 90vw;
-        }
-        .product-modal-close {
-            position: absolute;
-            top: var(--spacing-sm);
-            right: var(--spacing-sm);
-            font-size: var(--font-size-lg);
-            cursor: pointer;
-            display: none;
-        }
-        .product-modal-body {
-            display: flex;
-            gap: var(--spacing-lg);
-        }
-        .product-modal-image {
-            width: 40%;
-        }
-        .product-modal-info {
-            width: 60%;
-        }
-        .product-modal-info h3 {
-            font-size: var(--font-size-xxl);
-            margin-bottom: var(--spacing-md);
-        }
-        .product-modal-info p {
-            font-size: var(--font-size-md);
-            margin-bottom: var(--spacing-lg);
-        }
-        .product-modal-info ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: var(--spacing-xs);
-        }
-        .product-modal-info li {
-            background-color: var(--bg-light);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: var(--radius-sm);
-            font-size: var(--font-size-sm);
-        }
-        .product-modal-tags {
-            display: none;
-            margin-bottom: var(--spacing-sm);
-        }
-        .product-modal-tags .modal-tag {
-            background-color: var(--bg-light);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: var(--radius-sm);
-            font-size: var(--font-size-sm);
-            margin-right: var(--spacing-xs);
-        }
-        .product-modal-details {
-            display: none;
-            font-size: var(--font-size-md);
-            margin-bottom: var(--spacing-lg);
-        }
-        /* Modal for Mobile */
-        .modal-close {
-            position: absolute;
-            top: 18px;
-            right: 18px;
-            font-size: 2rem;
-            background: none;
-            border: none;
-            color: #222;
-            cursor: pointer;
-            z-index: 10001;
-            transition: color 0.2s;
-        }
-        .modal-close:hover {
-            color: var(--primary-color, #e4572e);
-        }
-        .product-modal-content {
-            position: relative;
-            text-align: center;
-        }
-        .product-modal-content img {
-            width: 100%;
-            max-width: 260px;
-            display: block;
-            margin: 0 auto 1rem auto;
-            border-radius: 1rem;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.09);
-        }
-        .product-modal-content h2 {
-            text-align: center;
-            font-size: 1.3rem;
-            margin-bottom: 0.7rem;
-        }
-        .product-modal-content p {
-            text-align: center;
-            font-size: 1rem;
-            color: #444;
-            line-height: 1.5;
-        }
-        .modal-tags {
-            margin-top: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-        .modal-tag {
-            background: var(--bg-light,#f2f2f2);
-            color: #333;
-            border-radius: 12px;
-            font-size: 0.92rem;
-            padding: 0.22em 0.9em;
-            letter-spacing: 0.01em;
-            box-shadow: 0 2px 7px rgba(0,0,0,0.06);
-        }
-        @media (max-width: 700px) {
-            .section-title.headline-animated, .section-title { font-size: 1.45rem !important; }
-            .why-choose-title, #whyThreadHeading, .why-thread-title { font-size: 1.25rem !important; }
-        }
-        /* Menu color updates - mobile nav styles removed */
-        :root {
-          --primary-color: #1e3a8a;  /* Blue color */
-          --secondary-color: #3b82f6; /* Lighter blue for highlights */
-        }
-        
-        .nav-link { color: #333; }
-        
-        .nav-link:hover, 
-        .nav-link:focus, 
-        .nav-link.active {
-          color: var(--primary-color);
-        }
-        
-        .nav-link::after {
-          background-color: var(--primary-color);
-        }
-        
-        /* Mobile menu styles removed */
-        /* हैडर मेनू बटन हाइड/दिखाने के लिए CSS */
-        @media (min-width: 992px) {
-            .menu-toggle {
-                display: none !important; /* PC पर मेनू बटन छिपाएं */
-            }
-        }
-        
-        @media (max-width: 991px) {
-            .menu-toggle {
-                display: flex !important; /* मोबाइल पर मेनू बटन दिखाएं */
-                flex-direction: column;
-                justify-content: space-between;
-                width: 30px;
-                height: 22px;
-                background: transparent;
-                border: none;
-                cursor: pointer;
-                padding: 0;
-                z-index: 10;
+                min-width: 220px;
+                max-width: 240px;
+                width: 230px;
+                min-height: 180px;
+                height: 180px;
             }
             
-            .menu-toggle span {
-                width: 100%;
-                height: 3px;
-                background-color: var(--primary-color);
-                border-radius: 2px;
+            .feature-block .feature-icon {
+                font-size: 3.2rem;
+            }
+            
+            .feature-block .feature-title {
+                font-size: 1.35rem;
             }
         }
-        /* Swiper Navigation Styles */
-        .swiper-button-next, .swiper-button-prev {
-            color: #1A3C40;
-            background: rgba(255, 255, 255, 0.8);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+        
+        /* Adjust for tablet screens */
+        @media (max-width: 900px) {
+            .feature-marquee.infinite-marquee {
+                height: 20vw !important;
+                min-height: 140px !important;
+            }
+            
+            .feature-block {
+                min-width: 160px;
+                max-width: 180px;
+                width: 170px;
+                min-height: 130px;
+                height: 130px;
+                padding: 1.4rem 1.2rem 1.2rem 1.2rem;
+            }
+            
+            .feature-block .feature-icon {
+                font-size: 2.2rem;
+                margin-bottom: 0.7rem;
+            }
+            
+            .feature-block .feature-title {
+                font-size: 1.15rem;
+            }
         }
         
-        .swiper-button-next:hover, .swiper-button-prev:hover {
-            background: #ffffff;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .feature-marquee.infinite-marquee {
+                height: 26vw !important;
+                min-height: 120px !important;
+            }
+            
+            .feature-block {
+                min-width: 140px;
+                max-width: 160px;
+                width: 150px;
+                min-height: 110px;
+                height: 110px;
+                padding: 1.2rem 1rem 1rem 1rem;
+            }
+            
+            .feature-block .feature-icon {
+                font-size: 2rem;
+                margin-bottom: 0.6rem;
+            }
+            
+            .feature-block .feature-title {
+                font-size: 1.05rem;
+            }
         }
         
-        .swiper-button-next:after, .swiper-button-prev:after {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        
-        .swiper-pagination-bullet {
-            background: #1A3C40;
-            opacity: 0.5;
-        }
-        
-        .swiper-pagination-bullet-active {
-            opacity: 1;
-            background: #1A3C40;
-        }
-        
-        /* Modal Animation */
-        .product-modal {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        
-        .product-modal.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .product-modal-content {
-            transform: translateY(20px);
-            opacity: 0;
-            transition: transform 0.4s ease, opacity 0.4s ease;
-        }
-        
-        .product-modal.active .product-modal-content {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        /* Modal Tags */
-        .modal-tags {
+        .fullwidth-marquee.marquee-outer-tall {
+            width: 100vw !important;
+            max-width: 100vw !important;
+            margin-left: calc(50% - 50vw) !important;
+            margin-right: calc(50% - 50vw) !important;
+            left: unset;
+            right: unset;
+            box-sizing: border-box;
+            min-height: 380px; /* Increased min-height */
+            padding-top: 70px; /* Increased padding */
+            padding-bottom: 70px; /* Increased padding */
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .modal-tag {
-            background: #f2f7f7;
-            color: #1A3C40;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            padding: 0.3em 1em;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        /* Swiper Navigation Enhancement */
-        .swiper-button-next,
-        .swiper-button-prev {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-            color: #1A3C40;
-            display: flex;
-            justify-content: center;
             align-items: center;
-            z-index: 100;
+            background: #fff !important;
+            overflow-x: clip;
         }
         
-        .swiper-button-next:after,
-        .swiper-button-prev:after {
-            font-size: 20px;
-            font-weight: bold;
+        /* Section title for Why Choose Our Threads */
+        .why-choose-section h2.section-title {
+            font-size: 2.2rem; /* Increased font size */
+            margin-bottom: 1.2rem !important;
         }
         
-        .swiper-button-next {
-            right: 10px;
+        .why-choose-section p {
+            font-size: 1.15rem; /* Increased font size */
+            max-width: 700px;
+            margin: 0 auto 1.8rem !important;
         }
         
-        .swiper-button-prev {
-            left: 10px;
+        /* Media queries for Why Choose section */
+        @media (max-width: 900px) {
+            .fullwidth-marquee.marquee-outer-tall {
+                min-height: 300px;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            
+            .why-choose-section h2.section-title {
+                font-size: 1.8rem;
+            }
+            
+            .why-choose-section p {
+                font-size: 1.05rem;
+            }
         }
         
-        .swiper-button-next:hover,
-        .swiper-button-prev:hover {
-            background-color: #ffffff;
-            color: #1A3C40;
-            transform: scale(1.05);
-        }
-        
-        .swiper-button-disabled {
-            opacity: 0.35;
-            cursor: auto;
-            pointer-events: none;
+        @media (max-width: 600px) {
+            .fullwidth-marquee.marquee-outer-tall {
+                min-height: 240px;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+            
+            .why-choose-section h2.section-title {
+                font-size: 1.5rem;
+            }
+            
+            .why-choose-section p {
+                font-size: 0.95rem;
+            }
         }
     </style>
 </head>
@@ -925,11 +483,7 @@
             </nav>
             
             <!-- Mobile Menu Button (visible only on mobile) -->
-            <button class="menu-toggle" aria-label="Toggle mobile menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            
         </div>
     </header>
 
@@ -937,7 +491,7 @@
     <div class="mobile-menu">
         <div class="mobile-menu-header">
             <a href="index.html" class="mobile-logo">
-                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Supreme Thread Logo" style="border-radius:50%;width:36px;height:36px;object-fit:cover;">
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" style="border-radius:50%;width:36px;height:36px;object-fit:cover;">
                 <span>Supreme Thread</span>
             </a>
             <button class="mobile-menu-close">
@@ -970,268 +524,446 @@
     
 
     <!-- Redesigned Swiper Product Section Start -->
-    <section class="section product-section">
-        <div class="container"  style="padding-top: 3.5rem;">
+    <section class="section product-section-new" style="margin-bottom: 0 !important; padding-bottom: 0 !important;">
+        <div class="container" style="margin-bottom: 0 !important; padding-bottom: 0 !important;">
             <h2 class="section-title text-center headline-animated" id="productsHeading">
-              <span class="headline-text" style="text-decoration: underline;">Our Products<span class="headline-underline"></span></span>
+              <span class="headline-text">Our Products</span>
             </h2>
             
-            <!-- Desktop Swiper (hidden on mobile) -->
-            <div class="swiper product-swiper desktop-only">
-                <div class= "swiper-wrapper">
-                    <!-- Product Card 1 -->
-                    <div class="swiper-slide">
-                        <div class="product-card-modern">
-                            <img src="https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=400&q=80" alt="Core-Spun Thread" class="product-img-modern">
-                            <div class="product-info-modern">
-                                <h3 class="product-title-modern">Core-Spun Thread</h3>
-                                <p class="product-desc-modern">Polyester core wrapped with cotton for strength and softness. Ideal for garments.</p>
-                                <a href="#" class="example-btn learn-more-btn" data-tags="Cotton, Durable, Garment">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 2 --> 
-                    <div class="swiper-slide">
-                        <div class="product-card-modern">
-                            <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=400&q=80" alt="Rayon Embroidery Thread" class="product-img-modern">
-                            <div class="product-info-modern">
-                                <h3 class="product-title-modern">Rayon Embroidery Thread</h3>
-                                <p class="product-desc-modern">Exceptional luster and color vibrancy for decorative stitches and embroidery.</p>
-                                <a href="#" class="example-btn learn-more-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 3 -->
-                    <div class="swiper-slide">
-                        <div class="product-card-modern">
-                            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Technical Thread" class="product-img-modern">
-                            <div class="product-info-modern">
-                                <h3 class="product-title-modern">Technical Thread</h3>
-                                <p class="product-desc-modern">Specially developed for industrial applications with flame retardance and durability.</p>
-                                <a href="#" class="example-btn learn-more-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 4 -->
-                    <div class="swiper-slide">
-                        <div class="product-card-modern">
-                            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Premium Cotton Thread" class="product-img-modern">
-                            <div class="product-info-modern">
-                                <h3 class="product-title-modern">Premium Cotton Thread</h3>
-                                <p class="product-desc-modern">Finest long-staple cotton fibers for exceptional softness and sheen.</p>
-                                <a href="#" class="example-btn learn-more-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 5 -->
-                    <div class="swiper-slide">
-                        <div class="product-card-modern">
-                            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Mercerized Cotton Thread" class="product-img-modern">
-                            <div class="product-info-modern">
-                                <h3 class="product-title-modern">Mercerized Cotton Thread</h3>
-                                <p class="product-desc-modern">Special treatment enhances strength, luster, and color absorption.</p>
-                                <a href="#" class="example-btn learn-more-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 6 -->
-                    <div class="swiper-slide">
-                        <div class="product-card-modern">
-                            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="All-Purpose Polyester Thread" class="product-img-modern">
-                            <div class="product-info-modern">
-                                <h3 class="product-title-modern">All-Purpose Polyester Thread</h3>
-                                <p class="product-desc-modern">Versatile thread offering strength and durability for many applications.</p>
-                                <a href="#" class="example-btn learn-more-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 7 -->
-                    <div class="swiper-slide">
-                        <div class="product-card-modern">
-                            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Heavy-Duty Polyester Thread" class="product-img-modern">
-                            <div class="product-info-modern">
-                                <h3 class="product-title-modern">Heavy-Duty Polyester Thread</h3>
-                                <p class="product-desc-modern">Engineered for maximum strength—perfect for upholstery and outdoor use.</p>
-                                <a href="#" class="example-btn learn-more-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 8 -->
-                    <div class="swiper-slide">
-                        <div class="product-card-modern">
-                            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Standard Nylon Thread" class="product-img-modern">
-                            <div class="product-info-modern">
-                                <h3 class="product-title-modern">Standard Nylon Thread</h3>
-                                <p class="product-desc-modern">Excellent elasticity and strength for stretchy fabrics and leather goods.</p>
-                                <a href="#" class="example-btn learn-more-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 9 -->
-                    <div class="swiper-slide">
-                        <div class="product-card-modern">
-                            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Bonded Nylon Thread" class="product-img-modern">
-                            <div class="product-info-modern">
-                                <h3 class="product-title-modern">Bonded Nylon Thread</h3>
-                                <p class="product-desc-modern">Treated with resins for increased strength and abrasion resistance.</p>
-                                <a href="#" class="example-btn learn-more-btn">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add Swiper navigation and pagination -->
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
+            <!-- Product Category Filters
+            <div class="product-filters-new">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="cotton">Cotton</button>
+                <button class="filter-btn" data-filter="polyester">Polyester</button>
+                <button class="filter-btn" data-filter="nylon">Nylon</button>
+                <button class="filter-btn" data-filter="specialty">Specialty</button>
+            </div> -->
             
-            <!-- Mobile Product Scroll (visible only on mobile) -->
-            <div class="mobile-products-container mobile-only">
-                <div class="mobile-products-scroll">
-                    <!-- Product Card 1 -->
-                    <div class="mobile-product-card" data-product="Core-Spun Thread">
-                        <img src="https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=400&q=80" alt="Core-Spun Thread" class="mobile-product-img">
-                        <h3 class="mobile-product-title">Core-Spun Thread</h3>
-                        <button class="example-btn mobile-product-btn">View Details</button>
+            <!-- New Product Grid -->
+            <div class="product-grid-new" style="margin-bottom: 0 !important; padding-bottom: 0 !important;">
+                <!-- Featured Product Card -->
+                <div class="product-card-new product-card-featured" data-category="specialty" data-product-id="1">
+                    <div class="product-image-new">
+                        <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=600&q=80" alt="Rayon Embroidery Thread">
+                            </div>
+                    <div class="product-content-new">
+                        <h3 class="product-title-new">Rayon Embroidery Thread</h3>
+                        <p class="product-description-new">Our premium rayon embroidery thread offers exceptional luster and color vibrancy for decorative stitches and embroidery. Perfect for designs that need to stand out with brilliant shine and smooth finish.</p>
+                        
+                        <div class="product-features-new">
+                            <span class="feature-tag">Decorative</span>
+                            <span class="feature-tag">Vibrant Colors</span>
+                            <span class="feature-tag">High Sheen</span>
+                        </div>
+                        
+                        <div class="product-footer-new">
+                            <a href="#" class="product-btn-new">View Details <span class="btn-icon">→</span></a>
+                    </div>
+                            </div>
+                        </div>
+                
+                <!-- Product Card 1 -->
+                <div class="product-card-new" data-category="cotton" data-product-id="2">
+                    <div class="product-image-new">
+                        <img src="https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=600&q=80" alt="Core-Spun Thread">
+                        <div class="product-category-tag">Cotton</div>
+                    </div>
+                    <div class="product-content-new">
+                        <h3 class="product-title-new">Core-Spun Thread</h3>
+                        <p class="product-description-new">Polyester core wrapped with cotton for strength and softness. Ideal for garments requiring both durability and comfort.</p>
+                        
+                        <div class="product-features-new">
+                            <span class="feature-tag">Durable</span>
+                            <span class="feature-tag">Soft</span>
+                            <span class="feature-tag">Garment</span>
+                            </div>
+                        
+                        <div class="product-footer-new">
+                            <a href="#" class="product-btn-new">View Details</a>
+                        </div>
+                    </div>
+                            </div>
+                
+                <!-- Product Card 2 -->
+                <div class="product-card-new" data-category="specialty" data-product-id="3">
+                    <div class="product-image-new">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Technical Thread">
+                        <div class="product-category-tag">Specialty</div>
+                        </div>
+                    <div class="product-content-new">
+                        <h3 class="product-title-new">Technical Thread</h3>
+                        <p class="product-description-new">Specially developed for industrial applications with flame retardance and superior durability for demanding environments.</p>
+                        
+                        <div class="product-features-new">
+                            <span class="feature-tag">Industrial</span>
+                            <span class="feature-tag">Flame Retardant</span>
+                            <span class="feature-tag">Heavy-Duty</span>
+                    </div>
+                        
+                        <div class="product-footer-new">
+                            <a href="#" class="product-btn-new">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                <!-- Product Card 3 -->
+                <div class="product-card-new" data-category="cotton" data-product-id="4">
+                    <div class="product-image-new">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Premium Cotton Thread">
+                        <div class="product-category-tag">Cotton</div>
+                            </div>
+                    <div class="product-content-new">
+                        <h3 class="product-title-new">Premium Cotton Thread</h3>
+                        <p class="product-description-new">100% long-staple cotton thread with a silky finish, perfect for quilting and fine fabric sewing projects.</p>
+                        
+                        <div class="product-features-new">
+                            <span class="feature-tag">Fine Sewing</span>
+                            <span class="feature-tag">Quilting</span>
+                            <span class="feature-tag">Silky</span>
+                        </div>
+                        
+                        <div class="product-footer-new">
+                            <a href="#" class="product-btn-new">View Details</a>
+                    </div>
+                            </div>
+                        </div>
+                
+                <!-- Product Card 4 -->
+                <div class="product-card-new" data-category="cotton" data-product-id="5">
+                    <div class="product-image-new">
+                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Mercerized Cotton Thread">
+                        <div class="product-category-tag">Cotton</div>
+                    </div>
+                    <div class="product-content-new">
+                        <h3 class="product-title-new">Mercerized Cotton Thread</h3>
+                        <p class="product-description-new">Treated cotton with enhanced luster and strength. Perfect for decorative topstitching and embroidery work.</p>
+                        
+                        <div class="product-features-new">
+                            <span class="feature-tag">Topstitching</span>
+                            <span class="feature-tag">Embroidery</span>
+                            <span class="feature-tag">Lustrous</span>
+                            </div>
+                        
+                        <div class="product-footer-new">
+                            <a href="#" class="product-btn-new">View Details</a>
+                        </div>
+                    </div>
+                            </div>
+                
+                <!-- Product Card 5 -->
+                <div class="product-card-new" data-category="polyester" data-product-id="6">
+                    <div class="product-image-new">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="All-Purpose Polyester Thread">
+                        <div class="product-category-tag">Polyester</div>
+                        </div>
+                    <div class="product-content-new">
+                        <h3 class="product-title-new">All-Purpose Polyester Thread</h3>
+                        <p class="product-description-new">Versatile thread offering strength and durability for many applications, including general sewing and mending.</p>
+                        
+                        <div class="product-features-new">
+                            <span class="feature-tag">Versatile</span>
+                            <span class="feature-tag">Strong</span>
+                            <span class="feature-tag">General Use</span>
+                    </div>
+                        
+                        <div class="product-footer-new">
+                            <a href="#" class="product-btn-new">View Details</a>
+                </div>
+            </div>
                     </div>
                     
-                    <!-- Product Card 2 -->
-                    <div class="mobile-product-card" data-product="Rayon Embroidery Thread">
-                        <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=400&q=80" alt="Rayon Embroidery Thread" class="mobile-product-img">
-                        <h3 class="mobile-product-title">Rayon Embroidery Thread</h3>
-                        <button class="example-btn mobile-product-btn">View Details</button>
+                <!-- Product Card 6 -->
+                <div class="product-card-new" data-category="polyester" data-product-id="7">
+                    <div class="product-image-new">
+                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Heavy-Duty Polyester Thread">
+                        <div class="product-category-tag">Polyester</div>
+                    </div>
+                    <div class="product-content-new">
+                        <h3 class="product-title-new">Heavy-Duty Polyester Thread</h3>
+                        <p class="product-description-new">Engineered for maximum strength—perfect for upholstery, outdoor applications, and heavy materials.</p>
+                        
+                        <div class="product-features-new">
+                            <span class="feature-tag">Heavy-Duty</span>
+                            <span class="feature-tag">UV Resistant</span>
+                            <span class="feature-tag">Upholstery</span>
                     </div>
                     
-                    <!-- Product Card 3 -->
-                    <div class="mobile-product-card" data-product="Technical Thread">
-                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Technical Thread" class="mobile-product-img">
-                        <h3 class="mobile-product-title">Technical Thread</h3>
-                        <button class="example-btn mobile-product-btn">View Details</button>
+                        <div class="product-footer-new">
+                            <a href="#" class="product-btn-new">View Details</a>
+                        </div>
+                    </div>
                     </div>
                     
-                    <!-- Product Card 4 -->
-                    <div class="mobile-product-card" data-product="Premium Cotton Thread">
-                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Premium Cotton Thread" class="mobile-product-img">
-                        <h3 class="mobile-product-title">Premium Cotton Thread</h3>
-                        <button class="example-btn mobile-product-btn">View Details</button>
+                <!-- Additional Products (Hidden by Default) -->
+                <div class="product-card-new hidden" data-category="nylon" data-product-id="8">
+                    <div class="product-image-new">
+                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Standard Nylon Thread">
+                        <div class="product-category-tag">Nylon</div>
+                    </div>
+                    <div class="product-content-new">
+                        <h3 class="product-title-new">Standard Nylon Thread</h3>
+                        <p class="product-description-new">Excellent elasticity and strength for stretchy fabrics and leather goods. Resists abrasion effectively.</p>
+                        
+                        <div class="product-features-new">
+                            <span class="feature-tag">Stretchy</span>
+                            <span class="feature-tag">Leather</span>
+                            <span class="feature-tag">Abrasion Resistant</span>
                     </div>
                     
-                    <!-- Product Card 5 -->
-                    <div class="mobile-product-card" data-product="Mercerized Cotton Thread">
-                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Mercerized Cotton Thread" class="mobile-product-img">
-                        <h3 class="mobile-product-title">Mercerized Cotton Thread</h3>
-                        <button class="example-btn mobile-product-btn">View Details</button>
+                        <div class="product-footer-new">
+                            <a href="#" class="product-btn-new">View Details</a>
+                        </div>
                     </div>
-                    
-                    <!-- Product Card 6 -->
-                    <div class="mobile-product-card" data-product="All-Purpose Polyester Thread">
-                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="All-Purpose Polyester Thread" class="mobile-product-img">
-                        <h3 class="mobile-product-title">All-Purpose Polyester Thread</h3>
-                        <button class="example-btn mobile-product-btn">View Details</button>
-                    </div>
-                    
-                    <!-- Product Card 7 -->
-                    <div class="mobile-product-card" data-product="Heavy-Duty Polyester Thread">
-                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Heavy-Duty Polyester Thread" class="mobile-product-img">
-                        <h3 class="mobile-product-title">Heavy-Duty Polyester Thread</h3>
-                        <button class="example-btn mobile-product-btn">View Details</button>
                     </div>
                     
                     <!-- Product Card 8 -->
-                    <div class="mobile-product-card" data-product="Standard Nylon Thread">
-                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Standard Nylon Thread" class="mobile-product-img">
-                        <h3 class="mobile-product-title">Standard Nylon Thread</h3>
-                        <button class="example-btn mobile-product-btn">View Details</button>
+                <div class="product-card-new hidden" data-category="nylon" data-product-id="9">
+                    <div class="product-image-new">
+                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Bonded Nylon Thread">
+                        <div class="product-category-tag">Nylon</div>
                     </div>
-                    
-                    <!-- Product Card 9 -->
-                    <div class="mobile-product-card" data-product="Bonded Nylon Thread">
-                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Bonded Nylon Thread" class="mobile-product-img">
-                        <h3 class="mobile-product-title">Bonded Nylon Thread</h3>
-                        <button class="example-btn mobile-product-btn">View Details</button>
+                    <div class="product-content-new">
+                        <h3 class="product-title-new">Bonded Nylon Thread</h3>
+                        <p class="product-description-new">Treated with resins for increased strength and abrasion resistance. Ideal for heavy-duty applications.</p>
+                        
+                        <div class="product-features-new">
+                            <span class="feature-tag">High Strength</span>
+                            <span class="feature-tag">Resin Coated</span>
+                            <span class="feature-tag">Industrial Grade</span>
+                        </div>
+                        
+                        <div class="product-footer-new">
+                            <a href="#" class="product-btn-new">View Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Product Section End -->
+    <style>
+      /* Remove bottom margin and padding from the product section to eliminate unwanted vertical space above Why Choose Our Threads */
+      .product-section, .products-section {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+      }
+      /* Remove bottom margin and padding from the last product grid container as well */
+      .product-list-new, .products-container, .product-list, .product-grid {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+      }
+    </style>
+    <style>
+      /* Only apply negative margin and tight spacing fix for mobile and tablet */
+      @media (max-width: 1024px) {
+        .why-choose-section {
+          margin-top: -2.2rem !important;
+          padding-top: 0 !important;
+        }
+        .product-section-new, .product-section, .products-section {
+          margin-bottom: 0 !important;
+          padding-bottom: 0 !important;
+          min-height: 0 !important;
+        }
+        .product-grid-new, .container {
+          margin-bottom: 0 !important;
+          padding-bottom: 0 !important;
+          min-height: 0 !important;
+        }
+        /* Hide any whitespace node between sections */
+        .product-section-new + div[style], .product-section-new + br, .product-section-new + hr {
+          display: none !important;
+        }
+      }
+    </style>
+    <!-- Link New CSS and JavaScript -->
+    <link rel="stylesheet" href="assets/css/product-redesign.css">
+    <script src="assets/js/product-redesign.js"></script>
+
     <!-- Product Features Section -->
-    <section class="section why-choose-section" style="background-color: var(--bg-light);">
+    <section class="section why-choose-section" style="background-color: #fff; border-bottom: none !important; box-shadow: none !important;">
         <div class="container">
             <h2 class="section-title text-center headline-animated" id="whyThreadsHeading">
-              <span class="headline-text" style="text-decoration: underline;">Why Choose Our Threads<span class="headline-underline"></span></span>
+              <span class="headline-text why-underline">Why Choose Our Threads<span class="headline-underline"></span></span>
             </h2>
             <p class="text-center mb-5">Our products stand out for their exceptional quality and performance</p>
         </div>
-        <div class="feature-marquee-section-spacer"></div>
-        <div class="feature-marquee-container fullwidth-marquee marquee-outer-tall">
-            <div class="feature-marquee infinite-marquee">
-                <div class="feature-block"><span class="feature-icon">🏅</span><span class="feature-title">Premium Quality</span></div>
-                <div class="feature-block"><span class="feature-icon">🎨</span><span class="feature-title">Color Consistency</span></div>
-                <div class="feature-block"><span class="feature-icon">🛠️</span><span class="feature-title">Technical Excellence</span></div>
-                <div class="feature-block"><span class="feature-icon">🌱</span><span class="feature-title">Eco-Friendly Options</span></div>
-                <div class="feature-block"><span class="feature-icon">⚡</span><span class="feature-title">High Performance</span></div>
-                <div class="feature-block"><span class="feature-icon">🔒</span><span class="feature-title">Reliability</span></div>
-                <!-- DUPLICATE for seamless infinite loop -->
-                <div class="feature-block"><span class="feature-icon">🏅</span><span class="feature-title">Premium Quality</span></div>
-                <div class="feature-block"><span class="feature-icon">🎨</span><span class="feature-title">Color Consistency</span></div>
-                <div class="feature-block"><span class="feature-icon">🛠️</span><span class="feature-title">Technical Excellence</span></div>
-                <div class="feature-block"><span class="feature-icon">🌱</span><span class="feature-title">Eco-Friendly Options</span></div>
-                <div class="feature-block"><span class="feature-icon">⚡</span><span class="feature-title">High Performance</span></div>
-                <div class="feature-block"><span class="feature-icon">🔒</span><span class="feature-title">Reliability</span></div>
+        <!-- UNIQUE ANIMATED FEATURES SECTION START -->
+        <section class="unique-features-section">
+          <div class="container">
+            <div class="unique-features-grid">
+              <!-- Feature Card 1 -->
+              <div class="unique-feature-card">
+                <span class="unique-feature-icon">🧵</span>
+                <span class="unique-feature-title">Premium Quality Yarn</span>
+                <span class="unique-feature-desc">We use only the best raw materials for unbeatable strength and finish.</span>
+              </div>
+              <!-- Feature Card 2 -->
+              <div class="unique-feature-card">
+                <span class="unique-feature-icon">⚡</span>
+                <span class="unique-feature-title">High-Speed Manufacturing</span>
+                <span class="unique-feature-desc">Advanced machinery ensures rapid, precise, and consistent output.</span>
+              </div>
+              <!-- Feature Card 3 -->
+              <div class="unique-feature-card">
+                <span class="unique-feature-icon">🌱</span>
+                <span class="unique-feature-title">Eco-Friendly Processes</span>
+                <span class="unique-feature-desc">Sustainable dyeing and minimal waste for a cleaner planet.</span>
+              </div>
+              <!-- Feature Card 4 -->
+              <div class="unique-feature-card">
+                <span class="unique-feature-icon">🔬</span>
+                <span class="unique-feature-title">Lab-Grade QC</span>
+                <span class="unique-feature-desc">Strict quality control at every stage for flawless threads.</span>
+              </div>
+              <!-- Feature Card 5 -->
+              <div class="unique-feature-card">
+                <span class="unique-feature-icon">🤝</span>
+                <span class="unique-feature-title">Trusted by Industries</span>
+                <span class="unique-feature-desc">Supplying to top textile, apparel, and industrial brands worldwide.</span>
+              </div>
+              <!-- Feature Card 6 -->
+              <div class="unique-feature-card">
+                <span class="unique-feature-icon">🎨</span>
+                <span class="unique-feature-title">Vibrant Color Options</span>
+                <span class="unique-feature-desc">Wide range of colorfast shades for every industry need.</span>
+              </div>
+              <!-- Feature Card 7 -->
+              <div class="unique-feature-card">
+                <span class="unique-feature-icon">🔗</span>
+                <span class="unique-feature-title">Strong & Durable</span>
+                <span class="unique-feature-desc">Our threads are engineered for maximum tensile strength and longevity.</span>
+              </div>
+              <!-- Feature Card 8 -->
+              <div class="unique-feature-card">
+                <span class="unique-feature-icon">🛡️</span>
+                <span class="unique-feature-title">Consistent Reliability</span>
+                <span class="unique-feature-desc">Dependable supply and support for all your production needs.</span>
+              </div>
             </div>
-            <div class="feature-gradient-left"></div>
-            <div class="feature-gradient-right"></div>
-        </div>
-        <div class="feature-marquee-section-spacer"></div>
+          </div>
+        </section>
+        <!-- UNIQUE ANIMATED FEATURES SECTION END -->
+        <style>
+        /* Unique Features Section - Responsive Animated Grid */
+        .unique-features-section {
+          background: #fff;
+          padding: 64px 0 48px 0;
+        }
+        .unique-features-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 2.2rem;
+          justify-items: center;
+          align-items: stretch;
+          margin: 0 auto;
+          max-width: 1200px;
+          padding-bottom: 2.5rem; /* Added bottom padding for desktop */
+        }
+        .unique-feature-card {
+          background: #fff;
+          border-radius: 1.1rem;
+          box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+          padding: 2.1rem 1.5rem 1.5rem 1.5rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-height: 220px;
+          position: relative;
+          transition: box-shadow 0.25s, transform 0.25s, background 0.18s, color 0.18s;
+          cursor: pointer;
+          overflow: hidden;
+          border: 1.5px solid #e3f6f5;
+          animation: featureCardFadeIn 1.2s cubic-bezier(0.25, 1, 0.5, 1.05);
+        }
+        .unique-feature-card:hover {
+          background: linear-gradient(120deg, #1A3C40 70%, #2A5C60 100%);
+          color: #fff;
+          box-shadow: 0 12px 40px rgba(30,58,138,0.17);
+          transform: translateY(-14px) scale(1.045);
+        }
+        .unique-feature-icon {
+          font-size: 2.8rem;
+          margin-bottom: 1.1rem;
+          display: block;
+          transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1.05);
+        }
+        .unique-feature-card:hover .unique-feature-icon {
+          transform: scale(1.22) rotate(-8deg);
+        }
+        .unique-feature-title {
+          font-size: 1.17rem;
+          font-weight: 700;
+          text-align: center;
+          margin-bottom: 0.7rem;
+        }
+        .unique-feature-desc {
+          font-size: 1.01rem;
+          text-align: center;
+          color: #4b5c6b;
+          margin-bottom: 0.2rem;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+          .unique-features-section {
+            padding: 36px 0 26px 0;
+          }
+          .unique-features-grid {
+            gap: 1.2rem;
+            padding-bottom: 2.5rem; /* Added bottom padding for tablet */
+          }
+          .unique-feature-card {
+            min-height: 160px;
+            padding: 1.3rem 0.8rem 1rem 0.8rem;
+          }
+          .unique-feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+          }
+          .unique-feature-title {
+            font-size: 1.01rem;
+          }
+          .unique-feature-desc {
+            font-size: 0.93rem;
+          }
+        }
+        @media (max-width: 600px) {
+          .unique-features-section {
+            padding: 22px 0 16px 0;
+          }
+          .unique-features-grid {
+            gap: 0.7rem;
+            padding-bottom: 2.2rem; /* Added bottom padding for mobile */
+          }
+          .unique-feature-card {
+            min-height: 120px;
+            padding: 0.7rem 0.4rem 0.6rem 0.4rem;
+          }
+          .unique-feature-icon {
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+          }
+          .unique-feature-title {
+            font-size: 0.93rem;
+          }
+          .unique-feature-desc {
+            font-size: 0.8rem;
+          }
+        }
+        /* Subtle fade-in animation for cards */
+        @keyframes featureCardFadeIn {
+          0% { opacity: 0; transform: translateY(30px) scale(0.98); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        </style>
+        <!-- END Unique Features Section -->
+        <!-- NEW MODERN MARQUEE END -->
     </section>
-    <style>
-    .feature-marquee-section-spacer {
-        height: 1.2vw;
-        min-height: 10px;
-        width: 100%;
-        padding-top: 0;
-        margin-top: 0.3rem;
-        margin-bottom: 0.3rem;
-    }
-    .why-choose-section h2 {
-        margin-bottom: 0.7rem !important;
-    }
-    .why-choose-section p {
-        margin-bottom: 1.2rem !important;
-        margin-top: 0.2rem !important;
-    }
-    @media (max-width: 900px) {
-        .feature-marquee-section-spacer {
-            height: 0.8vw;
-            min-height: 6px;
-        }
-        .why-choose-section h2 {
-            margin-bottom: 0.5rem !important;
-        }
-        .why-choose-section p {
-            margin-bottom: 0.7rem !important;
-        }
-    }
-    @media (max-width: 600px) {
-        .feature-marquee-section-spacer {
-            height: 0.5vw;
-            min-height: 4px;
-        }
-        .why-choose-section h2 {
-            margin-bottom: 0.37rem !important;
-        }
-        .why-choose-section p {
-            margin-bottom: 0.4rem !important;
-        }
-    }
-    </style>
-    <!-- Add extra space below marquee before CTA -->
-    <div class="below-marquee-spacer"></div>
     <!-- CTA Section -->
     <!-- Custom Thread Solutions section removed as requested -->
     <!-- ================= UNIFIED MODERN CTA SECTION (Consistent across all pages) ================= -->
     <!-- This CTA is placed just above the footer for maximum visibility and engagement. -->
-    <section class="modern-cta-section">
+    <section class="modern-cta-section" style="margin-top: 0 !important; border-top: none !important; box-shadow: none !important;">
       <div class="modern-cta-container">
         <div class="modern-cta-card">
           <div class="modern-cta-content">
@@ -1255,7 +987,7 @@
           background: #fff;
           padding-bottom: 2.5rem;
           margin-bottom: 0 !important;
-          margin-top: -12rem !important;
+          margin-top: 2rem !important; /* Changed from -12rem to 2rem */
         }
         .modern-cta-container {
           max-width: 1100px;
@@ -1298,6 +1030,8 @@
           opacity: 0.9;
           margin-bottom: 0;
           color: #e0e0e0;
+          overflow: visible; /* Prevent text from being cut off */
+          max-width: 100%; /* Ensure text doesn't overflow */
         }
         .modern-cta-action {
           flex: 0 0 auto;
@@ -1349,9 +1083,20 @@
           }
           .modern-cta-text {
             margin-bottom: 1.5rem;
+            width: 100%; /* Ensure text container takes full width */
+          }
+          .modern-cta-text p {
+            font-size: 1rem; /* Slightly smaller font on mobile */
+            line-height: 1.5; /* Better line height for readability */
           }
           .modern-cta-action {
             margin-left: 0;
+            width: 100%; /* Full width for button container */
+          }
+          .modern-cta-btn {
+            padding: 0.7rem 1.5rem; /* Adjust padding */
+            width: auto; /* Auto width instead of fixed */
+            display: inline-block; /* Ensure proper display */
           }
         }
       </style>
@@ -1359,12 +1104,12 @@
     <!-- ================= END UNIFIED MODERN CTA SECTION ================= -->
     
     <!-- Footer -->
-    <footer class="footer" style="margin-top: 0 !important;">
+   <footer class="footer">
         <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-logo-section">
                     <div class="footer-logo">
-                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Supreme Thread Logo" class="footer-logo-img" style="border:2px solid red;">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" class="footer-logo-img">
                         <span class="footer-logo-text">Supreme Thread</span>
                     </div>
                     <p class="footer-about">We are a leading manufacturer of premium quality threads for various industries. Our state-of-the-art facilities in Surat, Gujarat produce threads that meet international quality standards.</p>
@@ -1412,6 +1157,281 @@
             </div>
         </div>
     </footer>
+
+<style>
+/* Modern Footer Styles */
+.footer {
+    background-color: #1A3C40;
+    color: white;
+    padding: 3rem 0 1.5rem;
+    margin-top: 0 !important; /* Remove any top margin */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+}
+
+/* Company Info Section */
+.footer-logo-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.footer-logo-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.8rem;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.footer-logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+}
+
+.footer-about {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Social Icons */
+.social-links {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--secondary, #f9e79f);
+    color: var(--primary, #1A3C40);
+    transform: translateY(-3px);
+}
+
+/* Links Section */
+.footer-links-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer-links-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    color: white;
+}
+
+.footer-links-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--secondary, #f9e79f);
+}
+
+/* VERTICAL Quick Links - as requested */
+.footer-links-column:first-child .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: left;
+}
+
+.footer-links-column:first-child .footer-links l {
+    margin-bottom: 0.2rem;
+    display: block;
+    text-align: left;
+}
+
+.footer-links-column:first-child .footer-links l a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: block;
+    padding: 2px 0;
+    text-align: left;
+}
+
+.footer-links-column:first-child .footer-links l a:hover {
+    color: var(--secondary, #f9e79f);
+    transform: translateX(5px);
+}
+
+/* Other Link Lists */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: block;
+    padding: 3px 0;
+}
+
+.footer-links a:hover {
+    color: var(--secondary, #f9e79f);
+    transform: translateX(5px);
+}
+
+/* Contact Info */
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-contact-item i {
+    margin-right: 0.7rem;
+    margin-top: 0.2rem;
+    color: var(--secondary, #f9e79f);
+    min-width: 16px;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .footer-logo-section {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-links-title {
+        text-align: center;
+    }
+    
+    .footer-links-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-links, 
+    .footer-links-column:first-child .footer-links {
+        text-align: center;
+    }
+    
+    .footer-links-column:first-child .footer-links l {
+        text-align: center;
+    }
+    
+    .footer-links-column:first-child .footer-links l a:hover,
+    .footer-links a:hover {
+        transform: translateY(-3px);
+    }
+    
+    .footer-contact-item {
+        justify-content: center;
+    }
+}
+
+/* Ensure Quick Links align left in PC view */
+@media (min-width: 992px) {
+    .footer-links-column:first-child .footer-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+        flex-wrap: nowrap;
+        align-items: flex-start; /* Force alignment to start from left */
+    }
+    
+    .footer-links-column:first-child .footer-links l {
+        text-align: left;
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .footer-links-column:first-child .footer-links l a {
+        text-align: left;
+        padding-left: 0;
+    }
+    
+    .footer-links-column:first-child .footer-links-title {
+        text-align: left;
+    }
+    
+    .footer-links-column:first-child .footer-links-title::after {
+        left: 0;
+        transform: none;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-links-section {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+    
+    .footer-links-column:nth-child(3) {
+        grid-column: span 1;
+    }
+}
+</style>
+
+
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/navigation.js"></script>
@@ -1515,7 +1535,7 @@
                     },
                     'All-Purpose Polyester Thread': {
                         img: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
-                        description: 'Our versatile All-Purpose Polyester Threads offer strength and durability for a wide range of applications. These threads resist shrinking, stretching, and fading, while providing excellent stitch formation on all fabric types. Perfect for everyday sewing with reliable results.',
+                        description: 'Our versatile All-Purpose Polyester Threads offer strength and durability for many applications. These threads resist shrinking, stretching, and fading, while providing excellent stitch formation on all fabric types. Perfect for everyday sewing with reliable results.',
                         tags: ['Polyester', 'Multi-Purpose', 'Fade Resistant', 'Strong']
                     },
                     'Heavy-Duty Polyester Thread': {
@@ -1693,278 +1713,7 @@
         });
     </script>
 
-    <style>
-    /* Modern Footer Styles */
-    .footer {
-        background-color: #1A3C40;
-        color: white;
-        padding: 3rem 0 1.5rem;
-        margin-top: 0 !important;
-    }
     
-    .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-    
-    .footer-main {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 3rem;
-    }
-    
-    /* Company Info Section */
-    .footer-logo-section {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .footer-logo {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1.2rem;
-    }
-    
-    .footer-logo-img {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 0.8rem;
-        border: 2px solid rgba(255,255,255,0.2);
-    }
-    
-    .footer-logo-text {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: white;
-    }
-    
-    .footer-about {
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-        color: rgba(255, 255, 255, 0.8);
-    }
-    
-    /* Social Icons */
-    .social-links {
-        display: flex;
-        gap: 0.8rem;
-    }
-    
-    .social-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 38px;
-        height: 38px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        color: white;
-        transition: all 0.3s ease;
-    }
-    
-    .social-link:hover {
-        background-color: var(--secondary, #f9e79f);
-        color: var(--primary, #1A3C40);
-        transform: translateY(-3px);
-    }
-    
-    /* Links Section */
-    .footer-links-section {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-    
-    .footer-links-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 1.2rem;
-        position: relative;
-        padding-bottom: 0.5rem;
-        color: white;
-    }
-    
-    .footer-links-title::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 40px;
-        height: 2px;
-        background-color: var(--secondary, #f9e79f);
-    }
-    
-    /* VERTICAL Quick Links - as requested */
-    .footer-links-column:first-child .footer-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.3rem;
-        text-align: left;
-    }
-    
-    .footer-links-column:first-child .footer-links l {
-        margin-bottom: 0.2rem;
-        display: block;
-        text-align: left;
-    }
-    
-    .footer-links-column:first-child .footer-links l a {
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-        font-size: 0.95rem;
-        transition: all 0.2s ease;
-        display: block;
-        padding: 2px 0;
-        text-align: left;
-    }
-    
-    .footer-links-column:first-child .footer-links l a:hover {
-        color: var(--secondary, #f9e79f);
-        transform: translateX(5px);
-    }
-    
-    /* Other Link Lists */
-    .footer-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .footer-links li {
-        margin-bottom: 0.6rem;
-    }
-    
-    .footer-links a {
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-        font-size: 0.95rem;
-        transition: all 0.2s ease;
-        display: block;
-        padding: 3px 0;
-    }
-    
-    .footer-links a:hover {
-        color: var(--secondary, #f9e79f);
-        transform: translateX(5px);
-    }
-    
-    /* Contact Info */
-    .footer-contact-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 0.9rem;
-        font-size: 0.95rem;
-        line-height: 1.5;
-        color: rgba(255, 255, 255, 0.8);
-    }
-    
-    .footer-contact-item i {
-        margin-right: 0.7rem;
-        margin-top: 0.2rem;
-        color: var(--secondary, #f9e79f);
-        min-width: 16px;
-        text-align: center;
-    }
-    
-    /* Responsive Styles */
-    @media (max-width: 992px) {
-        .footer-main {
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-        }
-        
-        .footer-logo-section {
-            text-align: center;
-            align-items: center;
-        }
-        
-        .footer-logo {
-            justify-content: center;
-        }
-        
-        .social-links {
-            justify-content: center;
-        }
-        
-        .footer-links-title {
-            text-align: center;
-        }
-        
-        .footer-links-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .footer-links, 
-        .footer-links-column:first-child .footer-links {
-            text-align: center;
-        }
-        
-        .footer-links-column:first-child .footer-links l {
-            text-align: center;
-        }
-        
-        .footer-links-column:first-child .footer-links l a:hover,
-        .footer-links a:hover {
-            transform: translateY(-3px);
-        }
-        
-        .footer-contact-item {
-            justify-content: center;
-        }
-    }
-    
-    /* Ensure Quick Links align left in PC view */
-    @media (min-width: 992px) {
-        .footer-links-column:first-child .footer-links {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            text-align: left;
-            flex-wrap: nowrap;
-            align-items: flex-start; /* Force alignment to start from left */
-        }
-        
-        .footer-links-column:first-child .footer-links l {
-            text-align: left;
-            margin-left: 0;
-            width: 100%;
-        }
-        
-        .footer-links-column:first-child .footer-links l a {
-            text-align: left;
-            padding-left: 0;
-        }
-        
-        .footer-links-column:first-child .footer-links-title {
-            text-align: left;
-        }
-        
-        .footer-links-column:first-child .footer-links-title::after {
-            left: 0;
-            transform: none;
-            margin-left: 0;
-        }
-    }
-    
-    @media (max-width: 576px) {
-        .footer-links-section {
-            grid-template-columns: 1fr;
-            gap: 1.8rem;
-        }
-        
-        .footer-links-column:nth-child(3) {
-            grid-column: span 1;
-        }
-    }
-    </style>
     <style>
     .fullwidth-marquee.marquee-outer-tall {
         width: 100vw !important;
@@ -1974,19 +1723,13 @@
         left: unset;
         right: unset;
         box-sizing: border-box;
-        min-height: 320px;
-        padding-top: 56px;
-        padding-bottom: 56px;
+        min-height: 380px; /* Increased min-height */
+        padding-top: 70px; /* Increased padding */
+        padding-bottom: 70px; /* Increased padding */
         display: flex;
         align-items: center;
         background: #fff !important;
         overflow-x: clip;
-    }
-    .below-marquee-spacer {
-        height: 3.5vw;
-        min-height: 38px;
-        width: 100vw;
-        background: transparent;
     }
     @media (max-width: 900px) {
         .below-marquee-spacer {
@@ -2000,6 +1743,111 @@
             min-height: 8px;
         }
     }
+    </style>
+    <style>
+    /* Responsive and Professional Section Title Fixes */
+    .section-title,
+    h2.section-title,
+    .section-title .headline-text {
+      border-bottom: none !important;
+      text-decoration: none !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+    .section-title {
+      margin-top: 6rem;
+      margin-bottom: 3.2rem;
+      position: relative;
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: var(--underline-width);
+      height: var(--underline-height);
+      background: var(--underline-color);
+      margin: 0.7rem auto 0 auto;
+      border-radius: 2px;
+    }
+    /* Remove any extra underline or border from .headline-text */
+    .headline-text {
+      border: none !important;
+      text-decoration: none !important;
+      display: inline-block;
+      background: none !important;
+      box-shadow: none !important;
+    }
+    /* Tablet adjustments */
+    @media (max-width: 900px) {
+      .section-title {
+        margin-top: 4.2rem;
+        margin-bottom: 2.7rem;
+        padding-left: 13vw;
+        padding-right: 13vw;
+      }
+    }
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .section-title {
+        margin-top: 5.5rem;
+        margin-bottom: 2.2rem;
+        padding-left: 12vw;
+        padding-right: 12vw;
+      }
+      .section-title::after {
+        width: 38px;
+        height: 3px;
+      }
+    }
+    </style>
+    <style>
+    /* Add underline to Why Choose Our Threads heading */
+    .why-underline {
+      position: relative;
+      display: inline-block;
+    }
+    .why-underline::after {
+      content: '';
+      display: block;
+      width: 80%;
+      height: 4px;
+      background: linear-gradient(90deg, #1A3C40 60%, #2A5C60 100%);
+      border-radius: 2px;
+      margin: 0.35em auto 0 auto;
+    }
+    @media (max-width: 600px) {
+      .why-underline::after {
+        width: 60%;
+        height: 3px;
+      }
+    }
+    </style>
+    <style>
+      @media (max-width: 1024px) {
+        .why-choose-section,
+        .section.why-choose-section {
+          padding-top: 0 !important;
+          margin-top: 0 !important;
+        }
+        #whyThreadsHeading,
+        .why-choose-section .section-title {
+          margin-top: 0 !important;
+          padding-top: 0 !important;
+        }
+      }
+      @media (max-width: 600px) {
+        .why-choose-section,
+        .section.why-choose-section {
+          padding-top: 0 !important;
+          margin-top: 0 !important;
+        }
+        #whyThreadsHeading,
+        .why-choose-section .section-title {
+          margin-top: 0 !important;
+          padding-top: 0 !important;
+        }
+      }
     </style>
 </body>
 </html>

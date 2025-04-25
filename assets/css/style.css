@@ -449,7 +449,7 @@ img {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-  z-index: 100;
+  z-index: 90 !important; /* Reduce header z-index */
   transition: all 0.3s ease;
   padding: 0.8rem 0;
 }
@@ -682,7 +682,7 @@ img {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-  z-index: 100;
+  z-index: 90 !important; /* Reduce header z-index */
   transition: all 0.3s ease;
   padding: 0.8rem 0;
 }
@@ -1718,22 +1718,22 @@ textarea.form-control {
 /* Feature Marquee Styles */
 .feature-marquee-container {
   position: relative;
-  overflow: hidden;
+  overflow: visible !important; /* Allow hover to show outside */
   margin: 0 auto 2rem auto;
   max-width: 100vw;
   padding: 0 0;
+  min-height: 240px; /* Increase height for hover effect */
 }
+
 .infinite-marquee {
   display: flex;
   align-items: center;
   animation: why-infinite-marquee 18s linear infinite;
   width: max-content;
   will-change: transform;
+  min-height: 180px; /* Ensure enough height for cards */
 }
-@keyframes why-infinite-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+
 .feature-block {
   flex: 0 0 calc(100vw / 3.2);
   max-width: calc(100vw / 3.2);
@@ -1750,11 +1750,14 @@ textarea.form-control {
   font-size: 1.02rem;
   transition: box-shadow 0.18s, transform 0.18s;
   text-align: center;
+  z-index: 2;
+  position: relative;
 }
 .feature-block:active,
 .feature-block:hover {
-  box-shadow: 0 8px 32px rgba(30,58,138,0.13);
-  transform: translateY(-8px) scale(1.04);
+  transform: translateY(-16px) scale(1.07);
+  z-index: 10;
+  box-shadow: 0 12px 40px rgba(30,58,138,0.18);
 }
 .feature-icon {
   font-size: 2.1vw;
@@ -2907,4 +2910,219 @@ textarea.form-control {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  /* Remove underline from Why Choose Our Threads heading only in mobile view */
+  #whyThreadsHeading.section-title .headline-text {
+    text-decoration: none !important;
+  }
+  #whyThreadsHeading.section-title::after {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Remove ALL underlines except the first one in Our Products heading on mobile */
+  .section-title .headline-underline {
+    display: none !important;
+  }
+  #productsHeading.section-title .headline-underline {
+    display: inline-block !important;
+  }
+  /* Remove underline from Why Choose Our Threads heading */
+  #whyThreadsHeading.section-title .headline-underline {
+    display: none !important;
+  }
+  #whyThreadsHeading.section-title .headline-text {
+    text-decoration: none !important;
+  }
+  #whyThreadsHeading.section-title::after {
+    display: none !important;
+  }
+}
+
+/* Make sure ALL section titles are centered */
+.section-title,
+h2.section-title,
+.headline-animated,
+.industries-modern-title,
+#whyThreadsHeading {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+/* Make headline text centered properly */
+.section-title .headline-text,
+h2.section-title .headline-text,
+.headline-animated .headline-text {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: inline-block !important;
+}
+
+/* Add margin-top to the 'Why Choose Our Threads' section to prevent it from being hidden behind header */
+#whyThreadsHeading, 
+.why-choose-section .section-title {
+  margin-top:-60px!important; /* Greatly increased margin to prevent header overlap */
+  padding-top: 5px !important; /* Added more padding at top */
+  text-align: center !important; /* Make sure heading is centered */
+  width: 100%; /* Ensure full width for proper centering */
+  display: block; /* Block display for proper centering */
+  position: relative; /* Add positioning context */
+  z-index: 95 !important; /* Make it appear above header */
+}
+
+/* Add margin to the entire section to push it down */
+.why-choose-section, 
+section.section_our_solution, 
+#why-choose {
+  margin-top: -2px !important; /* Add margin to the whole section */
+  padding-top: 70px !important;
+  position: relative;
+  z-index: 95 !important;
+}
+
+/* Create additional space specifically for Why Choose section */
+.section.why-choose-section {
+  padding-top: 80px !important;
+}
+
+/* Special fix for mobile */
+@media (max-width: 768px) {
+  #whyThreadsHeading, 
+  .why-choose-section .section-title {
+    margin-top: 120px !important;
+    padding-top: 50px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  #whyThreadsHeading, 
+  .why-choose-section .section-title {
+    margin-top: 100px !important;
+    padding-top: 40px !important;
+  }
+}
+
+/* Mobile Hover Fix - Better touch experience for mobile devices */
+@media (max-width: 768px) {
+  /* Convert hover effects to active/focus effects for touch devices */
+  .product-card-new:hover,
+  .feature-block:hover,
+  .industry-card:hover,
+  .solution-card:hover,
+  .why-card-mfg:hover {
+    transform: none !important; /* Remove hover transform on touch devices */
+  }
+  
+  /* Use active state instead for touch feedback */
+  .product-card-new:active,
+  .feature-block:active,
+  .industry-card:active,
+  .solution-card:active,
+  .why-card-mfg:active {
+    transform: translateY(-5px) !important;
+    transition: transform 0.2s ease !important;
+  }
+  
+  /* Fix link hover states for mobile - more touch-friendly */
+  a:hover, .nav-link:hover, .mobile-nav-link:hover, 
+  .footer-links a:hover, .product-btn-new:hover {
+    transition: all 0.2s !important;
+  }
+  
+  /* Footer links active state for mobile */
+  .footer-links-column:first-child .footer-links l a:active {
+    color: var(--secondary, #f9e79f) !important;
+    transform: translateY(-2px) !important;
+  }
+}
+
+/* Enhanced Responsiveness for All Devices */
+/* Fix for extra small devices (under 400px) */
+@media (max-width: 400px) {
+  /* Reduce padding and margins for better space usage */
+  .container {
+    padding: 0 12px !important;
+  }
+  
+  #whyThreadsHeading, 
+  .why-choose-section .section-title {
+    margin-top: 80px !important;
+    padding-top: 30px !important;
+    font-size: 1.3rem !important;
+  }
+  
+  /* Smaller font sizes for extra small screens */
+  .section-title {
+    font-size: 1.2rem !important;
+  }
+  
+  .section-subtitle {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Tighter product grid */
+  .product-grid-new {
+    gap: 0.6rem !important;
+    grid-template-columns: repeat(1, 1fr) !important; /* Single column for very small devices */
+  }
+  
+  /* Adjust product card sizes */
+  .product-image-new {
+    height: 130px !important;
+  }
+  
+  .product-card-new {
+    border-radius: 8px !important;
+  }
+  
+  /* Fix feature blocks in marquee for small screens */
+  .feature-block {
+    padding: 8px !important;
+    margin: 0 6px !important;
+  }
+  
+  .feature-icon {
+    font-size: 18px !important;
+  }
+  
+  .feature-title {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Improve tablet responsiveness */
+@media (min-width: 577px) and (max-width: 991px) {
+  /* Better section spacing for tablets */
+  .section {
+    padding: 3.5rem 0 !important;
+  }
+  
+  /* Fix the "Our Thread" heading position on tablets */
+  #whyThreadsHeading, 
+  .why-choose-section .section-title {
+    margin-top: 120px !important;
+    font-size: 1.6rem !important;
+  }
+  
+  /* Better product grid for tablets */
+  .product-grid-new {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+  }
+}
+
+/* Better fixed header handling for all devices */
+body {
+  scroll-padding-top: 80px; /* Add scroll padding to account for fixed header */
+}
+
+section {
+  scroll-margin-top: 80px; /* Add margin for anchor links with fixed header */
 }
