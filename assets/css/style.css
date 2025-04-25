@@ -1,7 +1,7 @@
 /* --- Unified Modern Theme for Supreme Thread --- */
 :root {
   --primary: #1A3C40;
-  --primary-color: #437fc7;
+  --primary-color: #1A3C40;
   --secondary: #64b5f6;
   --accent: #64b5f6;
   --background: #F6F7F9;
@@ -2091,13 +2091,13 @@ textarea.form-control {
   flex: 1 1 260px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* Align content to left for professional look */
   transition: box-shadow 0.3s, transform 0.3s;
+  text-align: left; /* Ensure all text inside is left-aligned */
 }
 
-.why-card-mfg:hover {
-  box-shadow: 0 8px 32px rgba(30,58,138,0.13);
-  transform: scale(1.05) translateY(-6px);
+.why-card-mfg h3, .why-card-mfg p {
+  text-align: left !important; /* Force left alignment for headings and paragraphs */
 }
 
 .why-icon-mfg {
@@ -2391,10 +2391,9 @@ textarea.form-control {
 }
 
 @media (max-width: 600px) {
-  .how-step-mfg {
-    pointer-events: none !important;
-    touch-action: none !important;
-    user-select: none !important;
+  .how-step-mfg:hover, .how-step-mfg:active {
+    box-shadow: none !important;
+    transform: none !important;
   }
 }
 

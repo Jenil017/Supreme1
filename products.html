@@ -198,6 +198,68 @@
             background-color: var(--bg-light);
         }
         /* Feature Marquee Section for Why Choose Our Threads */
+        .feature-marquee-container { position: relative; overflow: hidden; margin: 0 auto 2rem auto; max-width: 100vw; padding: 0 2vw; }
+        .feature-marquee { will-change: transform; }
+        .feature-gradient-left, .feature-gradient-right { position: absolute; top: 0; bottom: 0; width: 60px; pointer-events: none; z-index: 2; }
+        .feature-gradient-left { left: 0; background: linear-gradient(90deg, #f9f6f2 85%, rgba(249,246,242,0) 100%); }
+        .feature-gradient-right { right: 0; background: linear-gradient(270deg, #f9f6f2 85%, rgba(249,246,242,0) 100%); }
+        /* Full width for Why Choose Our Threads marquee */
+        .fullwidth-marquee {
+            width: 100vw !important;
+            max-width: 100vw !important;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            position: relative;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            box-sizing: border-box;
+        }
+        .feature-marquee.infinite-marquee {
+            height: 7.5vw !important;
+            min-height: 90px !important;
+            display: flex;
+            align-items: center;
+        }
+        .feature-block {
+            min-height: 70px !important;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.22rem;
+            padding-top: 1.3vw !important;
+            padding-bottom: 1.3vw !important;
+        }
+        @media (max-width: 900px) {
+            .feature-marquee.infinite-marquee {
+                height: 16vw !important;
+                min-height: 60px !important;
+            }
+            .feature-block {
+                min-height: 50px !important;
+                font-size: 1.07rem;
+                padding-top: 2vw !important;
+                padding-bottom: 2vw !important;
+            }
+        }
+        @media (max-width: 600px) {
+            .feature-marquee.infinite-marquee {
+                height: 22vw !important;
+                min-height: 44px !important;
+            }
+            .feature-block {
+                min-height: 36px !important;
+                font-size: 0.98rem;
+                padding-top: 3vw !important;
+                padding-bottom: 3vw !important;
+            }
+        }
+        @keyframes marqueeMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
         .feature-marquee-container {
             position: relative;
             overflow: hidden;
@@ -240,10 +302,6 @@
             font-size: 1.05rem;
             font-weight: 600;
             text-align: center;
-        }
-        @keyframes marqueeMove {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
         }
         @media (max-width: 700px) {
             .feature-block {
@@ -913,14 +971,14 @@
 
     <!-- Redesigned Swiper Product Section Start -->
     <section class="section product-section">
-        <div class="container">
+        <div class="container"  style="padding-top: 3.5rem;">
             <h2 class="section-title text-center headline-animated" id="productsHeading">
-              <span class="headline-text">Our Products<span class="headline-underline"></span></span>
+              <span class="headline-text" style="text-decoration: underline;">Our Products<span class="headline-underline"></span></span>
             </h2>
             
             <!-- Desktop Swiper (hidden on mobile) -->
             <div class="swiper product-swiper desktop-only">
-                <div class="swiper-wrapper">
+                <div class= "swiper-wrapper">
                     <!-- Product Card 1 -->
                     <div class="swiper-slide">
                         <div class="product-card-modern">
@@ -932,7 +990,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Product Card 2 -->
+                    <!-- Product Card 2 --> 
                     <div class="swiper-slide">
                         <div class="product-card-modern">
                             <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=400&q=80" alt="Rayon Embroidery Thread" class="product-img-modern">
@@ -1097,42 +1155,80 @@
         </div>
     </section>
     <!-- Product Features Section -->
-    <section class="section" style="background-color: var(--bg-light);">
+    <section class="section why-choose-section" style="background-color: var(--bg-light);">
         <div class="container">
             <h2 class="section-title text-center headline-animated" id="whyThreadsHeading">
-              <span class="headline-text">Why Choose Our Threads<span class="headline-underline"></span></span>
+              <span class="headline-text" style="text-decoration: underline;">Why Choose Our Threads<span class="headline-underline"></span></span>
             </h2>
             <p class="text-center mb-5">Our products stand out for their exceptional quality and performance</p>
-            <div class="feature-marquee-container">
-                <div class="feature-marquee infinite-marquee">
-                    <div class="feature-block"><span class="feature-icon">🏅</span><span class="feature-title">Premium Quality</span></div>
-                    <div class="feature-block"><span class="feature-icon">🎨</span><span class="feature-title">Color Consistency</span></div>
-                    <div class="feature-block"><span class="feature-icon">🛠️</span><span class="feature-title">Technical Excellence</span></div>
-                    <div class="feature-block"><span class="feature-icon">🌱</span><span class="feature-title">Eco-Friendly Options</span></div>
-                    <div class="feature-block"><span class="feature-icon">⚡</span><span class="feature-title">High Performance</span></div>
-                    <div class="feature-block"><span class="feature-icon">🔒</span><span class="feature-title">Reliability</span></div>
-                    <!-- DUPLICATE for seamless infinite loop -->
-                    <div class="feature-block"><span class="feature-icon">🏅</span><span class="feature-title">Premium Quality</span></div>
-                    <div class="feature-block"><span class="feature-icon">🎨</span><span class="feature-title">Color Consistency</span></div>
-                    <div class="feature-block"><span class="feature-icon">🛠️</span><span class="feature-title">Technical Excellence</span></div>
-                    <div class="feature-block"><span class="feature-icon">🌱</span><span class="feature-title">Eco-Friendly Options</span></div>
-                    <div class="feature-block"><span class="feature-icon">⚡</span><span class="feature-title">High Performance</span></div>
-                    <div class="feature-block"><span class="feature-icon">🔒</span><span class="feature-title">Reliability</span></div>
-                </div>
-                <div class="feature-gradient-left"></div>
-                <div class="feature-gradient-right"></div>
+        </div>
+        <div class="feature-marquee-section-spacer"></div>
+        <div class="feature-marquee-container fullwidth-marquee marquee-outer-tall">
+            <div class="feature-marquee infinite-marquee">
+                <div class="feature-block"><span class="feature-icon">🏅</span><span class="feature-title">Premium Quality</span></div>
+                <div class="feature-block"><span class="feature-icon">🎨</span><span class="feature-title">Color Consistency</span></div>
+                <div class="feature-block"><span class="feature-icon">🛠️</span><span class="feature-title">Technical Excellence</span></div>
+                <div class="feature-block"><span class="feature-icon">🌱</span><span class="feature-title">Eco-Friendly Options</span></div>
+                <div class="feature-block"><span class="feature-icon">⚡</span><span class="feature-title">High Performance</span></div>
+                <div class="feature-block"><span class="feature-icon">🔒</span><span class="feature-title">Reliability</span></div>
+                <!-- DUPLICATE for seamless infinite loop -->
+                <div class="feature-block"><span class="feature-icon">🏅</span><span class="feature-title">Premium Quality</span></div>
+                <div class="feature-block"><span class="feature-icon">🎨</span><span class="feature-title">Color Consistency</span></div>
+                <div class="feature-block"><span class="feature-icon">🛠️</span><span class="feature-title">Technical Excellence</span></div>
+                <div class="feature-block"><span class="feature-icon">🌱</span><span class="feature-title">Eco-Friendly Options</span></div>
+                <div class="feature-block"><span class="feature-icon">⚡</span><span class="feature-title">High Performance</span></div>
+                <div class="feature-block"><span class="feature-icon">🔒</span><span class="feature-title">Reliability</span></div>
             </div>
+            <div class="feature-gradient-left"></div>
+            <div class="feature-gradient-right"></div>
         </div>
+        <div class="feature-marquee-section-spacer"></div>
     </section>
+    <style>
+    .feature-marquee-section-spacer {
+        height: 1.2vw;
+        min-height: 10px;
+        width: 100%;
+        padding-top: 0;
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+    }
+    .why-choose-section h2 {
+        margin-bottom: 0.7rem !important;
+    }
+    .why-choose-section p {
+        margin-bottom: 1.2rem !important;
+        margin-top: 0.2rem !important;
+    }
+    @media (max-width: 900px) {
+        .feature-marquee-section-spacer {
+            height: 0.8vw;
+            min-height: 6px;
+        }
+        .why-choose-section h2 {
+            margin-bottom: 0.5rem !important;
+        }
+        .why-choose-section p {
+            margin-bottom: 0.7rem !important;
+        }
+    }
+    @media (max-width: 600px) {
+        .feature-marquee-section-spacer {
+            height: 0.5vw;
+            min-height: 4px;
+        }
+        .why-choose-section h2 {
+            margin-bottom: 0.37rem !important;
+        }
+        .why-choose-section p {
+            margin-bottom: 0.4rem !important;
+        }
+    }
+    </style>
+    <!-- Add extra space below marquee before CTA -->
+    <div class="below-marquee-spacer"></div>
     <!-- CTA Section -->
-    <section class="section cta-section" style="background-image: url('https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; position: relative; color: var(--bg-color); text-align: center; padding: 6.5rem 0 2.5rem 0; margin-bottom: 0 !important;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 0;"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <h2 style="font-size: var(--font-size-xxl); margin-bottom: var(--spacing-lg); color:#1A3C40;">Custom Thread Solutions</h2>
-            <p style="margin-bottom: var(--spacing-xl); max-width: 800px; margin-left: auto; color: #e3e8f7; margin-right: auto;">Can't find exactly what you're looking for? We specialize in developing custom thread solutions to meet specific industry requirements. Contact our team to discuss your unique needs.</p>
-            <a href="contact.html" class="example-btn" style="min-width:180px;font-size:1.08rem;font-weight:600;letter-spacing:0.01em;margin-top:18px;">Contact Us</a>
-        </div>
-    </section>
+    <!-- Custom Thread Solutions section removed as requested -->
     <!-- ================= UNIFIED MODERN CTA SECTION (Consistent across all pages) ================= -->
     <!-- This CTA is placed just above the footer for maximum visibility and engagement. -->
     <section class="modern-cta-section">
@@ -1156,9 +1252,10 @@
         /* Modern CTA Section Styles - Consistent across all pages */
         .modern-cta-section {
           padding: 4rem 0 5rem 0;
-          background: linear-gradient(120deg, #f8fafc 0%, #e5e9ff 100%);
+          background: #fff;
           padding-bottom: 2.5rem;
           margin-bottom: 0 !important;
+          margin-top: -12rem !important;
         }
         .modern-cta-container {
           max-width: 1100px;
@@ -1865,6 +1962,42 @@
         
         .footer-links-column:nth-child(3) {
             grid-column: span 1;
+        }
+    }
+    </style>
+    <style>
+    .fullwidth-marquee.marquee-outer-tall {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+        left: unset;
+        right: unset;
+        box-sizing: border-box;
+        min-height: 320px;
+        padding-top: 56px;
+        padding-bottom: 56px;
+        display: flex;
+        align-items: center;
+        background: #fff !important;
+        overflow-x: clip;
+    }
+    .below-marquee-spacer {
+        height: 3.5vw;
+        min-height: 38px;
+        width: 100vw;
+        background: transparent;
+    }
+    @media (max-width: 900px) {
+        .below-marquee-spacer {
+            height: 2vw;
+            min-height: 18px;
+        }
+    }
+    @media (max-width: 600px) {
+        .below-marquee-spacer {
+            height: 1vw;
+            min-height: 8px;
         }
     }
     </style>

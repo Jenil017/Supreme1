@@ -194,7 +194,7 @@
         /* Styles for the process step icon section */
         .process-step-icon { font-size: 2rem; margin-bottom: 0.7rem; }
         /* Styles for the process step title section */
-        .process-step-title { font-size: 1.08rem; font-weight: 700; margin-bottom: 0.3rem; color: #1e3a8a; }
+        .process-step-title { font-size: 1.08rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--primary); }
         /* Styles for the process step description section */
         .process-step-desc { font-size: 0.98rem; color: #444; }
         /* Styles for the cta section */
@@ -607,8 +607,7 @@
     <div class="mobile-menu">
         <div class="mobile-menu-header">
             <a href="index.html" class="mobile-logo">
-                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" style="border-radius:50%;width:36px;height:36px;object-fit:cover;">
-                <span>Supreme Thread</span>
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=80&q=80" alt="Supreme Thread Logo" style="border-radius:50%;width:36px;height:36px;object-fit:cover;background:#fff;padding:8px;box-shadow:0 2px 10px rgba(26,60,64,0.10);">
             </a>
             <button class="mobile-menu-close">
                 <span>&times;</span>
@@ -696,39 +695,162 @@
       });
     </script>
 
-    <!-- WHY CHOOSE SUPREME THREAD SECTION (Horizontal Card Layout) -->
-    <section id="why-choose" class="section why-choose-mfg" style="background: linear-gradient(120deg, #e0e7ff 0%, #f9f6f2 100%);">
-        <div class="container">
-            <h2 class="section-title text-3xl font-bold mb-10 text-blue-900">Why Choose Supreme Thread</h2>
-            <div class="why-grid-mfg flex flex-row flex-wrap gap-8 justify-center">
-                <div class="why-card-mfg bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center hover:shadow-xl transition min-w-[260px] max-w-[300px] flex-1">
+    <!-- WHY CHOOSE SUPREME THREAD SECTION (Modern Card Layout) -->
+    <section id="why-choose" class="section_our_solution" style="background: white; padding-top: 2rem; padding-bottom: 2rem; margin-top: 0;">
+      <div class="container">
+        <h2 class="section-title text-center font-bold mb-5" style="color: var(--primary, #1e3a8a); font-size: 2.4rem; margin-top: 0; letter-spacing: 0.01em; text-decoration: underline; padding-bottom: 3rem;">Why Choose Supreme Thread</h2>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="our_solution_category">
+              <div class="solution_cards_box">
+                <div class="solution_card">
+                  <div class="hover_color_bubble"></div>
+                  <div class="so_top_icon">
                     <span class="why-icon-mfg text-4xl mb-3">✨</span>
-                    <h3 class="font-semibold text-blue-900 mb-2 text-lg">Durability Tested</h3>
-                    <p class="text-gray-600 text-center">Every spool is tested for strength and longevity, ensuring premium quality.</p>
-                </div>
-                <div class="why-card-mfg bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center hover:shadow-xl transition min-w-[260px] max-w-[300px] flex-1">
-                    <span class="why-icon-mfg text-4xl mb-3">🌍</span>
-                    <h3 class="font-semibold text-blue-900 mb-2 text-lg">Eco-Friendly Dyes</h3>
-                    <p class="text-gray-600 text-center">We use sustainable, safe dyes to protect the planet and your products.</p>
-                </div>
-                <div class="why-card-mfg bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center hover:shadow-xl transition min-w-[260px] max-w-[300px] flex-1">
-                    <span class="why-icon-mfg text-4xl mb-3">⚙️</span>
-                    <h3 class="font-semibold text-blue-900 mb-2 text-lg">Precision Winding</h3>
-                    <p class="text-gray-600 text-center">Advanced machinery ensures even, flawless winding on every spool.</p>
-                </div>
-                <div class="why-card-mfg bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center hover:shadow-xl transition min-w-[260px] max-w-[300px] flex-1">
-                    <span class="why-icon-mfg text-4xl mb-3">🚚</span>
-                    <h3 class="font-semibold text-blue-900 mb-2 text-lg">Global Logistics</h3>
-                    <p class="text-gray-600 text-center">Efficient shipping and support for clients worldwide, on time every time.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                  </div>
+                  <div class="solu_title">
+                    <h3>Durability Tested</h3>
+                  </div>
+                  <div class="solu_description">
+                    <p>Every spool is tested for strength and longevity, ensuring premium quality.</p>
 
+                  </div>
+                </div>
+                <div class="solution_card">
+                  <div class="hover_color_bubble"></div>
+                  <div class="so_top_icon">
+                    <span class="why-icon-mfg text-4xl mb-3">🌍</span>
+                  </div>
+                  <div class="solu_title">
+                    <h3>Eco-Friendly Dyes</h3>
+                  </div>
+                  <div class="solu_description">
+                    <p>We use sustainable, safe dyes to protect the planet and your products.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="solution_cards_box sol_card_top_3">
+                <div class="solution_card">
+                  <div class="hover_color_bubble"></div>
+                  <div class="so_top_icon">
+                    <span class="why-icon-mfg text-4xl mb-3">⚙️</span>
+                  </div>
+                  <div class="solu_title">
+                    <h3>Precision Winding</h3>
+                  </div>
+                  <div class="solu_description">
+                    <p>Advanced machinery ensures even, flawless winding on every spool.</p>
+                  </div>
+                </div>
+                <div class="solution_card">
+                  <div class="hover_color_bubble"></div>
+                  <div class="so_top_icon">
+                    <span class="why-icon-mfg text-4xl mb-3">🚚</span>
+                  </div>
+                  <div class="solu_title">
+                    <h3>Global Logistics</h3>
+                  </div>
+                  <div class="solu_description">
+                    <p>Efficient shipping and support for clients worldwide, on time every time.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Why Choose Section -->
+    <style>
+    /* Modern Card Section Styles for Why Choose Supreme Thread */
+    .section_our_solution .row { align-items: center; }
+    .section_our_solution { margin-top: 2.5rem; }
+    .section_our_solution .container { max-width: 1100px; margin: 0 auto; }
+    .section-title { margin-bottom: 2.2rem; font-weight: 700; }
+    .our_solution_category { display: flex; flex-direction: row; flex-wrap: wrap; width: 100%; margin: 0 auto; }
+    .our_solution_category .solution_cards_box { display: flex; flex-direction: column; justify-content: center; flex: auto; }
+    .solution_cards_box .solution_card {
+      flex: 0 50%;
+      background: #fff;
+      box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2), 0 5px 15px 0 rgba(37, 44, 97, 0.15);
+      border-radius: 15px;
+      margin: 8px;
+      padding: 10px 15px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      min-height: 265px;
+      transition: 0.7s;
+    }
+    .solution_cards_box .solution_card:hover {
+      background: var(--primary-color, #1e3a8a); /* Use primary color on hover */
+      color: #fff;
+      transform: scale(1.1);
+      z-index: 9;
+    }
+    .solution_cards_box .solution_card:hover::before { background: rgb(85 108 214 / 10%); }
+    .solution_cards_box .solution_card:hover .solu_title h3,
+    .solution_cards_box .solution_card:hover .solu_description p { color: #fff; }
+    .solution_cards_box .solution_card:before {
+      content: "";
+      position: absolute;
+      background: rgb(85 108 214 / 5%);
+      width: 170px;
+      height: 400px;
+      z-index: -1;
+      transform: rotate(42deg);
+      right: -56px;
+      top: -23px;
+      border-radius: 35px;
+    }
+    .solution_cards_box .solution_card:hover .solu_description button {
+      background: #fff !important;
+      color: var(--primary-color, #1e3a8a);
+    }
+    .solution_card .so_top_icon {
+      width: 60px; height: 60px; border-radius: 50%; background: #fff; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;
+    }
+    .solution_card .solu_title h3 { color: #212121; font-size: 1.3rem; margin-top: 13px; margin-bottom: 13px; }
+    .solution_card .solu_description p { font-size: 15px; margin-bottom: 15px; }
+    .solution_card .solu_description button {
+      border: 0;
+      border-radius: 15px;
+      background: linear-gradient(140deg, #42c3ca 0%, #42c3ca 50%, #42c3cac7 75%) !important;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 5px 16px;
+    }
+    .hover_color_bubble {
+      position: absolute;
+      background: rgb(54 81 207 / 15%);
+      width: 100rem;
+      height: 100rem;
+      left: -18rem;
+      z-index: -1;
+      top: 16rem;
+      border-radius: 50%;
+      transform: rotate(-36deg);
+      transition: 0.7s;
+    }
+    .solution_cards_box .solution_card:hover .hover_color_bubble { top: 0rem; }
+    @media screen and (min-width: 320px) {
+      .sol_card_top_3 { position: relative; top: 0; }
+      .our_solution_category { width: 100%; margin: 0 auto; }
+      .our_solution_category .solution_cards_box { flex: auto; }
+    }
+    @media only screen and (min-width: 768px) {
+      .our_solution_category .solution_cards_box { flex: 1; }
+    }
+    @media only screen and (min-width: 1024px) {
+      .sol_card_top_3 { position: relative; top: -3rem; }
+      .our_solution_category { width: 50%; margin: 0 auto; }
+    }
+    </style>
     <!-- PROCESS STEPS SECTION -->
-    <section id="process" class="section process-section" style="background: linear-gradient(120deg, #f1f5fe 40%, #f9f6f2 100%);">
+    <section id="process" class="section process-section" style="background: white">
         <div class="container py-12">
-            <h2 class="section-title text-center text-3xl font-bold mb-10 text-blue-900">How We Make Supreme Thread</h2>
+            <h2 class="section-title text-center text-3xl font-bold mb-10 text-blue-900" style="text-decoration: underline; margin-top: -2rem;">How We Make Supreme Thread</h2>
             <div class="process-timeline flex flex-col md:flex-row gap-8 md:gap-6 justify-center items-stretch">
                 <div class="process-step-new">
                     <span class="process-step-icon">🧵</span>
@@ -766,7 +888,7 @@
 
     <!-- ================= UNIFIED MODERN CTA SECTION (Consistent across all pages) ================= -->
     <!-- This CTA is placed just above the footer for maximum visibility and engagement. -->
-    <section class="modern-cta-section" style="margin-bottom:0 !important;">
+    <section class="modern-cta-section" style="margin-bottom:0 !important; background: white">
       <div class="modern-cta-container">
         <div class="modern-cta-card">
           <div class="modern-cta-content">
