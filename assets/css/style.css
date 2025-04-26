@@ -2964,12 +2964,13 @@ h2.section-title .headline-text,
   margin-left: auto !important;
   margin-right: auto !important;
   display: inline-block !important;
+  margin-top: 3rem;
 }
 
 /* Add margin-top to the 'Why Choose Our Threads' section to prevent it from being hidden behind header */
 #whyThreadsHeading, 
 .why-choose-section .section-title {
-  margin-top:-60px!important; /* Greatly increased margin to prevent header overlap */
+  margin-top:-36px!important; /* Greatly increased margin to prevent header overlap */
   padding-top: 5px !important; /* Added more padding at top */
   text-align: center !important; /* Make sure heading is centered */
   width: 100%; /* Ensure full width for proper centering */

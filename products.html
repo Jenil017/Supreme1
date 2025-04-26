@@ -1753,9 +1753,10 @@
       text-decoration: none !important;
       background: none !important;
       box-shadow: none !important;
+      margin-top: 41px   !important;
     }
     .section-title {
-      margin-top: 6rem;
+      margin-top: 7rem !important; /* Increased top margin for all devices */
       margin-bottom: 3.2rem;
       position: relative;
       padding-left: 10vw;
@@ -1772,6 +1773,7 @@
     }
     /* Remove any extra underline or border from .headline-text */
     .headline-text {
+      margin-top: 0px   !important;
       border: none !important;
       text-decoration: none !important;
       display: inline-block;
@@ -1781,7 +1783,7 @@
     /* Tablet adjustments */
     @media (max-width: 900px) {
       .section-title {
-        margin-top: 4.2rem;
+        margin-top: 5.5rem !important; /* Increased for tablet */
         margin-bottom: 2.7rem;
         padding-left: 13vw;
         padding-right: 13vw;
@@ -1790,7 +1792,7 @@
     /* Mobile adjustments */
     @media (max-width: 600px) {
       .section-title {
-        margin-top: 5.5rem;
+        margin-top: 4.5rem !important; /* Increased for mobile */
         margin-bottom: 2.2rem;
         padding-left: 12vw;
         padding-right: 12vw;
